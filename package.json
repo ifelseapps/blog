@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ifelseapps/blog/issues"
   },
-  "homepage": "https://github.com/ifelseapps/blog#readme"
+  "homepage": "https://github.com/ifelseapps/blog#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
 }
