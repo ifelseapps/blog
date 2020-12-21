@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <div class="page">
+    <header class="page__header">
+      <a href="/">
+        <h1 class="sitename">Блог Максима</h1>
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Обо мне</a>
+          </li>
+          <li>
+            <a href="/">Проекты</a>
+          </li>
+          <li>
+            <a href="/">Путешествия</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="page__content">
+      <main class="page__main">
+        {{ content | safe }}
+      </main>
+      <aside class="page__sidebar">
+        <ul>
+          <li>Верстка</li>
+          <li>Accessibility</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>Сборка</li>
+          <li>Angular</li>
+          <li>React</li>
+          <li>Разное</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
