@@ -12,6 +12,13 @@ module.exports = function (eleventyConfig) {
       }
     };
   });
+  eleventyConfig.addLiquidTag('line', function (liquidEngine) {
+    return {
+      render: function () {
+        return Promise.resolve('<hr class="line">');
+      }
+    };
+  });
 
   return {
     dir: {
