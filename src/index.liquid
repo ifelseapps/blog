@@ -1,15 +1,27 @@
 ---
 layout: default.liquid
 ---
-<div>
-  <p>Привет! Меня зовут Максим Павлов. Я – разработчик интерфейсов (frontend-разработчик).
-    Интересуюсь гражданской авиацией, историей. Люблю путешествовать, учу английский и иврит.</p>
-</div>
-{%- for post in collections.post -%}
-  <article>
-    <a href="{{ post.url |  url }}">
-      <h1>{{ post.data.title }}</h1>
-    </a>
-    {{ post.templateContent }}
-  </article>
-{%- endfor -%}
+<main class="posts content__main">
+  {%- for post in collections.post -%}
+    <article class="posts__item">
+      <h1>
+        <a href="{{ post.url |  url }}">
+          {{ post.data.title }}
+        </a>
+      </h1>
+      {{ post.data.desc }}
+    </article>
+  {%- endfor -%}
+</main>
+<aside class="content__sidebar">
+  <ul>
+    <li>Верстка</li>
+    <li>Accessibility</li>
+    <li>JavaScript</li>
+    <li>TypeScript</li>
+    <li>Сборка</li>
+    <li>Angular</li>
+    <li>React</li>
+    <li>Разное</li>
+  </ul>
+</aside>

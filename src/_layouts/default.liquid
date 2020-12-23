@@ -8,41 +8,32 @@
 </head>
 <body>
   <div class="page">
-    <header class="page__header">
-      <a href="/">
-        <h1 class="sitename">Блог Максима</h1>
-      </a>
-      <nav>
-        <ul>
-          <li>
+    <header class="container">
+      <h1 class="site-name">
+        <a class="site-name__link" href="/">
+          Блог Максима
+        </a>
+      </h1>
+      <nav class="main-menu">
+        <ul class="main-menu__list">
+          <li class="main-menu__item">
             <a href="/">Обо мне</a>
           </li>
-          <li>
+          <li class="main-menu__item">
             <a href="/">Проекты</a>
           </li>
-          <li>
+          <li class="main-menu__item">
             <a href="/">Путешествия</a>
           </li>
         </ul>
       </nav>
     </header>
-    <div class="page__content">
-      <main class="page__main">
-        {{ content | safe }}
-      </main>
-      <aside class="page__sidebar">
-        <ul>
-          <li>Верстка</li>
-          <li>Accessibility</li>
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-          <li>Сборка</li>
-          <li>Angular</li>
-          <li>React</li>
-          <li>Разное</li>
-        </ul>
-      </aside>
+    <div class="content">
+      {{ content |  safe }}
     </div>
+    <footer class="container">
+      &copy;&nbsp;2018-2020 Максим Павлов
+    </footer>
   </div>
 </body>
 </html>
