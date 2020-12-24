@@ -117,6 +117,19 @@ html, body {
   border-color: var(--primary-a-700);
 }
 
+.posts {}
+
+.posts__item:not(:last-child) {
+  margin-bottom: 3em;
+}
+
+.post-item {}
+
+.post-item__title {
+  margin: 0 0 0.5em;
+  font-weight: 900;
+}
+
 .post-page {}
 
 .post-page pre {
@@ -232,7 +245,8 @@ html, body {
 
   .post-page h1,
   .post-page h2,
-  .post-page h3 {
+  .post-page h3,
+  .post-page__header {
     grid-column: 2 / 12;
   }
 

@@ -2,14 +2,17 @@
 layout: default.liquid
 ---
 <main class="posts content__main">
-  {%- for post in collections.post -%}
-    <article class="posts__item">
-      <h1>
+  {% assign posts = collections.post | reverse %}
+  {%- for post in posts -%}
+    <article class="post-item posts__item">
+      <h1 class="post-item__title">
         <a href="{{ post.url |  url }}">
           {{ post.data.title }}
         </a>
       </h1>
-      {{ post.data.desc }}
+      <div class="post-item__desc">
+        {{ post.data.desc }}
+      </div>
     </article>
   {%- endfor -%}
 </main>

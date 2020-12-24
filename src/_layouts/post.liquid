@@ -3,7 +3,10 @@ layout: default.liquid
 ---
 
 <main class="post-page">
-  <h1>{{ title }}</h1>
+  <header class="post-page__header">
+    <h1>{{ title }}</h1>
+    <div>{{ date |  readableDate }}</div>
+  </header>
   <p class="post-page__desc">{{ desc }}</p>
   {{ content |  safe }}
   <footer class="post-page__footer">
