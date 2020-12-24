@@ -104,6 +104,19 @@ html, body {
   }
 }
 
+.content a {
+  padding: 0 0 0.05em;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: solid 1px var(--dark-200);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.content a:hover {
+  color: var(--primary-a-700);
+  border-color: var(--primary-a-700);
+}
+
 .post-page {}
 
 .post-page pre {
@@ -120,17 +133,54 @@ html, body {
   font-style: italic;
 }
 
+.post-page .line {
+  margin-top: 2em;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: dashed 1px var(--dark-200);
+}
+
+.post-page p {
+  margin: 1em 0 0;
+  line-height: 1.3em;
+}
+
+.post-page ul {
+  margin: 1em 2em 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-page ul > li {
+  position: relative;
+}
+
+.post-page ul > li::before {
+  content: '';
+  position: absolute;
+  top: 0.5em;
+  left: -0.8em;
+  width: 6px;
+  height: 6px;
+  background: var(--primary-a-700);
+  border-radius: 100%;
+}
+
 .post-page h1 {
+  margin: 0;
   font-size: 2.6rem;
   font-weight: 900;
 }
 
 .post-page h2 {
+  margin: 1.5em 0 0.1em;
   font-size: 1.8rem;
   font-weight: 900;
 }
 
 .post-page h3 {
+  margin: 1.5em 0 0.1em;
   font-weight: 900;
 }
 
