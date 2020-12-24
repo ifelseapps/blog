@@ -104,6 +104,11 @@ html, body {
   }
 }
 
+.content p,
+.content ul {
+  line-height: 1.5em;
+}
+
 .content a {
   padding: 0 0 0.05em;
   text-decoration: none;
@@ -156,7 +161,6 @@ html, body {
 
 .post-page p {
   margin: 1em 0 0;
-  line-height: 1.3em;
 }
 
 .post-page ul {
@@ -202,6 +206,18 @@ html, body {
   background: var(--primary-100);
   color: var(--primary-a-700);
   border-radius: 5px;
+}
+
+.post-page .note {
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .post-page .note {
+    margin: 1em 4em;
+    padding: 0 0 0 1em;
+    border-left: solid 2px var(--dark-200);
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -255,8 +271,16 @@ html, body {
     width: 100%;
   }
 
+  .note-wrapper {
+    position: relative;
+  }
+
   .post-page .note {
-    grid-column: 10 / 12;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 200px;
+    transform: translateX(100%);
   }
 
   .post-page__footer {

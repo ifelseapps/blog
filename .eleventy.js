@@ -21,6 +21,11 @@ module.exports = function (eleventyConfig) {
       }
     };
   });
+
+  eleventyConfig.addPairedShortcode('notewrapper', function (content) {
+    return `<div class="note-wrapper">${content}</div>`;
+  });
+
   eleventyConfig.addLiquidTag('line', function (liquidEngine) {
     return {
       render: function () {
