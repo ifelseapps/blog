@@ -34,6 +34,17 @@
   font-style: italic;
 }
 
+:root {
+  --background-color: #e8eaf6;
+  --text-color: #263238;
+  --primary-a-700: #2962ff;
+  --primary-400: #42a5f5;
+  --primary-100: #bbdefb;
+  --dark-900: #263238;
+  --dark-200: #b0bec5;
+  --light: #fafafa;
+}
+
 html {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: calc(16px + .25vw);
@@ -93,6 +104,43 @@ html, body {
   }
 }
 
+.post-page {}
+
+.post-page pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.post-page__desc {
+  font-style: italic;
+}
+
+.post-page .note {
+  color: grey;
+  font-style: italic;
+}
+
+.post-page h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+}
+
+.post-page h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.post-page h3 {
+  font-weight: 900;
+}
+
+.post-page p > code {
+  padding: 0.1em 0.3em;
+  background: var(--primary-100);
+  color: var(--primary-a-700);
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 1024px) {
   .content {
     display: grid;
@@ -133,7 +181,8 @@ html, body {
   }
 
   .post-page h1,
-  .post-page h2 {
+  .post-page h2,
+  .post-page h3 {
     grid-column: 2 / 12;
   }
 
@@ -144,12 +193,6 @@ html, body {
 
   .post-page .note {
     grid-column: 10 / 12;
-    color: grey;
-    font-style: italic;
-  }
-
-  .post-page__desc {
-    font-style: italic;
   }
 
   .post-page__footer {
