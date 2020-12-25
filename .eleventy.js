@@ -7,8 +7,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/images');
 
-  eleventyConfig.addFilter('readableDate', dateObj => {
+  eleventyConfig.addFilter('dateFormatted', dateObj => {
     return format(dateObj, 'dd.MM.yyyy');
+  });
+
+  eleventyConfig.addFilter('dateISO', dateObj => {
+    return format(dateObj, 'yyyy-MM-dd');
   });
 
   eleventyConfig.addLiquidTag('note', function (liquidEngine) {

@@ -203,6 +203,7 @@ body {
 
 .post-page .note {
   color: grey;
+  font-size: 0.7rem;
   font-style: italic;
 }
 
@@ -263,12 +264,18 @@ body {
   border-radius: 5px;
 }
 
-.post-page .note {
-  font-size: 0.8rem;
+.post-page__date {
+  display: block;
+  margin-bottom: 1em;
 }
 
 .post-page__footer {
   margin-top: 2em;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: var(--dark-900);
 }
 
 .post-footer {
@@ -305,8 +312,8 @@ body {
 
 @media screen and (max-width: 1023px) {
   .post-page .note {
-    margin: 1em 4em;
-    padding: 0 0 0 1em;
+    margin: 1em;
+    padding: 1em 0 1em 1em;
     border-left: solid 2px var(--dark-200);
   }
 }
@@ -337,11 +344,14 @@ body {
   }
 
   .post-page {
+    grid-column: 1/13;
+  }
+
+  .post-page__inner {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 1rem;
     grid-auto-rows: min-content;
-    grid-column: 1/13;
   }
 
   .post-page p,
