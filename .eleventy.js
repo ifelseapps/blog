@@ -1,10 +1,11 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const { parseISO, format } = require('date-fns');
+const { format } = require('date-fns');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addPassthroughCopy('src/css');
+  eleventyConfig.addPassthroughCopy('src/images');
 
   eleventyConfig.addFilter('readableDate', dateObj => {
     return format(dateObj, 'dd.MM.yyyy');

@@ -55,6 +55,10 @@ html, body {
   margin: 0;
 }
 
+body {
+  background: #F5F5F5;
+}
+
 .site-name {
   margin: 0;
   font-size: 1.2rem;
@@ -74,8 +78,7 @@ html, body {
 }
 
 .container {
-  width: 95vw;
-  margin: 0 auto;
+  margin: 0 2.5vw;
 }
 
 .main-menu {}
@@ -88,13 +91,43 @@ html, body {
   list-style: none;
 }
 
-.main-menu__item:not(:last-child) {
-  margin-right: 0.7em;
-  margin-bottom: 0;
+.main-menu__link {
+  padding: 0.2em 0.3em;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: inherit;
+  border-radius: 3px;
+}
+
+.main-menu__link:hover,
+.main-menu__item_active .main-menu__link {
+  background: rgb(106,27,144);
+  background: linear-gradient(0deg, rgba(106,27,144,1) 0%, rgba(156,39,176,1) 100%);
+  color: #fff;
 }
 
 .main-menu__item:not(:last-child) {
-  margin-bottom: 0.4em;
+  margin-right: 0.2em;
+}
+
+.header {
+  background: #fff;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  padding: 1em 0;
+}
+
+.header__logo {
+  margin-right: 0.3em;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
 }
 
 @media screen and (max-width: 1023px) {

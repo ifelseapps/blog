@@ -9,25 +9,32 @@
 </head>
 <body>
   <div class="page">
-    <header class="container">
-      <h1 class="site-name">
-        <a class="site-name__link" href="/">
-          Блог Максима
+    <header class="header">
+      <div class="container header__inner">
+        <a href="/">
+          <img class="logo header__logo" src="/images/ninja.svg" alt="Logo">
         </a>
-      </h1>
-      <nav class="main-menu">
-        <ul class="main-menu__list">
-          <li class="main-menu__item">
-            <a href="/">Обо мне</a>
-          </li>
-          <li class="main-menu__item">
-            <a href="/">Проекты</a>
-          </li>
-          <li class="main-menu__item">
-            <a href="/">Путешествия</a>
-          </li>
-        </ul>
-      </nav>
+        <div>
+          <h1 class="site-name">
+            <a class="site-name__link" href="/">
+              Блог Максима
+            </a>
+          </h1>
+          <nav class="main-menu">
+            <ul class="main-menu__list">
+              <li class="main-menu__item">
+                <a class="main-menu__link" href="/">Обо мне</a>
+              </li>
+              <li class="main-menu__item">
+                <a class="main-menu__link" href="/">Проекты</a>
+              </li>
+              <li class="main-menu__item">
+                <a class="main-menu__link" href="/">Путешествия</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
     <div class="content">
       {{ content |  safe }}
