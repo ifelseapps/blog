@@ -78,12 +78,52 @@ code {
 
 .header__inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 1em 0;
 }
 
 .header__logo {
   margin-right: 0.3em;
+}
+
+@media screen and (max-width: 767px) {
+  .header__socials {
+    margin-top: 0.6em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__socials {
+    margin-left: auto;
+  }
+}
+
+.socials {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials__item {
+  &:not(:last-child) {
+    margin-right: 1em;
+  }
+}
+
+.socials__link {
+  display: flex;
+  color: var(--dark-600);
+  &:hover {
+    color: var(--dark-900);
+  }
+}
+
+.socials__icon {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
 }
 
 .logo {
