@@ -1,7 +1,6 @@
 @import "tokens";
+@import "fonts";
 @import "prism";
 @import "common";
-
-.some-block {
-  background: var(--test);
-}
+@import "posts";
+@import "post";

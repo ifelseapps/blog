@@ -1,0 +1,57 @@
+.tag,
+a.tag {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  font-weight: 400;
+  border: solid 1px;
+  border-radius: 3px;
+  color: grey;
+  font-size: 0.8rem;
+  line-height: 1.5em;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags-list__item {
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  &::before {
+    display: none;
+  }
+}
+
+.posts {}
+
+.posts__tags-list {
+  margin-top: 3em;
+}
+
+.posts__current-tag {
+  grid-column: 2 / 12;
+  margin-bottom: 0.5em;
+  line-height: 1;
+}
+
+.posts__item:not(:last-child) {
+  margin-bottom: 3em;
+}
+
+.post-item {}
+
+.post-item__title {
+  margin: 0 0 0.5em;
+}
+
+@media screen and (min-width: 1024px) {
+  .posts {}
+
+  .posts__item {
+    grid-column: 2 / 10;
+  }
+}
