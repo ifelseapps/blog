@@ -12,6 +12,14 @@ layout: default.liquid
     </header>
     <p class="post-page__desc">{{ desc }}</p>
     {{ content | safe }}
+
+    <ul>
+      {%- assign nextPost = collections.post | getNextCollectionItem: page %}
+      {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+      {%- assign previousPost = collections.post | getPreviousCollectionItem: page %}
+      {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+    </ul>
+
     <footer class="post-footer post-page__footer">
       <img class="post-footer__avatar" src="/images/avatar.jpg" alt="Моя фотография">
       <div class="post-footer__name">Максим Павлов</div>
