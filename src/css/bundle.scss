@@ -1,0 +1,7 @@
+@import "tokens";
+@import "prism";
+@import "common";
+
+.some-block {
+  background: var(--test);
+}
