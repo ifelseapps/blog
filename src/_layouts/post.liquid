@@ -13,23 +13,28 @@ layout: default.liquid
     <p class="post-page__desc">{{ desc }}</p>
     {{ content | safe }}
 
-    <ul>
+    <ul class="post-pagination post-page__pagination">
       {%- assign nextPost = collections.post | getNextCollectionItem: page %}
-      {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+      {%- if nextPost %}
+        <li class="post-pagination__item">
+          <a href="{{ nextPost.url | url }}">&larr;{{ nextPost.data.title }}</a>
+        </li>
+      {% endif %}
       {%- assign previousPost = collections.post | getPreviousCollectionItem: page %}
-      {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+      {%- if previousPost %}
+        <li class="post-pagination__item">
+          <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}&rarr;</a>
+        </li>
+      {% endif %}
     </ul>
 
     <footer class="post-footer post-page__footer">
       <img class="post-footer__avatar" src="/images/avatar.jpg" alt="Моя фотография">
-      <div class="post-footer__name">Максим Павлов</div>
-      <div>senior frontend engineer</div>
       <div class="post-footer__desc">
-        <div>Я занимаюсь промышленной web-разработкой&nbsp;около&nbsp;6&nbsp;лет.</div>
-        <div>3 года назад я сосредоточился исключительно на&nbsp;разработке&nbsp;интерфейсов.</div>
-        <div>Пишу на <strong>React</strong> и <strong>Angular</strong>.</div>
+        <div>Меня зовут Максим Павлов. Я senior frontend engineer.</div>
+        <div>Пишу про разработку, путешествия, а также обо всем, что меня интересует.</div>
       </div>
-      <a class="button post-footer__show-more" href="/">Подробнее</a>
+      <a class="post-footer__show-more" href="/">Подробнее</a>
     </footer>
   </article>
 </main>

@@ -23,30 +23,35 @@
   align-items: center;
   text-align: center;
   padding: 1em;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   border-radius: 3px;
-  background: #E0E0E0;
 }
 
 .post-footer__avatar {
   width: 150px;
   height: 150px;
   margin-bottom: 1em;
-  border: solid 6px var(--dark-200);
   border-radius: 100%;
 }
 
-.post-footer__name {
-  font-weight: 700;
-}
-
-.post-footer__desc {
-  margin-top: 0.5em;
-  font-size: 0.75rem;
-}
-
 .post-footer__show-more {
-  margin-top: 1em;
+  margin-top: 0.3em;
+}
+
+ul.post-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  padding: 0;
+}
+
+.post-pagination__item {
+  &::before {
+    display: none;
+  }
+  &:not(:last-child) {
+    margin-right: 1em;
+  }
 }
 
 @media screen and (min-width: 1024px) {

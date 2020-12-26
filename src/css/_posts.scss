@@ -10,6 +10,10 @@ a.tag {
   line-height: 1.5em;
 }
 
+a.tag:hover {
+  border: solid 1px var(--primary-700);
+}
+
 .tags-list {
   display: flex;
   flex-wrap: wrap;
@@ -43,6 +47,10 @@ a.tag {
 }
 
 .post-item {}
+
+a.post-item__link {
+  border: none;
+}
 
 .post-item__title {
   margin: 0 0 0.5em;
