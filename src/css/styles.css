@@ -35,11 +35,11 @@
 }
 
 :root {
-  --background-color: #e8eaf6;
+  --background-color: #F5F5F5;
   --text-color: #263238;
-  --primary-a-700: #2962ff;
-  --primary-400: #42a5f5;
-  --primary-100: #bbdefb;
+  --primary-a-700: #AA00FF;
+  --primary-400: #AB47BC;
+  --primary-100: #E1BEE7;
   --dark-900: #263238;
   --dark-200: #b0bec5;
   --light: #fafafa;
@@ -56,7 +56,7 @@ html, body {
 }
 
 body {
-  background: #F5F5F5;
+  background: var(--background-color);
 }
 
 .content .button {
