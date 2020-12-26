@@ -4,8 +4,37 @@ const { format } = require('date-fns');
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  eleventyConfig.setDataDeepMerge(true);
+
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/images');
+
+  eleventyConfig.addCollection('tags', function (collection) {
+    let tagSet = new Set();
+    collection.getAll().forEach(function (item) {
+      if ('tags' in item.data) {
+        let tags = item.data.tags;
+
+        tags = tags.filter(function (item) {
+          switch (item) {
+            case 'all':
+            case 'nav':
+            case 'post':
+            case 'posts':
+              return false;
+          }
+
+          return true;
+        });
+
+        for (const tag of tags) {
+          tagSet.add(tag);
+        }
+      }
+    });
+
+    return [...tagSet];
+  });
 
   eleventyConfig.addFilter('dateFormatted', dateObj => {
     return format(dateObj, 'dd.MM.yyyy');

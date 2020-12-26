@@ -67,12 +67,12 @@ body {
   background: linear-gradient(0deg, rgba(106,27,144,1) 0%, rgba(156,39,176,1) 100%);
   border-radius: 30px;
   color: #ffffff;
-  transition: transform 0.3s;
 }
 
 .content .button:hover {
   color: #ffffff;
   transform: scale(1.3, 1.3);
+  transition: transform 0.3s;
 }
 
 .site-name {
@@ -177,7 +177,41 @@ body {
   border-color: var(--primary-a-700);
 }
 
+.content .tag {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  font-weight: 400;
+  border: solid 1px;
+  border-radius: 3px;
+  color: grey;
+  font-size: 0.8rem;
+  line-height: 1.5em;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags-list__item {
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 .posts {}
+
+.posts__tags-list {
+  margin-top: 3em;
+}
+
+.content .posts__current-tag {
+  grid-column: 2 / 12;
+  margin-bottom: 0.5em;
+  line-height: 1;
+}
 
 .posts__item:not(:last-child) {
   margin-bottom: 3em;
@@ -240,7 +274,13 @@ body {
   border-radius: 100%;
 }
 
-.post-page h1 {
+.content h1,
+.content h2,
+.content h3 {
+  line-height: 1.4em;
+}
+
+.content h1 {
   margin: 0;
   font-size: 2.6rem;
   font-weight: 900;
