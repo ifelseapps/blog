@@ -17,13 +17,13 @@ layout: default.liquid
       {%- assign nextPost = collections.post | getNextCollectionItem: page %}
       {%- if nextPost %}
         <li class="post-pagination__item">
-          <a href="{{ nextPost.url | url }}">&larr;{{ nextPost.data.title }}</a>
+          <a href="{{ nextPost.url | url }}">&larr;&nbsp;{{ nextPost.data.title }}</a>
         </li>
       {% endif %}
       {%- assign previousPost = collections.post | getPreviousCollectionItem: page %}
       {%- if previousPost %}
         <li class="post-pagination__item">
-          <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}&rarr;</a>
+          <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}&nbsp;&rarr;</a>
         </li>
       {% endif %}
     </ul>
