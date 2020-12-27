@@ -1,12 +1,16 @@
 .post-page {}
 
+.post-page__desc {
+  font-style: italic;
+}
+
 .post-page__date {
   display: block;
   margin-bottom: 1em;
 }
 
 .post-page__picture {
-  grid-column: 2 / 12;
+  grid-column: 2 / 9;
   margin: 1em 0;
 
   img {
