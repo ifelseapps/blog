@@ -1,4 +1,5 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const Image = require('@11ty/eleventy-img');
 const { format } = require('date-fns');
 
 module.exports = function (eleventyConfig) {
@@ -64,11 +65,49 @@ module.exports = function (eleventyConfig) {
     };
   });
 
+  eleventyConfig.addLiquidShortcode('Image', async function (src, alt) {
+    if (!alt) {
+      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+    }
+
+    const stats = await Image(src, {
+      widths: [320, 640, 960, 1200, 1800, 2400],
+      formats: ['jpeg', 'webp'],
+      urlPath: '/images/',
+      outputDir: './_site/images/',
+    });
+
+    const lowestSrc = stats['jpeg'][0];
+
+    const srcset = Object.keys(stats).reduce(
+      (acc, format) => ({
+        ...acc,
+        [format]: stats[format].reduce(
+          (_acc, curr) => `${_acc} ${curr.srcset} ,`,
+          ''
+        ),
+      }),
+      {}
+    );
+
+    const source = `<source type="image/webp" data-srcset="${srcset['webp']}" >`;
+
+    const img = `<img
+      alt="${alt}"
+      src="${lowestSrc.url}"
+      sizes='(min-width: 1024px) 1024px, 100vw'
+      srcset="${srcset["jpeg"]}"
+    >`;
+
+    return `<div class="post-page__picture"><picture>${source} ${img}</picture></div>`;
+  });
+
   return {
     dir: {
       input: 'src',
       includes: '_includes',
       layouts: '_layouts',
+      markdownTemplateEngine: 'liquid'
     }
   };
 };

@@ -8,3 +8,5 @@ desc: Описание поста, напишем еще немного слов
 Контент
 
 Inline ```code```
+
+{% Image "./src/posts/first-post/some-picture.jpg", "Some picture" %}

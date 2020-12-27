@@ -5,6 +5,17 @@
   margin-bottom: 1em;
 }
 
+.post-page__picture {
+  grid-column: 2 / 12;
+  margin: 1em 0;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 .post-page__footer {
   margin-top: 2em;
 }
