@@ -51,13 +51,9 @@ module.exports = function (eleventyConfig) {
       },
       render: function (scope, hash) {
         const str = liquidEngine.evalValue(this.str, scope);
-        return Promise.resolve(`<p class="note">${str}</p>`);
+        return Promise.resolve(`<div class="note-wrapper"><p class="note">${str}</p></div>`);
       }
     };
-  });
-
-  eleventyConfig.addPairedShortcode('notewrapper', function (content) {
-    return `<div class="note-wrapper">${content}</div>`;
   });
 
   eleventyConfig.addLiquidTag('line', function (liquidEngine) {
