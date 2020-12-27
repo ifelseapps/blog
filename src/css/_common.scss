@@ -12,6 +12,11 @@ body {
   background: var(--background-color);
 }
 
+::selection {
+  background: var(--primary-700);
+  color: #fff;
+}
+
 code {
   font-family: inherit!important;
 }
