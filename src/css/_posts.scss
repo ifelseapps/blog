@@ -1,13 +1,14 @@
 .tag,
 a.tag {
-  display: inline-block;
+  display: inline-flex;
   padding: 0.2em 0.5em;
   font-weight: 400;
   border: solid 1px;
   border-radius: 3px;
   color: grey;
-  font-size: 0.8rem;
+  font-size: 0.65rem;
   line-height: 1.5em;
+  user-select: none;
 }
 
 a.tag:hover {
@@ -23,8 +24,9 @@ a.tag:hover {
 }
 
 .tags-list__item {
-  margin-right: 0.5em;
-  margin-bottom: 0.5em;
+  display: flex;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
   &::before {
     display: none;
   }
@@ -32,11 +34,7 @@ a.tag:hover {
 
 .posts {}
 
-.posts__tags-list {
-  margin-top: 3em;
-}
-
-.posts__current-tag {
+.posts .posts__current-tag {
   grid-column: 2 / 12;
   margin-bottom: 0.5em;
   line-height: 1;
@@ -44,6 +42,12 @@ a.tag:hover {
 
 .posts__item:not(:last-child) {
   margin-bottom: 3em;
+}
+
+.sidebar {}
+
+.sidebar .sidebar__tags-list {
+  margin-top: 3em;
 }
 
 .post-item {}
