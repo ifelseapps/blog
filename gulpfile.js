@@ -12,7 +12,7 @@ function stylesTask() {
   return gulp.src(PATHS.styles)
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano]))
-    .pipe(gulp.dest('src/css'));
+    .pipe(gulp.dest('_site/css'));
 }
 
 module.exports.styles = stylesTask;

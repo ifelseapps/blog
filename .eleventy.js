@@ -7,7 +7,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPassthroughCopy('src/css/fonts');
-  eleventyConfig.addPassthroughCopy('src/css/bundle.css');
   eleventyConfig.addPassthroughCopy('src/images');
 
   eleventyConfig.addCollection('tags', function (collection) {
