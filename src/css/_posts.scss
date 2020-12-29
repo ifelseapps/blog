@@ -1,5 +1,5 @@
-.tag,
-a.tag {
+.tag-item,
+a.tag-item {
   display: inline-flex;
   padding: 0.2em 0.5em;
   font-weight: 400;
@@ -11,7 +11,7 @@ a.tag {
   user-select: none;
 }
 
-a.tag:hover {
+a.tag-item:hover {
   border: solid 1px var(--primary-700);
 }
 
