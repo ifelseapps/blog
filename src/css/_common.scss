@@ -196,6 +196,18 @@ code {
   border-bottom: dashed 1px var(--dark-200);
 }
 
+.content blockquote {
+  margin: 1em 0 0;
+  padding: 0.5em 1em;
+  border-left: solid 4px var(--primary-700);
+
+  p {
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
 .content p {
   margin: 1em 0 0;
 }
@@ -208,6 +220,9 @@ code {
 
 .content ul > li {
   position: relative;
+  p, ul {
+    margin-top: 0;
+  }
 }
 
 .content ul > li::before {
@@ -244,7 +259,8 @@ code {
   font-weight: 900;
 }
 
-.content p > code {
+.content p > code,
+.content li > code {
   padding: 0.2em 0.3em;
   background: var(--primary-50);
   color: var(--primary-700);

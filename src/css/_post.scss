@@ -82,6 +82,10 @@ ul.post-pagination {
     grid-auto-rows: min-content;
   }
 
+  .post-page blockquote {
+    grid-column: 3 / 8;
+  }
+
   .post-page p,
   .post-page ul,
   .post-page pre {
