@@ -10,10 +10,7 @@ permalink: /tags/{{ tag }}/
 eleventyComputed:
   title: Заметки с тегом "{{ tag }}"
 ---
-<main class="posts content__main">
-  <h1 class="posts__current-tag">
-    <span class="tag-item">#{{ tag }}</span>
-  </h1>
+<main class="content__main">
   {% assign posts = collections[tag] | reverse %}
   {% include posts.liquid %}
 </main>

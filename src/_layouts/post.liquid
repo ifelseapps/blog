@@ -4,12 +4,6 @@ layout: default.liquid
 
 <main class="post-page">
   <article class="post-page__inner">
-    <header class="post-page__header">
-      <time class="date post-page__date" pubdate datetime="{{ date | dateISO }}">
-        {{ date | dateFormatted }}
-      </time>
-      <h1>{{ title }}</h1>
-    </header>
     <p class="post-page__desc">{{ description }}</p>
     {{ content | safe }}
 
@@ -34,7 +28,7 @@ layout: default.liquid
         <div>Меня зовут Максим Павлов. Я senior frontend engineer.</div>
         <div>Пишу про разработку.</div>
       </div>
-      <a class="post-footer__show-more" href="/">Подробнее</a>
+      <a class="post-footer__show-more" href="/#about">Подробнее</a>
     </footer>
   </article>
 </main>

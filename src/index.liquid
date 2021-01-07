@@ -5,9 +5,55 @@ description: Я senior frontend engineer, пишу о разработке, пу
 keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html
 ---
 
-<main class="posts content__main">
+<main class="content__main">
   {% assign posts = collections.post | reverse %}
   {% include posts.liquid %}
+
+  <section class="projects content__section">
+    <h2>Проекты</h2>
+    <p>NDA не позволяет мне раскрывать данные о проектах над которыми я работаю на работе. Ниже представлен список моих личных проектов и наработок.
+    Все они находятся в различной степени готовности.</p>
+    <article class="projects__item">
+      <h3><a href="https://github.com/ifelseapps/ng-bricks">NG-Bricks</a></h3>
+      <p>Я разрабатываю свою библиотеку компонентов для Angular, а также витрину компонентов к ней.</p>
+    </article>
+    <article class="projects__item">
+      <h3><a href="https://github.com/ifelseapps/typedoc-json-angular-parser">Typedoc json Angular parser</a></h3>
+      <p>Парсер АСТ, сгенерированного <em>typedoc</em>, для построения документации к компонентам Angular.</p>
+    </article>
+  </section>
+  <section class="content__section" id="about">
+    <h2>Обо мне</h2>
+    <p>Меня зовут Максим Павлов. Мне 32 года. Я senior frontend engineer. Я разрабатываю интерфейсы веб-приложений, участвую в разработке дизайн-систем, строю архитектуру.
+     Мой опыт промышленной веб-разработки составляет около 6 лет. Последние 3 года я сосредоточился только на разработке интерфейсов.
+      Благодаря опыту fullstack-разработки, я хорошо понимаю как работает веб-приложение, а не только
+    его клиентская часть.</p>
+    <p>Я отношусь к той категории фронтенд-разработчиков, которые любят и умеют быстро и качественно верстать. У меня есть опыт поддержки старых браузеров.
+    Я уделяю внимание доступности и производительности интерфейсов.
+    </p>
+    <p>Я хорошо владею JavaScript и TypeScript. Люблю выводить сложные типы. У меня есть опыт работы с Node.js в качестве backend for frontend,
+      а также в качестве инструмента для автоматизации процесса разработки.</p>
+    <p>Я пишу на Angular и React, но предпочитаю Angular.</p>
+    <p>Мой стек инструментов и технологий:</p>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Pug</li>
+      <li>Sass/Less/Stylus</li>
+      <li>JavaScript (ES3/ES5/ES6+)</li>
+      <li>TypeScript</li>
+      <li>Node.js</li>
+      <li>React</li>
+      <li>Redux</li>
+      <li>Redux-saga</li>
+      <li>Emotion/styled components</li>
+      <li>Angular</li>
+      <li>Gulp</li>
+      <li>Webpack</li>
+      <li>Linux</li>
+      <li>Git</li>
+    </ul>
+  </section>
 </main>
 {% include tags.liquid %}
 

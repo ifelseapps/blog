@@ -1,38 +1,36 @@
 .tag-item,
 a.tag-item {
   display: inline-flex;
-  padding: 0.2em 0.5em;
   font-weight: 400;
-  border: solid 1px;
-  border-radius: 3px;
-  color: var(--dark-600);
-  font-size: 0.65rem;
-  line-height: 1.5em;
+  font-size: 0.8rem;
+  line-height: 1;
   user-select: none;
+  border: none;
 }
 
-a.tag-item:hover {
-  border: solid 1px var(--primary-700);
-}
-
-.tags-list {
+ul.tags-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding:  0.5em 0.5em 0;
   list-style: none;
+  background: var(--secondary-50);
 }
 
 .tags-list__item {
   display: flex;
-  margin-right: 0.3em;
-  margin-bottom: 0.3em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
   &::before {
     display: none;
   }
 }
 
-.posts {}
+ul.posts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .posts .posts__current-tag {
   grid-column: 2 / 12;
@@ -40,15 +38,17 @@ a.tag-item:hover {
   line-height: 1;
 }
 
+.posts__item {
+  &::before {
+    display: none;
+  }
+}
+
 .posts__item:not(:last-child) {
-  margin-bottom: 3em;
+  margin-bottom: 0.5em;
 }
 
 .sidebar {}
-
-.sidebar .sidebar__tags-list {
-  margin-top: 3em;
-}
 
 .post-item {}
 
@@ -58,12 +58,4 @@ a.post-item__link {
 
 .post-item__title {
   margin: 0 0 0.5em;
-}
-
-@media screen and (min-width: 1024px) {
-  .posts {}
-
-  .posts__item {
-    grid-column: 2 / 10;
-  }
 }
