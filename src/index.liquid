@@ -1,59 +1,128 @@
 ---
 layout: default.liquid
-title: Блог Максима
+title: Максим Павлов
 description: Я senior frontend engineer, пишу о разработке, путешествиях, а также обо всем, что меня интересует
 keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html
 ---
 
-<main class="content__main">
-  {% assign posts = collections.post | reverse %}
-  {% include posts.liquid %}
+<main class="main-page container">
+  <div class="main-page__primary">
+    <h1 class="visually-hidden">Кратко обо мне</h1>
+    <p class="main-page__intro">Я senior frontend engineer. Я создаю интерфейсы веб-приложений,
+      разрабатываю дизайн-системы, строю архитектуру. Пишу на React и Angular. Отлично знаю JavaScript
+    и TypeScript. Умею верстать, уделяю внимание доступности и производительности.</p>
 
-  <section class="projects content__section">
-    <h2>Проекты</h2>
-    <p>NDA не позволяет мне раскрывать данные о проектах над которыми я работаю на работе. Ниже представлен список моих личных проектов и наработок.
-    Все они находятся в различной степени готовности.</p>
-    <article class="projects__item">
-      <h3><a href="https://github.com/ifelseapps/ng-bricks">NG-Bricks</a></h3>
-      <p>Я разрабатываю свою библиотеку компонентов для Angular, а также витрину компонентов к ней.</p>
-    </article>
-    <article class="projects__item">
-      <h3><a href="https://github.com/ifelseapps/typedoc-json-angular-parser">Typedoc json Angular parser</a></h3>
-      <p>Парсер АСТ, сгенерированного <em>typedoc</em>, для построения документации к компонентам Angular.</p>
-    </article>
-  </section>
-  <section class="content__section" id="about">
-    <h2>Обо мне</h2>
-    <p>Меня зовут Максим Павлов. Мне 32 года. Я senior frontend engineer. Я разрабатываю интерфейсы веб-приложений, участвую в разработке дизайн-систем, строю архитектуру.
-     Мой опыт промышленной веб-разработки составляет около 6 лет. Последние 3 года я сосредоточился только на разработке интерфейсов.
-      Благодаря опыту fullstack-разработки, я хорошо понимаю как работает веб-приложение, а не только
-    его клиентская часть.</p>
-    <p>Я отношусь к той категории фронтенд-разработчиков, которые любят и умеют быстро и качественно верстать. У меня есть опыт поддержки старых браузеров.
-    Я уделяю внимание доступности и производительности интерфейсов.
-    </p>
-    <p>Я хорошо владею JavaScript и TypeScript. Люблю выводить сложные типы. У меня есть опыт работы с Node.js в качестве backend for frontend,
-      а также в качестве инструмента для автоматизации процесса разработки.</p>
-    <p>Я пишу на Angular и React, но предпочитаю Angular.</p>
-    <p>Мой стек инструментов и технологий:</p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Pug</li>
-      <li>Sass/Less/Stylus</li>
-      <li>JavaScript (ES3/ES5/ES6+)</li>
-      <li>TypeScript</li>
-      <li>Node.js</li>
-      <li>React</li>
-      <li>Redux</li>
-      <li>Redux-saga</li>
-      <li>Emotion/styled components</li>
-      <li>Angular</li>
-      <li>Gulp</li>
-      <li>Webpack</li>
-      <li>Linux</li>
-      <li>Git</li>
-    </ul>
-  </section>
+    <div class="section-grid main-page__section">
+      <div class="section-grid__column section-grid__column_narrow">
+        <section class="main-page__section">
+          <h2 class="h h_lvl_2">Пишу в <a href="/">блог</a></h2>
+          {% assign posts = collections.post | reverse |  slice: 0, 3 %}
+          <ul class="posts">
+            {%- for post in posts -%}
+              <li class="posts__item">
+                <a href="{{ post.url |  url }}">
+                  {{ post.data.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </section>
+        <section class="main-page__section">
+          <h2 class="h h_lvl_2">Стек технологий</h2>
+          <ul class="tech-stack">
+            <li class="tech-stack__item">HTML</li>
+            <li class="tech-stack__item">CSS</li>
+            <li class="tech-stack__item">JavaScript (ES3/ES5/ES6+)</li>
+            <li class="tech-stack__item">TypeScript</li>
+            <li class="tech-stack__item">Sass</li>
+            <li class="tech-stack__item">Less</li>
+            <li class="tech-stack__item">jQuery</li>
+            <li class="tech-stack__item">React</li>
+            <li class="tech-stack__item">Redux</li>
+            <li class="tech-stack__item">Redux-saga</li>
+            <li class="tech-stack__item">Emotion</li>
+            <li class="tech-stack__item">Angular</li>
+            <li class="tech-stack__item">Node.js</li>
+            <li class="tech-stack__item">Gulp</li>
+            <li class="tech-stack__item">Webpack</li>
+            <li class="tech-stack__item">SQL</li>
+            <li class="tech-stack__item">Git</li>
+            <li class="tech-stack__item">Linux</li>
+          </ul>
+        </section>
+        <section class="main-page__section">
+          <h2 class="h h_lvl_2">Чем я могу быть полезен?</h2>
+          <ul>
+            <li>Верстка (адаптивная, кроссбраузерная)</li>
+            <li>Разработка интерфейсов для веб-приложений</li>
+            <li>Улучшение доступности сайта/веб-приложения</li>
+            <li>Аудит клиентской части сайта/веб-приложения</li>
+            <li>Настройка frontend-инфраструктуры</li>
+          </ul>
+        </section>
+      </div>
+      <div class="section-grid__column section-grid__column_wide">
+        <section class="main-page__section">
+          <h2 class="h h_lvl_2">Опыт</h2>
+          <p>Я занимаюсь web-разработкой больше 6 лет. За это время я участвовал в разработке 40+ проектов различной сложности:
+            от корпоративных сайтов и Интернет-магазинов до crm-систем и приложений со сложной клиентской логикой.
+            Кроме того, эти проекты были из различных отраслей экономики: коммерция, медицина, финансы, hi-tech и др.</p>
+          <p>Последние 3 года я сосредоточился на frontend-разработке. Благодаря тому, что за плечами
+            у меня опыт работы fullstack-разработчиком, я хорошо понимаю как работает все веб-приложение, а не только его клиентская часть.</p>
+          <p>У меня есть опыт разработки ui-kit'ов и дизайн-систем.</p>
+          <p>Я работал в командах разного размера (в т.ч. в распределенных), в заказной и продуктовой разработке.</p>
+        </section>
+        <section class="main-page__section">
+          <h2 class="h h_lvl_2">Стандарты качества</h2>
+          <p>Высокое качество — мой главный приоритет в работе и у меня есть собственные стандарты качества:</p>
+          <ul>
+            <li><strong>Соответствие стандартам</strong></li>
+            <li><strong>Оптимизация для мобильных устройств</strong></li>
+            <li><strong>Полностью отзывчивый дизайн</strong>. Я предпочитаю подход <em>mobile first</em>.</li>
+            <li><strong>Кроссбраузерность</strong>. Однако, это не значит, что приложение должно выглядеть одинаково во всех браузерах.</li>
+            <li><strong>Оптимизация производительности</strong></li>
+            <li><strong>Доступность</strong>. Продукт должен быть пригодным для использования с помощью <em>асистивных технологий</em>.</li>
+            <li><strong>Чистый код</strong>, который легко поддерживать и масштабировать</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="main-page__secondary">
+    <section class="main-page__section">
+      <h2 class="visually-hidden">Пишите, подписывайтесь в социальных сетях</h2>
+      <address class="main-page__contacts">
+        <ul class="contacts">
+          <li class="contacts__item">
+            <a href="/">me@maximpavlov.su</a>
+          </li>
+          <li class="contacts__item">
+            <a href="/">github</a>
+          </li>
+          <li class="contacts__item">
+            <a href="/">twitter</a>
+          </li>
+          <li class="contacts__item">
+            <a href="/">facebook</a>
+          </li>
+          <li class="contacts__item">
+            <a href="/">npm</a>
+          </li>
+        </ul>
+      </address>
+    </section>
+    <section class="main-page__section">
+      <h2 class="h h_lvl_3">Проекты</h2>
+      <p>
+        <em>Ниже представлен список моих личных проектов и наработок в различной степени готовности.</em>
+      </p>
+      <ul class="projects">
+        <li class="projects__item"><a href="/">Ng-Bricks</a> — библиотека компонентов для Angular</li>
+        <li class="projects__item"><a href="/">Typedoc Angular parser</a> — парсер AST, построенного <em>typedoc</em>, для компонентов Angular</li>
+        <li class="projects__item"><a href="/">Пример модульного приложения на Angular</a></li>
+        <li class="projects__item"><a href="/">Bricks</a> — библиотека компонентов для React</li>
+        <li class="projects__item"><a href="/">React field model</a> — hook для управления полями формы</li>
+      </ul>
+    </section>
+  </div>
 </main>
-{% include tags.liquid %}
-

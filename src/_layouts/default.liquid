@@ -16,60 +16,17 @@
 </head>
 <body>
   <div class="page">
-    <header class="header">
-      <div class="container header__inner">
-        <div class="header__top">
-          <a class="logo header__logo" href="/">
-            <img class="logo__ninja" src="/images/ninja.svg" alt="Ninja">
-            <span class="logo__site-name">
-              Блог Максима
-            </span>
-          </a>
-          <div class="header__socials">
-            <ul class="socials" role="menu">
-              <li class="socials__item" role="none">
-                <a class="socials__link" href="https://github.com/ifelseapps" role="menuitem" aria-label="Github">
-                  <svg class="socials__icon"><use xlink:href="#icon-github"></use></svg>
-                </a>
-              </li>
-              <li class="socials__item" role="none">
-                <a class="socials__link" href="https://twitter.com/ifelseapps" role="menuitem" aria-label="Twitter">
-                  <svg class="socials__icon"><use xlink:href="#icon-twitter"></use></svg>
-                </a>
-              </li>
-              <li class="socials__item" role="none">
-                <a class="socials__link" href="https://facebook.com/ifelseapps" role="menuitem" aria-label="Facebook">
-                  <svg class="socials__icon"><use xlink:href="#icon-facebook2"></use></svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        {% if page.url == '/' %}
-          <div class="intro header__intro">
-            <h1 class="page-title">Привет!</h1>
-            <p>Я — разработчик интерфейсов с опытом около 6 лет. Мой приоритет&nbsp;в&nbsp;работе — качество.
-              Я&nbsp;уделяю внимание доступности и производительности. У меня есть опыт разработки дизайн-систем.</p>
-            <p>Стек&nbsp;технологий: Angular&nbsp;+&nbsp;TypeScript&nbsp;+&nbsp;Sass, но также я пишу на&nbsp;React.</p>
-            <p>
-              <a class="button" href="#about">Подробнее</a>
-            </p>
-          </div>
-        {% else %}
-          <div class="header__page-meta">
-            {% if date %}
-              <time class="date" pubdate datetime="{{ date | dateISO }}">
-                {{ date | dateFormatted }}
-              </time>
-            {% endif %}
-            <h1 class="page-title">{{ title }}</h1>
-          </div>
-        {% endif %}
-      </div>
+    <header class="header container">
+      <a class="logo header__logo" href="/">
+        <img src="/images/avatar.jpg" alt="My photo" class="avatar avatar_size_sm logo__avatar">
+        Максим Павлов
+      </a>
+      <nav class="main-menu header__menu">
+        <a class="main-menu__item" href="/">Блог</a>
+        <a class="main-menu__item" href="/">Резюме</a>
+      </nav>
     </header>
-    <div class="content">
-      {{ content |  safe }}
-    </div>
+    {{ content |  safe }}
     <footer class="footer container">
       <p class="footer__line">&copy;&nbsp;2018-2021 Максим Павлов</p>
       <p class="footer__line">Этот сайт не следит за вами и не собирает никакие данные.</p>

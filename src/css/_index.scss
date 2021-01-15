@@ -1,0 +1,140 @@
+.main-page {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: min-content;
+    column-gap: 2em;
+  }
+
+  &__primary {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 3em;
+    }
+    @media screen and (min-width: 768px) {
+      grid-column: 1 / 10;
+    }
+    @media screen and (min-width: 1024px) {
+      grid-column: 1 / 11;
+    }
+  }
+
+  &__section {
+    &:not(:first-child) {
+      margin-top: 3em;
+    }
+  }
+
+  &__secondary {
+    font-size: 0.8rem;
+    @media screen and (min-width: 768px) {
+      grid-column: 10 / 13;
+    }
+    @media screen and (min-width: 1024px) {
+      grid-column: 11 / 13;
+    }
+  }
+
+  &__intro {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.4em;
+    font-weight: 100;
+    @media screen and (min-width: 768px) {
+      grid-column: 1 / 8;
+      font-size: 2rem;
+    }
+  }
+
+  &__contacts {
+    padding: 1em;
+    font-style: normal;
+    background: #FFF3E0;
+    @media screen and (max-width: 767px) {
+      margin-left: -5vw;
+      margin-right: -5vw;
+      padding: 0.7em 5vw;
+    }
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    margin-right: 0.6em;
+    margin-bottom: 0.4em;
+  }
+}
+
+.projects {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 0.8em;
+    }
+  }
+}
+
+.posts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 0.3em;
+    }
+  }
+}
+
+.section-grid {
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 1em;
+    grid-auto-rows: min-content;
+  }
+
+  &__column {
+    &:not(:last-child) {
+      @media screen and (max-width: 1023px) {
+        margin-bottom: 3em;
+      }
+    }
+
+    &_narrow {
+      grid-column: 1 / 5;
+      font-size: 0.9rem;
+    }
+
+    &_wide {
+      grid-column: 5 / 13;
+    }
+  }
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  line-height: 1em;
+
+  &__item {
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.4em;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.1);
+    background: #FFF3E0;
+  }
+}
