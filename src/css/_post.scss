@@ -26,6 +26,16 @@
     font-size: var(--h3-size);
   }
 
+  p, li {
+    & > code {
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      background: #f5f2f0;
+      color: #dd4a68;
+    }
+  }
+
   blockquote {
     margin: 0.5em 0;
     padding: 1em 2em;
