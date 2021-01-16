@@ -14,7 +14,7 @@ body {
 }
 
 ::selection {
-  background: #FFCC80;
+  background: var(--primary-200);
 }
 
 .visually-hidden {
@@ -54,7 +54,7 @@ ul {
       margin-bottom: 0.3em;
     }
     &::marker {
-      color: #FFD600;
+      color: var(--primary-a-600);
     }
   }
 }

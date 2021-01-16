@@ -48,7 +48,7 @@
   &__contacts {
     padding: 1em 1em 0.6em;
     font-style: normal;
-    background: #FFF3E0;
+    background: var(--primary-50);
     @media screen and (max-width: 767px) {
       margin-left: -5vw;
       margin-right: -5vw;
@@ -135,6 +135,6 @@
     padding: 0.4em;
     border-radius: 3px;
     box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.1);
-    background: #FFF3E0;
+    background: var(--primary-50);
   }
 }

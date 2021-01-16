@@ -88,7 +88,7 @@
     color: var(--dark-600);
     @media screen and (max-width: 1023px) {
       padding: 0.5em 0.8em;
-      background: #FFF3E0;
+      background: var(--primary-50);
     }
     @media screen and (min-width: 1024px) {
       position: absolute;
