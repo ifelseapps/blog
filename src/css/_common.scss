@@ -46,12 +46,15 @@ p {
 }
 
 ul {
-  margin: 0.5em 0;
+  margin: 0.5em;
   padding: 0 0 0 0.6em;
 
   li {
     &:not(:last-child) {
       margin-bottom: 0.3em;
+    }
+    &::marker {
+      color: #FFD600;
     }
   }
 }
@@ -62,6 +65,9 @@ ul {
   line-height: 1.3em;
 
   &_lvl {
+    &_1 {
+      font-size: 2.2rem;
+    }
     &_2 {
       font-size: 1.6rem;
     }
@@ -132,6 +138,11 @@ ul {
   &__item {
     &:not(:last-child) {
       margin-right: 0.8em;
+    }
+    &_active {
+      color: inherit;
+      border: none;
+      pointer-events: none;
     }
   }
 }

@@ -1,11 +1,9 @@
-<aside class="sidebar content__sidebar">
-  <ul class="sidebar__tags-list tags-list">
-    {% assign tags = collections.tags %}
-    {% for currentTag in tags %}
-      {% capture tagUrl %}/tags/{{ currentTag }}/{% endcapture %}
-      <li class="tags-list__item">
-        <a class="tag-item" href="{{ tagUrl }}"># {{ currentTag }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</aside>
+<ul class="tags-list">
+  {% assign tags = collections.tags %}
+  {% for currentTag in tags %}
+    {% capture tagUrl %}/tags/{{ currentTag }}/{% endcapture %}
+    <li class="tags-list__item">
+      <a class="tag-item" href="{{ tagUrl }}">{{ currentTag }}</a>
+    </li>
+  {% endfor %}
+</ul>

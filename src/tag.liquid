@@ -8,10 +8,8 @@ pagination:
     - post
 permalink: /tags/{{ tag }}/
 eleventyComputed:
-  title: Заметки с тегом "{{ tag }}"
+  title: "{{ tag }}"
 ---
-<main class="content__main">
-  {% assign posts = collections[tag] | reverse %}
-  {% include posts.liquid %}
-</main>
-{% include tags.liquid %}
+
+{% assign posts = collections[tag] | reverse %}
+{% include posts.liquid %}

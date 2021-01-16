@@ -1,12 +1,15 @@
-<section class="content__section">
-  <h2 class="visually-hidden">Заметки</h2>
-  <ul class="posts">
-    {%- for post in posts -%}
-      <li class="posts__item">
-        <a href="{{ post.url |  url }}">
-          {{ post.data.title }}
-        </a>
-      </li>
-    {%- endfor -%}
-  </ul>
-</section>
+<main class="posts-page container">
+  <section class="posts-page__posts">
+    <h1 class="h h_lvl_1">{{ title }}</h1>
+    <ul class="posts-list">
+      {% for post in posts %}
+        <li class="post-detail posts-list__item">
+          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <aside class="posts-page__tags">
+    {% include tags.liquid %}
+  </aside>
+</main>

@@ -22,7 +22,7 @@
         Максим Павлов
       </a>
       <nav class="main-menu header__menu">
-        <a class="main-menu__item" href="/">Блог</a>
+        <a class="main-menu__item{% if page.url contains '/posts' %} main-menu__item_active{% endif %}" href="/posts/">Блог</a>
         <a class="main-menu__item" href="/">Резюме</a>
       </nav>
     </header>

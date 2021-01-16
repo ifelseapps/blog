@@ -1,0 +1,39 @@
+.posts-page {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: min-content;
+    column-gap: 1.5em;
+  }
+
+  &__posts {
+    grid-column: 1 / 10;
+  }
+
+  &__tags {
+    grid-column: 10 / 13;
+  }
+}
+
+.posts-list {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0.6em;
+  list-style: none;
+  font-size: 0.8rem;
+  background: #FFF3E0;
+
+  &__item {
+    margin-bottom: 0!important;
+    margin-right: 0.6em;
+  }
+}
