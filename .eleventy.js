@@ -78,6 +78,7 @@ module.exports = function (eleventyConfig) {
     });
 
     const lowestSrc = stats['jpeg'][0];
+    const highSrc = stats['jpeg'][stats['jpeg'].length - 1];
 
     const srcset = Object.keys(stats).reduce(
       (acc, format) => ({
@@ -92,14 +93,21 @@ module.exports = function (eleventyConfig) {
 
     const source = `<source type="image/webp" data-srcset="${srcset['webp']}" >`;
 
-    const img = `<img
+    const img = `<a href="${highSrc.url}"><img
       alt="${alt}"
       src="${lowestSrc.url}"
       sizes='(min-width: 1024px) 1024px, 100vw'
       srcset="${srcset["jpeg"]}"
-    >`;
+    ></a>`;
 
     return `<div class="post-page__picture"><picture>${source} ${img}</picture></div>`;
+  });
+
+  eleventyConfig.addLiquidShortcode('quote', function (quote, author, position, link) {
+    const authorHtml = link && link.length
+      ? `<a target="_blank" href="${link}">${author}</a>`
+      : author;
+    return `<blockquote><p>${quote}</p><footer>${authorHtml}, <span>${position}</span></footer></blockquote>`;
   });
 
   return {

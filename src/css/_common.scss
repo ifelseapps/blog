@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-
+  color: var(--dark-900);
 }
 
 ::selection {
@@ -46,8 +46,8 @@ p {
 }
 
 ul {
-  margin: 0.5em;
-  padding: 0 0 0 0.6em;
+  margin: 0.5em 1em;
+  padding: 0 0 0 0.4em;
 
   li {
     &:not(:last-child) {
@@ -60,19 +60,17 @@ ul {
 }
 
 .h {
-  margin: 0 0 0.5em;
-  font-weight: 900;
-  line-height: 1.3em;
+  @include headerStyles;
 
   &_lvl {
     &_1 {
-      font-size: 2.2rem;
+      font-size: var(--h1-size);
     }
     &_2 {
-      font-size: 1.6rem;
+      font-size: var(--h2-size);
     }
     &_3 {
-      font-size: 1.2rem;
+      font-size: var(--h3-size);
     }
   }
 }
@@ -142,7 +140,6 @@ ul {
     &_active {
       color: inherit;
       border: none;
-      pointer-events: none;
     }
   }
 }

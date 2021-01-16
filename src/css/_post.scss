@@ -1,0 +1,138 @@
+.post-page {
+  &__footer {
+    margin-top: 3em;
+  }
+
+  &__picture img {
+    width: auto;
+    max-width: 100%;
+  }
+
+  h1, h2, h3 {
+    @include headerStyles;
+  }
+
+  h1 {
+    font-size: var(--h1-size);
+  }
+
+  h2 {
+    margin-top: 1.5em;
+    font-size: var(--h2-size);
+  }
+
+  h3 {
+    margin-top: 0.5em;
+    font-size: var(--h3-size);
+  }
+
+  blockquote {
+    margin: 0.5em 0;
+    padding: 1em 2em;
+    border-left: solid 3px var(--dark-300);
+
+    p {
+      margin: 0;
+    }
+
+    footer {
+      margin-top: 0.5em;
+      &::before {
+        content: '—';
+        margin-right: 0.5em;
+      }
+
+      span {
+        color: var(--dark-600);
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 1.5em;
+
+    h1, h2, h3,
+    p,
+    ul,
+    blockquote,
+    pre,
+    .line,
+    &__picture {
+      grid-column: 1 / 10;
+    }
+
+    &__footer {
+      grid-column: 1 / 13;
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  margin: 2.5em 0;
+  border: none;
+  height: 1px;
+  background: var(--dark-200);
+}
+
+.note-wrapper {
+  position: relative;
+  grid-column: 11 / 13;
+
+  .note {
+    font-size: 0.8rem;
+    line-height: 1.2em;
+    font-style: italic;
+    color: var(--dark-600);
+    @media screen and (max-width: 1023px) {
+      padding: 0.5em 0.8em;
+      background: #FFF3E0;
+    }
+    @media screen and (min-width: 1024px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.post-footer {
+  &__author {
+    margin-top: 2em;
+  }
+}
+
+.post-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    padding: 0 0.5em;
+  }
+}
+
+.post-author {
+  margin-left: -5vw;
+  margin-right: -5vw;
+  padding: 1em 10vw;
+  background: #FFF3E0;
+
+  &__avatar {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 100%;
+  }
+
+  &__desc {
+    margin-top: 1em;
+    text-align: center;
+  }
+}
