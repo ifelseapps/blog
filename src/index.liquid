@@ -16,7 +16,7 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
       <div class="section-grid__column section-grid__column_narrow">
         <section class="main-page__section">
           <h2 class="h h_lvl_2">Пишу в <a href="/posts/">блог</a></h2>
-          {% assign posts = collections.post | slice: 0, 3 | reverse %}
+          {% assign posts = collections.post | reverse | slice: 0, 3 %}
           <ul class="posts">
             {%- for post in posts -%}
               <li class="posts__item">
