@@ -107,7 +107,20 @@ module.exports = function (eleventyConfig) {
     const authorHtml = link && link.length
       ? `<a target="_blank" href="${link}">${author}</a>`
       : author;
-    return `<blockquote><p>${quote}</p><footer>${authorHtml}, <span>${position}</span></footer></blockquote>`;
+    const parts = [
+      `<blockquote><p>${quote}</p><footer>`,
+      authorHtml
+    ];
+
+    if (position) {
+      parts.push(
+        `, <span>${position}</span>`
+      );
+    }
+
+    parts.push('</footer></blockquote>');
+
+    return parts.join('');
   });
 
   return {
