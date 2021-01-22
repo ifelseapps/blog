@@ -10,17 +10,17 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
     <h1 class="visually-hidden">Кратко обо мне</h1>
     <p class="main-page__intro">Я senior frontend engineer. Я создаю интерфейсы веб-приложений,
       разрабатываю дизайн-системы, строю архитектуру. Пишу на React и Angular. Отлично знаю JavaScript
-    и TypeScript. Люблю и умею верстать, внимателен к деталям, уделяю внимание доступности и производительности.</p>
+      и TypeScript. Люблю и умею верстать, внимателен к деталям, уделяю внимание доступности и производительности.</p>
 
     <div class="section-grid main-page__section">
       <div class="section-grid__column section-grid__column_narrow">
         <section class="main-page__section">
           <h2 class="h h_lvl_2">Пишу в <a href="/posts/">блог</a></h2>
-          {% assign posts = collections.post | reverse |  slice: 0, 3 %}
+          {% assign posts = collections.post | slice: 0, 3 | reverse %}
           <ul class="posts">
             {%- for post in posts -%}
               <li class="posts__item">
-                <a href="{{ post.url |  url }}">
+                <a href="{{ post.url | url }}">
                   {{ post.data.title }}
                 </a>
               </li>
@@ -69,7 +69,8 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
             от корпоративных сайтов и Интернет-магазинов до crm-систем и приложений со сложной клиентской логикой.
             Кроме того, эти проекты были из различных отраслей экономики: коммерция, медицина, финансы, hi-tech и др.</p>
           <p>Последние 3 года я сосредоточился на frontend-разработке. Благодаря тому, что за плечами
-            у меня опыт работы fullstack-разработчиком, я хорошо понимаю как работает все веб-приложение, а не только его клиентская часть.</p>
+            у меня опыт работы fullstack-разработчиком, я хорошо понимаю как работает все веб-приложение, а не только его клиентская
+            часть.</p>
           <p>У меня есть опыт разработки ui-kit'ов и дизайн-систем.</p>
         </section>
         <section class="main-page__section">
@@ -79,7 +80,9 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
             <li><strong>Соответствуют стандартам</strong></li>
             <li><strong>Оптимизированы для мобильных устройств</strong></li>
             <li><strong>Имеют полностью отзывчивый дизайн</strong>. Я предпочитаю подход <em>mobile first</em>.</li>
-            <li><strong>Разработаны с учетом кроссбраузерности</strong>. Однако, это не значит, что приложение должно выглядеть одинаково во всех браузерах.</li>
+            <li><strong>Разработаны с учетом кроссбраузерности</strong>. Однако, это не значит, что приложение должно выглядеть одинаково во
+              всех браузерах.
+            </li>
             <li><strong>Оптимизированы с точки зрения производительности</strong></li>
             <li><strong>Доступны</strong>. Продукт должен быть пригодным для использования с помощью <em>асистивных технологий</em>.</li>
             <li><strong>Содержат чистый код</strong>, который легко поддерживать и масштабировать</li>
@@ -121,7 +124,8 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
           <a target="_blank" href="https://github.com/ifelseapps/ng-bricks">Ng-Bricks</a> — библиотека компонентов для Angular
         </li>
         <li class="projects__item">
-          <a target="_blank" href="https://github.com/ifelseapps/typedoc-json-angular-parser/">Typedoc Angular parser</a> — парсер AST, построенного <em>typedoc</em>, для компонентов Angular
+          <a target="_blank" href="https://github.com/ifelseapps/typedoc-json-angular-parser/">Typedoc Angular parser</a> — парсер AST,
+          построенного <em>typedoc</em>, для компонентов Angular
         </li>
         <li class="projects__item">
           <a target="_blank" href="https://github.com/ifelseapps/angular-modular-example">Пример модульного приложения на Angular</a>
@@ -130,7 +134,8 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
           <a target="_blank" href="https://github.com/ifelseapps/bricks">Bricks</a> — библиотека компонентов для React
         </li>
         <li class="projects__item">
-          <a target="_blank" href="https://github.com/ifelseapps/react-field-models">React field models</a> — hook для управления полями формы
+          <a target="_blank" href="https://github.com/ifelseapps/react-field-models">React field models</a> — hook для управления полями
+          формы
         </li>
       </ul>
     </section>
