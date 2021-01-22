@@ -26,11 +26,16 @@
     font-size: var(--h3-size);
   }
 
+  h1 + h2,
+  h2 + h3 {
+    margin-top: 0;
+  }
+
   p, li {
     & > code {
-      padding: 0.1em 0.3em;
+      padding: 0.3em 0.5em;
       border-radius: 3px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       background: #f5f2f0;
       color: #dd4a68;
     }
