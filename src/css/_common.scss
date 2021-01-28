@@ -45,7 +45,7 @@ p {
   margin: 0.5em 0;
 }
 
-ul {
+ul, ol {
   margin: 0.5em 1em;
   padding: 0 0 0 0.4em;
 
@@ -53,9 +53,12 @@ ul {
     &:not(:last-child) {
       margin-bottom: 0.3em;
     }
-    &::marker {
-      color: var(--primary-a-600);
-    }
+  }
+}
+
+ul {
+  li::marker {
+    color: var(--primary-a-600);
   }
 }
 
