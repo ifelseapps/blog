@@ -134,10 +134,10 @@
 }
 
 .post-author {
+  border-top: dashed 1px var(--dark-200);
   margin-left: -5vw;
   margin-right: -5vw;
-  padding: 1em 10vw;
-  background: #FFF3E0;
+  padding: 2em 10vw;
 
   &__avatar {
     display: block;

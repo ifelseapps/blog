@@ -23,17 +23,19 @@
 </head>
 <body>
   <div class="page">
-    <header class="header container">
-      <a class="logo header__logo" href="/">
+    <header class="header">
+      <div class="header__inner container">
+        <a class="logo header__logo" href="/">
         <span class="logo__avatar">
           <img src="/images/avatar.jpg" alt="Моя фотография" class="avatar avatar_size_sm">
         </span>
-        Максим Павлов
-      </a>
-      <nav class="main-menu header__menu">
-        <a class="main-menu__item{% if page.url contains '/posts' or page.url contains '/tags' %} main-menu__item_active{% endif %}" href="/posts/">Блог</a>
-        <a class="main-menu__item{% if page.url contains '/cv' %} main-menu__item_active{% endif %}" href="/cv/">Резюме</a>
-      </nav>
+          Максим Павлов
+        </a>
+        <nav class="main-menu header__menu">
+          <a class="main-menu__item{% if page.url contains '/posts' or page.url contains '/tags' %} main-menu__item_active{% endif %}" href="/posts/">Блог</a>
+          <a class="main-menu__item{% if page.url contains '/cv' %} main-menu__item_active{% endif %}" href="/cv/">Резюме</a>
+        </nav>
+      </div>
     </header>
     {{ content |  safe }}
     <footer class="footer container">

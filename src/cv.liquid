@@ -5,7 +5,7 @@ description: Максим Павлов — senior frontend engineer
 keywords: резюме, frontend, фронтенд, ui, ux, javascript, typescript, css, html, angular, react
 ---
 
-<main class="cv container">
+<main class="cv page-inner container">
   <header class="cv__section">
     <h1 class="h h_lvl_1">Резюме</h1>
     <dl class="cv-common">
@@ -23,7 +23,9 @@ keywords: резюме, frontend, фронтенд, ui, ux, javascript, typescri
   </header>
   <section class="cv__section">
     <h2 class="h h_lvl_2">Стек технологий</h2>
-    {% include tech-stack.liquid %}
+    <div class="cv-tech">
+      {% include tech-stack.liquid %}
+    </div>
   </section>
   <section class="cv__section">
     <h2 class="h h_lvl_2">Опыт работы</h2>
