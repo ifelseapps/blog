@@ -47,7 +47,9 @@
 
   &__contacts {
     padding: 1em;
-    border: solid 4px var(--primary-a-200);
+    border: solid 4px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, var(--primary-a-700), var(--primary-a-200));
     font-style: normal;
   }
 }
