@@ -179,6 +179,9 @@ ul {
     }
     &_active {
       position: relative;
+      &:hover {
+        color: inherit;
+      }
       &::before {
         content: '';
         position: absolute;
