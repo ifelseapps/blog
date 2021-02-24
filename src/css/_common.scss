@@ -123,6 +123,7 @@ ul {
   padding-top: 1em;
   padding-bottom: 1em;
   background: var(--primary-a-400);
+  box-shadow: 0 0 12px rgb(0 0 0 / 15%);
 
   &__inner {
     display: flex;
