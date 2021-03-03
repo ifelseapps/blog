@@ -1,6 +1,8 @@
 .page-inner_post {
   position: relative;
-  background: transparent;
+  @media screen and (min-width: 1024px) {
+    background: transparent;
+  }
 }
 
 .post-page {
