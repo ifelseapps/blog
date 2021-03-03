@@ -1,6 +1,9 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const Image = require('@11ty/eleventy-img');
 const { format } = require('date-fns');
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -9,6 +12,22 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('src/css/fonts');
   eleventyConfig.addPassthroughCopy('src/images');
+
+  const markdownItOptions = {
+    html: true,
+  };
+
+  const markdownItAnchorOptions = {
+    permalink: true,
+    permalinkSymbol: '#'
+  };
+
+  const markdownLib = markdownIt(markdownItOptions).use(
+    markdownItAnchor,
+    markdownItAnchorOptions
+  );
+
+  eleventyConfig.setLibrary('md', markdownLib);
 
   eleventyConfig.addCollection('tags', function (collection) {
     let tagSet = new Set();
@@ -97,7 +116,7 @@ module.exports = function (eleventyConfig) {
       alt="${alt}"
       src="${lowestSrc.url}"
       sizes='(min-width: 1024px) 1024px, 100vw'
-      srcset="${srcset["jpeg"]}"
+      srcset="${srcset['jpeg']}"
     ></a>`;
 
     return `<div class="post-page__picture"><picture>${source} ${img}</picture></div>`;

@@ -35,6 +35,8 @@
   }
 
   h1, h2, h3 {
+    display: flex;
+    align-items: center;
     @include headerStyles;
   }
 
@@ -175,4 +177,12 @@
     margin-top: 1em;
     text-align: center;
   }
+}
+
+.header-anchor {
+  margin-right: 0.2em;
+  order: -1;
+  line-height: 1em;
+  border: none;
+  color: var(--dark-600);
 }
