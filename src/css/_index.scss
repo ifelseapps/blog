@@ -74,6 +74,10 @@
     background-position: center;
     border: none;
 
+    &_rss {
+      background-image: url(/images/rss.svg);
+    }
+
     &_email {
       background-image: url(/images/mail-dot-ru.svg);
     }

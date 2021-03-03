@@ -1,4 +1,5 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 const Image = require('@11ty/eleventy-img');
 const { format } = require('date-fns');
 const markdownIt = require('markdown-it');
@@ -7,6 +8,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -83,6 +85,10 @@ module.exports = function (eleventyConfig) {
       }
     };
   });
+
+  eleventyConfig.addLiquidFilter('dateToRfc3339', pluginRss.dateToRfc3339);
+  eleventyConfig.addLiquidFilter('absoluteUrl', pluginRss.absoluteUrl);
+  eleventyConfig.addLiquidFilter('getNewestCollectionItemDate', pluginRss.getNewestCollectionItemDate);
 
   eleventyConfig.addLiquidShortcode('Image', async function (src, alt) {
     if (!alt) {
