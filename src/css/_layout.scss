@@ -1,0 +1,30 @@
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.page-inner {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.avatar {
+  border-radius: 100%;
+  &_size {
+    &_sm {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  border: none;
+  font-size: 2rem;
+
+  &__avatar {
+    margin-right: 0.6em;
+  }
+}

@@ -11,7 +11,6 @@ html, body {
 
 body {
   color: var(--dark-900);
-  background: #FAFAFA;
 }
 
 ::selection {
@@ -63,30 +62,7 @@ ul {
   }
 }
 
-.button {
-  display: inline-flex;
-  padding: 1em 1.5em;
-  line-height: 1;
-  background: var(--primary-a-400);
-  color: var(--dark-900);
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0px 2px 0px #795548;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  &:hover {
-    color: var(--dark-900);
-    background: var(--primary-a-700);
-  }
-  &:active {
-    box-shadow: inset 0px 2px 3px rgba(#795548, 0.3);
-  }
-}
-
 .h {
-  @include headerStyles;
-
   &_lvl {
     &_1 {
       font-size: var(--h1-size);
@@ -97,118 +73,5 @@ ul {
     &_3 {
       font-size: var(--h3-size);
     }
-  }
-}
-
-.page {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-}
-
-.page-inner {
-  background: #fff;
-  padding-top: 2em;
-  padding-bottom: 2em;
-}
-
-.container {
-  min-width: 320px;
-  max-width: 1200px;
-  padding-left: 5vw;
-  padding-right: 5vw;
-}
-
-.header {
-  position: sticky;
-  top: 0;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  background: var(--primary-a-400);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  &__logo {
-  }
-
-  &__menu {
-    margin-left: 50px;
-  }
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  border: none;
-  font-size: 1.1rem;
-  font-weight: 900;
-  text-decoration: none;
-  color: inherit;
-
-  &__avatar {
-    position: relative;
-    margin-right: 10px;
-  }
-}
-
-.avatar {
-  display: block;
-  border-radius: 100%;
-
-  &_size {
-    &_sm {
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
-
-.main-menu {
-  display: flex;
-  align-items: center;
-
-  &__item {
-    color: inherit;
-    border: none;
-    &:not(:last-child) {
-      margin-right: 0.8em;
-    }
-    &_active {
-      position: relative;
-      &:hover {
-        color: inherit;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        padding: 0.4em;
-        box-sizing: content-box;
-        background: #fff;
-        border: solid 2px var(--primary-a-700);
-        opacity: 0.5;
-        z-index: -1;
-      }
-    }
-  }
-}
-
-.footer {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  font-size: 0.7rem;
-
-  &__line {
-    margin: 0;
   }
 }
