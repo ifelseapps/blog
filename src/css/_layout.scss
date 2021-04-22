@@ -18,13 +18,16 @@
 
   &__inner {
     display: flex;
+    justify-content: space-between;
     width: 100%;
+    @include bp(lg) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
-  &__menu {
-    @include bp(lg) {
-      margin: 0 auto;
-    }
+  &__avatar {
+    margin-bottom: 1em;
   }
 
   &__hamburger {
@@ -155,4 +158,12 @@
     position: relative;
     z-index: 2;
   }
+}
+
+.avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: solid 3px #212121;
+  border-radius: 100%;
 }
