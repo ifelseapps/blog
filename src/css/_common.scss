@@ -6,6 +6,7 @@ html {
 
 html, body {
   min-height: 100vh;
+  min-width: 320px;
   margin: 0;
 }
 
@@ -33,28 +34,23 @@ code {
 
 a {
   text-decoration: none;
-  border-bottom: solid 1px #BBDEFB;
   color: #1E88E5;
-  &:hover {
-    color: #E53935;
-    border-color: #FFCDD2;
-  }
 }
 
 p {
   margin: 0.5em 0;
 }
 
-ul, ol {
-  margin: 0.5em 1em;
-  padding: 0 0 0 0.4em;
-
-  li {
-    &:not(:last-child) {
-      margin-bottom: 0.3em;
-    }
-  }
-}
+//ul, ol {
+//  margin: 0.5em 1em;
+//  padding: 0 0 0 0.4em;
+//
+//  li {
+//    &:not(:last-child) {
+//      margin-bottom: 0.3em;
+//    }
+//  }
+//}
 
 ul {
   li::marker {
