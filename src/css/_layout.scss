@@ -106,7 +106,7 @@
         width: 4px;
         height: 4px;
         border-radius: 100%;
-        background: #00695C;
+        background: #A7FFEB;
         z-index: 2;
       }
     }
@@ -131,7 +131,7 @@
     position: relative;
     display: block;
     color: inherit;
-    padding: 1em 1.5em;
+    padding: 15px 20px;
     line-height: 1;
     overflow: hidden;
     @include bp(lg) {
