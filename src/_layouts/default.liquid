@@ -23,82 +23,19 @@
 </head>
 <body>
   <div class="js-page page">
-    <header class="header{% if page.url == '/' %} header_main-page{% endif %}">
-      <div class="header__inner">
-        <a href="/" class="logo header__logo">
-          <img class="avatar logo__avatar" src="/images/ninja.svg" alt="Логотип"/>
-          <span class="logo__text">Максим Павлов</span>
+    <header class="header{% if page.url == '/' %} header_main-page{% endif %} container">
+      <div class="header__logo">
+        <a class="logo" href="/">
+          <img class="avatar logo__avatar" alt="Моя фотография" src="/images/avatar.jpg"/>
+          <div class="logo__name">Максим Павлов</div>
         </a>
-        <button class="js-hamburger hamburger header__hamburger">
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-        </button>
-        <nav class="js-menu main-menu">
-          <ul class="main-menu__list">
-            <li class="js-menu-item main-menu__item">
-              <a href="#" class="main-menu__link">
-                <span class="main-menu__link-inner">Обо мне</span>
-              </a>
-              <ul class="js-menu-popup main-menu__list">
-                <li class="main-menu__item">
-                  <a href="#" class="main-menu__link">
-                    <span class="main-menu__link-inner">Резюме</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="js-menu-item main-menu__item">
-              <a href="#" class="main-menu__link">
-                <span class="main-menu__link-inner">Проекты</span>
-              </a>
-            </li>
-            <li class="js-menu-item main-menu__item">
-              <a href="#" class="main-menu__link">
-                <span class="main-menu__link-inner">Рабочий процесс</span>
-              </a>
-              <ul class="js-menu-popup main-menu__list">
-                <li class="main-menu__item">
-                  <a href="#" class="main-menu__link">
-                    <span class="main-menu__link-inner">Кейсы</span>
-                  </a>
-                </li>
-                <li class="main-menu__item">
-                  <a href="#" class="main-menu__link">
-                    <span class="main-menu__link-inner">Технологии</span>
-                  </a>
-                </li>
-                <li class="main-menu__item">
-                  <a href="#" class="main-menu__link">
-                    <span class="main-menu__link-inner">Качество</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="js-menu-item main-menu__item">
-              <a href="#" class="main-menu__link">
-                <span class="main-menu__link-inner">Сотрудничество</span>
-              </a>
-            </li>
-            <li class="js-menu-item main-menu__item">
-              <a href="#" class="main-menu__link">
-                <span class="main-menu__link-inner">Заметки</span>
-              </a>
-            </li>
-            <li class="js-menu-item main-menu__item">
-              <a href="#" class="main-menu__link">
-                <span class="main-menu__link-inner">Мир</span>
-              </a>
-            </li>
-            <li class="js-menu-item main-menu__item">
-              <a href="#" class="main-menu__link">
-                <span class="main-menu__link-inner">Контакты</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-
       </div>
+      <nav class="main-menu header__menu">
+        <a class="main-menu__item" href="#">Проекты</a>
+        <a class="main-menu__item" href="#">Кейсы</a>
+        <a class="main-menu__item" href="#">Заметки</a>
+        <a class="main-menu__item" href="#">Мир</a>
+      </nav>
     </header>
     {{ content |  safe }}
     <footer class="footer container">

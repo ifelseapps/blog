@@ -12,6 +12,7 @@ html, body {
 
 body {
   color: var(--dark-900);
+  background: #FAFAFA;
 }
 
 ::selection {
@@ -33,8 +34,14 @@ code {
 }
 
 a {
+  line-height: 1em;
   text-decoration: none;
-  color: #1E88E5;
+  color: #0060a0;
+  border-bottom: solid 1px rgba(0, 96, 160, 0.20);
+  &:hover {
+    color: #b03000;
+    border-color: rgba(176, 48, 0, 0.20);
+  }
 }
 
 p {

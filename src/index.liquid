@@ -5,18 +5,41 @@ description: Максим Павлов — senior frontend engineer
 keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html, angular, react
 ---
 
-<main>
-  <section class="banner">
-    <img class="banner__photo" src="/images/avatar.jpg" alt="Моя фотография"/>
-    <div class="banner__about">
-      <h1 class="banner__title">Senior frontend engineer</h1>
-      <p>Моя работа находится на стыке дизайна и программирования. Я разрабатываю пользовательские интерфейсы для веб-приложений,
-      которыми ежедневно пользуются тысячи людей. Я уделяю внимание доступности, производительности и отзывчивости.</p>
-      <div class="banner__more">
-        <a class="button" href="#">
-          <span class="button__inner">Подробнее</span>
-        </a>
+<main class="main-page">
+  <div class="grid-row">
+    <div class="jh-banner main-page__banner">
+      <div class="jh-banner__inner">
+        <div class="jh-banner__title">Jewish history</div>
+        <div class="jh-banner__desc">Интерактивный онлайн-проект, визуализирующий всю&nbsp;еврейскую&nbsp;историю от&nbsp;Авраама до&nbsp;наших дней.</div>
       </div>
     </div>
-  </section>
+    <div class="main-page__banner-desc">
+      <div>
+        Хотите <a href="#">прочитать</a> о&nbsp;проекте или <a href="#">присоединиться</a> к&nbsp;нему?
+      </div>
+    </div>
+  </div>
+  <div class="grid-row">
+    <section class="about-section main-page__about">
+      <h1>Обо мне</h1>
+      <p>
+        <img class="about-section__photo" src="/images/avatar.jpg" alt="Моя фотография"/>
+        Меня зовут Максим Павлов. Мне 32 года. Я senior frontend engineer. Разрабатываю интерфейсы, которыми пользуются тысячи людей, в МТС.
+      </p>
+      <p>Моя работа находится на пересечении программирования и дизайна. Я уделяю внимание доступности, производительности и отзывчивости интерфейсов.
+      У меня за плечами опыт коммерческой разработки более 7 лет. Последние 4 года я сосредоточился на frontend-разработке.</p>
+    </section>
+    <section class="main-page__notes">
+      {% assign posts = collections.post | reverse | slice: 0, 5 %}
+      <ul class="posts">
+        {%- for post in posts -%}
+          <li class="posts__item">
+            <a href="{{ post.url | url }}">
+              {{ post.data.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  </div>
 </main>
