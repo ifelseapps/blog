@@ -24,23 +24,26 @@
 <body>
   <div class="js-page page">
     <header class="header{% if page.url == '/' %} header_main-page{% endif %} container">
-      <div class="header__logo">
-        <a class="logo" href="/">
-          <img class="avatar logo__avatar" alt="Моя фотография" src="/images/avatar.jpg"/>
-          <div class="logo__name">Максим Павлов</div>
-        </a>
+      <div class="container header__inner">
+        <div class="site-name">Максим Павлов</div>
       </div>
       <nav class="main-menu header__menu">
-        <a class="main-menu__item" href="#">Проекты</a>
-        <a class="main-menu__item" href="#">Кейсы</a>
-        <a class="main-menu__item" href="#">Заметки</a>
-        <a class="main-menu__item" href="#">Мир</a>
+        <a class="main-menu__item main-menu__item_active" href="#">Заметки</a>
+        <a class="main-menu__item" href="#">Путешествия</a>
       </nav>
     </header>
-    {{ content |  safe }}
+    <main class="page__content">
+      {{ content |  safe }}
+    </main>
     <footer class="footer container">
-      <p class="footer__line">&copy;&nbsp;2018-2021 Максим Павлов</p>
-      <p class="footer__line">Этот сайт не следит за вами и не собирает никакие данные.</p>
+      <div class="footer__column">
+        <p class="footer__line">&copy;&nbsp;2018-2021 Максим Павлов</p>
+        <p class="footer__line">Этот сайт не следит за вами и не собирает никакие данные.</p>
+      </div>
+      <div class="footer_column">
+        <p class="footer__line">Эл. почта: <a href="#">me@maximpavlov.su</a></p>
+        <p class="footer__line">Соц. сети: <a href="#">github</a>, <a href="#">twitter</a>, <a href="#">facebook</a></p>
+      </div>
     </footer>
   </div>
   <script src="/scripts/common.js"></script>

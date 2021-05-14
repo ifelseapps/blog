@@ -3,6 +3,12 @@
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   transition: transform 0.3s;
+
+  &__content {
+    background: var(--color-gray-50);
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .page-inner {
@@ -14,7 +20,7 @@
 
 .container {
   width: 90vw;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .grid-row {
@@ -23,73 +29,61 @@
   grid-template-rows: min-content;
   grid-row-gap: 0;
   grid-column-gap: 20px;
-  &:not(:last-child) {
-    margin-bottom: 3em;
-  }
 }
 
 .header {
-  padding: 1em 0;
-  @include bp(md) {
-    display: flex;
-    align-items: center;
-  }
+  position: relative;
 
-  &__logo {
-    display: flex;
+  &__inner {
+    text-align: center;
+    padding: 2em 0 3em;
   }
 
   &__menu {
-    margin-top: 1em;
-    @include bp(md) {
-      margin-top: 0;
-      margin-left: calc(5vw + 2em);
-    }
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 }
 
 .main-menu {
-  display: flex;
-  text-transform: lowercase;
+  display: inline-flex;
+  border-radius: 30px;
+  background: var(--color-dark);
+  color: var(--color-light);
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+
   &__item {
-    &:not(:last-child) {
-      margin-right: 1.5em;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 1em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    border-radius: inherit;
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px var(--color-primary-100);
+    }
+    &_active {
+      background: linear-gradient(to bottom, var(--color-primary-500), var(--color-primary-800));
     }
   }
 }
 
-.logo {
-  display: inline-flex;
-  align-items: center;
-  color: inherit;
-  line-height: 1;
-  border: none;
-
-  &__avatar {
-    width: 2.5em;
-    height: 2.5em;
-  }
-
-  &__name {
-    margin-left: 0.4em;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.02em;
-  }
-}
-
-.avatar {
-  display: block;
-  border-radius: 100%;
+.site-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .footer {
-  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5em;
   font-size: 0.8rem;
-
-  &__line {
-    margin: 0.5em 0;
-    line-height: 1;
-  }
 }

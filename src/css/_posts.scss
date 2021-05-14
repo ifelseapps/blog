@@ -1,0 +1,32 @@
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.7rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  &__item {
+    margin: 0 0.5em 0.5em 0;
+  }
+}
+
+.tag-item {
+  padding: 0.3em 0.6em;
+  border: solid 1px #CFD8DC;
+  border-radius: 4px;
+  line-height: 1em;
+  background: #CFD8DC;
+  &:hover {
+    background: transparent;
+  }
+
+  &__link {
+    position: relative;
+    top: 2px;
+    color: inherit;
+  }
+}
