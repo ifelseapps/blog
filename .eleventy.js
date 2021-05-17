@@ -34,9 +34,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection('tags', function (collection) {
     let tagSet = new Set();
+    const count = {};
     collection.getAll().forEach(function (item) {
       if ('tags' in item.data) {
         let tags = item.data.tags;
+
+        tags.forEach(t => count[t] = (count[t] || 0) + 1);
 
         tags = tags.filter(function (item) {
           switch (item) {
@@ -56,10 +59,13 @@ module.exports = function (eleventyConfig) {
       }
     });
 
-    return [...tagSet];
+    return [...tagSet].map(t => ({ name: t, count: count[t] }));
   });
 
   eleventyConfig.addFilter('dateFormatted', dateObj => {
+    if (!dateObj) {
+      return '';
+    }
     return format(dateObj, 'dd.MM.yyyy');
   });
 

@@ -1,10 +1,16 @@
-<main class="posts-page page-inner container">
+<main class="posts-page container">
   <section class="posts-page__posts">
-    <h1 class="h h_lvl_1">{{ title }}</h1>
+    <h1 class="visually-hidden">Заметки</h1>
     <ul class="posts-list">
       {% for post in posts %}
-        <li class="post-detail posts-list__item">
-          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+        <li class="posts-list-item posts-list__item">
+          <div class="posts-list-item__date">{{ post.date | dateFormatted }}</div>
+          <a class="posts-list-item__title" href="{{ post.url | url }}">{{ post.data.title }}</a>
+          <div class="posts-list-item__preview">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis eaque eos ex facilis, fuga, iste labore laborum
+            nisi nulla obcaecati officiis quae. Consequatur ea est fuga quo quos! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Amet autem blanditiis eaque eos ex facilis, fuga, iste labore laborum nisi nulla obcaecati officiis quae. Consequatur ea est fuga quo quos!
+          </div>
         </li>
       {% endfor %}
     </ul>

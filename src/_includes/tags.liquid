@@ -1,9 +1,9 @@
 <ul class="tags-list">
   {% assign tags = collections.tags %}
   {% for currentTag in tags %}
-    {% capture tagUrl %}/tags/{{ currentTag }}/{% endcapture %}
-    <li class="tag-item tags-list__item">
-      <a class="tag-item__link" href="{{ tagUrl }}">{{ currentTag }}</a>
+    {% capture tagUrl %}/tags/{{ currentTag.name }}/{% endcapture %}
+    <li class="tag-item tags-list__item{% if page.url == tagUrl %} tags-list__item_active{% endif %}">
+      <a class="tag-item__link" href="{{ tagUrl }}">{{ currentTag.name }} ({{ currentTag.count }})</a>
     </li>
   {% endfor %}
 </ul>
