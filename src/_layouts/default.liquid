@@ -26,10 +26,18 @@
     <header class="header{% if page.url == '/' %} header_main-page{% endif %} container">
       <div class="container header__inner">
         <div class="site-name">Максим Павлов</div>
+        <div class="header__desc">Личный журнал для&nbsp;заметок. Пишу о&nbsp;программировании, истории, путешествиях.</div>
       </div>
       <nav class="main-menu header__menu">
-        <a class="main-menu__item main-menu__item_active" href="#">Заметки</a>
-        <a class="main-menu__item" href="#">Путешествия</a>
+        <a class="main-menu__item main-menu__item_active" href="#">
+          <span class="main-menu__item-inner">Заметки</span>
+        </a>
+        <a class="main-menu__item" href="#">
+          <span class="main-menu__item-inner">Мир</span>
+        </a>
+        <a class="main-menu__item" href="#">
+          <span class="main-menu__item-inner">Обо мне</span>
+        </a>
       </nav>
     </header>
     <main class="page__content">
@@ -38,7 +46,7 @@
     <footer class="footer container">
       <div class="footer__column">
         <p class="footer__line">&copy;&nbsp;2018-2021 Максим Павлов</p>
-        <p class="footer__line">Этот сайт не следит за вами и не собирает никакие данные.</p>
+        <p class="footer__line">Копирование материалов данного блога разрешается только с письменного разрешения автора</p>
       </div>
       <div class="footer_column">
         <p class="footer__line">Эл. почта: <a href="#">me@maximpavlov.su</a></p>

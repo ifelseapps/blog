@@ -36,7 +36,15 @@
 
   &__inner {
     text-align: center;
-    padding: 2em 0 3em;
+    padding: 1em 0 2em;
+  }
+
+  &__desc {
+    margin-top: 0.5em;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    font-style: italic;
+    color: var(--color-gray-400);
   }
 
   &__menu {
@@ -59,17 +67,26 @@
     align-items: center;
     height: 40px;
     padding: 0 1em;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
     border-radius: inherit;
+    white-space: nowrap;
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 2px var(--color-primary-100);
+      color: var(--color-primary-100);
     }
     &_active {
       background: linear-gradient(to bottom, var(--color-primary-500), var(--color-primary-800));
     }
+  }
+
+  &__item-inner {
+    position: relative;
+    top: 1px;
+    border-bottom: solid 1px #616161;
+  }
+
+  &__item_active &__item-inner,
+  &__item:hover &__item-inner {
+    border-color: transparent;
   }
 }
 
@@ -82,8 +99,19 @@
 
 .footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5em;
+  justify-content: center;
+  flex-direction: column-reverse;
+  padding-top: 1em;
+  padding-bottom: 1em;
   font-size: 0.8rem;
+  line-height: 1.2;
+  @include bp(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__line {
+    margin-bottom: 0.5em;
+  }
 }
