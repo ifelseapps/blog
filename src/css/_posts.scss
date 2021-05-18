@@ -1,14 +1,55 @@
 .posts-page {
   display: flex;
+  flex-direction: column-reverse;
+  @include bp(lg) {
+    flex-direction: row;
+  }
 
   &__posts {
-    margin-right: 4em;
+    @include bp(lg) {
+      margin-right: 4em;
+    }
   }
 
   &__tags {
-    flex: none;
-    width: 20%;
-    padding: 4em 0;
+    margin-bottom: 2em;
+    @include bp(lg) {
+      flex: none;
+      width: 20%;
+      margin-bottom: 0;
+      padding: 4em 0;
+    }
+  }
+}
+
+.posts-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item:not(:last-child) {
+    margin-bottom: 3em;
+  }
+}
+
+.posts-list-item {
+  &__date {
+    margin-bottom: 0.5em;
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border-bottom: solid 1px var(--color-gray-100);
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  &__preview {
+    margin-top: 0.5em;
   }
 }
 
