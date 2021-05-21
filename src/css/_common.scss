@@ -16,7 +16,8 @@ body {
 }
 
 ::selection {
-  background: var(--primary-200);
+  background: var(--color-dark);
+  color: #ffffff;
 }
 
 .visually-hidden {
@@ -74,6 +75,7 @@ ul {
 
 .h {
   margin: 0 0 0.5em;
+  line-height: 1.2;
   font-weight: 900;
   &_lvl {
     &_1 {

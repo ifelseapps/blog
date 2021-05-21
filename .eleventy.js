@@ -22,7 +22,7 @@ module.exports = function (eleventyConfig) {
 
   const markdownItAnchorOptions = {
     permalink: true,
-    permalinkSymbol: '#'
+    permalinkSymbol: '§'
   };
 
   const markdownLib = markdownIt(markdownItOptions).use(

@@ -2,35 +2,31 @@
 layout: default.liquid
 ---
 
-<main class="page-inner page-inner_post container">
+<div class="container">
   <article class="post-page">
-    <div class="post-page__back" aria-hidden="true"></div>
     <h1 class="h h_lvl_1">{{ title }}</h1>
-    {{ content | safe }}
-
-    <footer class="post-footer post-page__footer">
-      <ul class="post-pagination post-footer__pagination">
-        {%- assign nextPost = collections.post | getNextCollectionItem: page %}
-        <li class="post-pagination__item">
-          {%- if nextPost %}
-            <a href="{{ nextPost.url | url }}">&larr;&nbsp;{{ nextPost.data.title }}</a>
-          {% endif %}
-        </li>
-        {%- assign previousPost = collections.post | getPreviousCollectionItem: page %}
-        <li class="post-pagination__item">
-          {%- if previousPost %}
-            <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}&nbsp;&rarr;</a>
-          {% endif %}
-        </li>
-      </ul>
-      <div class="post-author post-footer__author">
-        <img class="post-author__avatar" src="/images/avatar.jpg" alt="Моя фотография">
-        <div class="post-author__desc">
-          <p>Меня зовут Максим, я senior frontend engineer, пишу&nbsp;на&nbsp;React&nbsp;и&nbsp;Angular.</p>
-          <p>Это мой личный блог. Я пишу о разработке, книгах, а также обо всем, что&nbsp;мне&nbsp;интересно.</p>
-          <p><a class="post-author__show-more" href="/">Подробнее</a></p>
-        </div>
-      </div>
-    </footer>
+    <div class="post-page__preview">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci distinctio facere laborum modi mollitia omnis quas, quasi velit.
+      Aperiam asperiores deleniti dignissimos expedita harum illo laborum nulla quasi tempora voluptas?
+    </div>
+    <div class="post-page__content">
+      {{ content | safe }}
+      <footer class="post-footer post-page__footer">
+        <ul class="post-pagination post-footer__pagination">
+          {%- assign nextPost = collections.post | getNextCollectionItem: page %}
+          <li class="post-pagination__item">
+            {%- if nextPost %}
+              <a class="post-pagination__link" href="{{ nextPost.url | url }}">&laquo;&nbsp;{{ nextPost.data.title }}</a>
+            {% endif %}
+          </li>
+          {%- assign previousPost = collections.post | getPreviousCollectionItem: page %}
+          <li class="post-pagination__item">
+            {%- if previousPost %}
+              <a class="post-pagination__link" href="{{ previousPost.url | url }}">{{ previousPost.data.title }}&nbsp;&raquo;</a>
+            {% endif %}
+          </li>
+        </ul>
+      </footer>
+    </div>
   </article>
-</main>
+</div>

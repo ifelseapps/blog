@@ -6,8 +6,8 @@
 
   &__content {
     background: var(--color-gray-50);
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
@@ -21,6 +21,9 @@
 .container {
   width: 90vw;
   margin: 0 auto;
+  @include bp(lg) {
+    width: 70vw;
+  }
 }
 
 .grid-row {
