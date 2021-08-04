@@ -1,6 +1,6 @@
 html {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: calc(14px + .15vw);
+  font-size: calc(16px + .15vw);
   line-height: 1.3em;
 }
 
@@ -12,7 +12,7 @@ html, body {
 
 body {
   color: var(--dark-900);
-  background: #fff;
+  background: #FFF3E0;
 }
 
 ::selection {
@@ -39,11 +39,10 @@ a {
   text-decoration: none;
   color: inherit;
   &:not([class]) {
-    color: #0060a0;
-    border-bottom: solid 1px rgba(0, 96, 160, 0.20);
+    border-bottom: solid 1px #FFCDD2;
+    color: #B71C1C;
     &:hover {
-      color: #b03000;
-      border-color: rgba(176, 48, 0, 0.20);
+      border-color: #B71C1C;
     }
   }
 }
