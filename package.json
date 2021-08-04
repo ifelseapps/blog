@@ -31,7 +31,8 @@
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^5.0.0",
     "markdown-it": "^12.0.4",
-    "postcss": "^8.2.1"
+    "postcss": "^8.2.1",
+    "sass": "^1.37.5"
   },
   "devDependencies": {
     "markdown-it-anchor": "^7.0.2"
