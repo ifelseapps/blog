@@ -2,23 +2,27 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 100%;
-  min-width: 320px;
   min-height: 100vh;
+
+  &__content {
+    margin: 3em 0;
+  }
+}
+
+.container {
+  min-width: 320px;
   padding: 0 1em;
   @include bp(md) {
     width: 90vw;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
-  }
-
-  &__content {
-    margin: 1em 0;
   }
 }
 
 .header {
-  padding: 1em 0;
-  border-bottom: solid 2px #FFE0B2;
+  padding: 1em 0 3em 0;
+  border-bottom: solid 2px #e0e0e0;
 }
 
 .main-menu {
@@ -43,4 +47,12 @@
       }
     }
   }
+}
+
+.footer {
+  padding: 1em 0;
+  border-top: solid 2px #ffe1dc;
+  background: #ffefeb;
+  font-size: 0.8rem;
+  text-align: center;
 }

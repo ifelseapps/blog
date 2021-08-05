@@ -12,7 +12,7 @@ html, body {
 
 body {
   color: var(--dark-900);
-  background: #FFF3E0;
+  background: #fff6f3;
 }
 
 ::selection {
@@ -39,10 +39,10 @@ a {
   text-decoration: none;
   color: inherit;
   &:not([class]) {
-    border-bottom: solid 1px #FFCDD2;
-    color: #B71C1C;
+    color: #01579b;
+    border-bottom: solid 1px #e0e0e0;
     &:hover {
-      border-color: #B71C1C;
+      border-color: #0277bd;
     }
   }
 }
