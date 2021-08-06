@@ -5,7 +5,6 @@
   min-height: 100vh;
 
   &__content {
-    margin: 3em 0;
   }
 }
 
@@ -21,38 +20,11 @@
 }
 
 .header {
-  padding: 1em 0 3em 0;
-  border-bottom: solid 2px #e0e0e0;
-}
+  padding-top: 1em;
+  padding-bottom: 1em;
 
-.main-menu {
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  &__name {
+    font-size: 1.2rem;
+    font-weight: 900;
   }
-
-  &__item {
-    position: relative;
-    &:not(:last-child) {
-      padding-right: 1em;
-      &::after {
-        content: '/';
-        position: absolute;
-        top: 50%;
-        right: 0.5em;
-        transform: translate(50%, -50%);
-      }
-    }
-  }
-}
-
-.footer {
-  padding: 1em 0;
-  border-top: solid 2px #ffe1dc;
-  background: #ffefeb;
-  font-size: 0.8rem;
-  text-align: center;
 }

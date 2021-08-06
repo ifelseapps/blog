@@ -4,34 +4,42 @@ title: Максим Павлов
 description: Максим Павлов — senior frontend engineer
 keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html, angular, react
 ---
-<div class="page">
-  <header class="header container">
-    <div class="index-desc">
-      <p>Привет! Меня зовут Максим Павлов. Я&nbsp;&mdash;&nbsp;senior frontend engineer.
-        Разрабатываю интерфейсы, которыми пользуются тысячи людей, в&nbsp;<a href="#">МТС</a>.
-        В свободное время путешествую, учу иврит и английский, интересуюсь историей и гражданской авиацией.</p>
-    </div>
-    <nav class="main-menu header__menu">
-      <ul class="main-menu__list">
-        <li class="main-menu__item">
-          <span>Главная</span>
-        </li>
-        <li class="main-menu__item">
-          <a href="#">Заметки</a>
-        </li>
-        <li class="main-menu__item">
-          <a href="#">Мир</a>
-        </li>
-        <li class="main-menu__item">
-          <a href="#">Резюме</a>
-        </li>
-      </ul>
-    </nav>
+<div class="main-page container">
+  <header class="header main-page__header">
+    <div class="header__name">Максим Павлов</div>
   </header>
-  <main class="container page__content">Main content</main>
-  <footer class="footer">
-    <div class="container footer__inner">
-      &copy;&nbsp;2018&nbsp;&mdash;&nbsp;2021&nbsp;<a href="mailto:me@maximpavlov.su">Максим Павлов</a>
+  <main class="main-page__content">
+    <div class="main-page__desc">
+      Привет! Я&nbsp;&mdash;&nbsp;senior frontend engineer. Разрабатываю интерфейсы, которыми пользуются тысячи людей,
+      в&nbsp;<a href="#">МТС</a>. В&nbsp;свободное время я люблю <a href="#">путешествовать</a>, изучаю иврит и&nbsp;английский,
+      интересуюсь историей и&nbsp;гражданской авиацией.
     </div>
-  </footer>
+    <div class="main-page__section">
+      <h1 class="h h_lvl_2 main-page__section-title">Заметки</h1>
+      {% assign posts = collections.post | reverse %}
+      <ul class="posts">
+        {%- for post in posts -%}
+          <li class="posts__item">
+            <a href="{{ post.url | url }}">
+              {{ post.data.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="main-page__section">
+      <h2 class="h h_lvl_2 main-page__section-title">Стек технологий</h2>
+      <p>Я отлично знаю JavaScript и TypeScript. Есть коммерческий опыт разработки на React и Angular.</p>
+      <p>Однако, мой основной стек технологий&nbsp;&mdash;&nbsp;<span class="tech-stack-item">TypeScript</span> +
+        <span class="tech-stack-item">React</span> + <span class="tech-stack-item">Redux</span>.</p>
+      <p>Все технологии:</p>
+      <ul class="tech-stack">
+        <li class="tech-stack-item tech-stack__item">HTML</li>
+        <li class="tech-stack-item tech-stack__item">CSS</li>
+        <li class="tech-stack-item tech-stack__item">SASS</li>
+        <li class="tech-stack-item tech-stack__item">PUG</li>
+        <li class="tech-stack-item tech-stack__item">БЭМ</li>
+      </ul>
+    </div>
+  </main>
 </div>
