@@ -13,6 +13,7 @@
   padding: 0 1em;
   @include bp(md) {
     width: 90vw;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
@@ -25,9 +26,14 @@
 
   &__name {
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #2cb98f;
   }
+}
+
+.footer {
+  font-size: 0.75rem;
+  color: #90A4AE;
 }

@@ -88,3 +88,14 @@ ul {
     }
   }
 }
+
+.contacts {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item:not(:last-child) {
+    margin-right: 1em;
+  }
+}

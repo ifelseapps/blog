@@ -5,14 +5,14 @@ description: Максим Павлов — senior frontend engineer
 keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html, angular, react
 ---
 <div class="main-page container">
-  <header class="header main-page__header">
-    <div class="header__name">Максим Павлов</div>
-  </header>
+  <div class="main-page__header">
+    {% include header.liquid %}
+  </div>
   <main class="main-page__content">
     <section class="about-section">
       <div class="about-section__info">
-        Привет! Я&nbsp;&mdash;&nbsp;senior frontend engineer. Разрабатываю интерфейсы, которыми пользуются тысячи людей,
-        в&nbsp;<a href="#">МТС</a>. В&nbsp;свободное время я люблю путешествовать, изучаю иврит и&nbsp;английский,
+        Привет! Я&nbsp;&mdash;&nbsp;senior frontend engineer. <strong>Разрабатываю интерфейсы, которыми пользуются тысячи людей,</strong>
+        в&nbsp;<a href="https://mts.ru" target="_blank">МТС</a>. В&nbsp;свободное время я люблю путешествовать, изучаю иврит и&nbsp;английский,
         интересуюсь историей и&nbsp;гражданской авиацией.
       </div>
       <div class="about-section__photo-wrapper">
@@ -98,4 +98,5 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
       </ul>
     </section>
   </main>
+  {% include footer.liquid %}
 </div>
