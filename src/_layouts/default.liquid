@@ -25,16 +25,12 @@
   {% if page.url == '/' %}
     {{ content |  safe }}
   {% else %}
-    <div class="page">
-      <header class="header">
-
-      </header>
+    <div class="page container">
+      {% include header.liquid %}
       <main class="page__content">
         {{ content |  safe }}
       </main>
-      <footer class="footer">
-        Footer
-      </footer>
+      {% include footer.liquid %}
     </div>
   {% endif %}
   <script src="/scripts/common.js"></script>

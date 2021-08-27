@@ -55,20 +55,20 @@ p:not([class]) {
   margin: 0.5em 0;
 }
 
-//ul, ol {
-//  margin: 0.5em 1em;
-//  padding: 0 0 0 0.4em;
-//
-//  li {
-//    &:not(:last-child) {
-//      margin-bottom: 0.3em;
-//    }
-//  }
-//}
+ul, ol {
+  margin: 0.5em 0;
+  padding: 0;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 0.3em;
+    }
+  }
+}
 
 ul {
   li::marker {
-    color: var(--primary-a-700);
+    color: #2cb98f;
   }
 }
 

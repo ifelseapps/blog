@@ -40,6 +40,11 @@
       margin: 0;
       padding-left: 1em;
       border-left: solid 3px var(--color-gray-400);
+
+      footer span {
+        font-style: italic;
+      }
+
       &:not(:last-of-type) {
         margin-bottom: 1em;
       }
@@ -48,7 +53,8 @@
     .note-wrapper {
       margin: 2em 0;
       padding: 1em;
-      background: var(--color-primary-50);
+      border-radius: 4px;
+      background: #A7FFEB;
       font-size: 0.9rem;
     }
   }
@@ -58,7 +64,7 @@
   height: 2px;
   margin: 2rem 0;
   border: none;
-  background: linear-gradient(to right, var(--color-primary-500), var(--color-primary-800));
+  background: #90A4AE;
 }
 
 .post-pagination {
@@ -78,18 +84,42 @@
   }
 
   &__link {
+    position: relative;
     display: block;
     max-width: 100%;
     padding: 1em;
-    border: solid 2px var(--color-dark);
+    color: #2cb98f;
+    border: solid 2px #2cb98f;
     font-size: 1.2rem;
     font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     &:hover {
-      background-color: var(--color-dark);
+      background-color: #2cb98f;
       color: #ffffff;
+    }
+  }
+
+  &__item:first-child &__link {
+    padding-left: 2em;
+    &::after {
+      content: '\00AB';
+      position: absolute;
+      top: 50%;
+      left: 1em;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__item:last-child &__link {
+    padding-right: 2em;
+    &::after {
+      content: '\00BB';
+      position: absolute;
+      top: 50%;
+      right: 1em;
+      transform: translateY(-50%);
     }
   }
 }
