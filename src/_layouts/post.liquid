@@ -5,8 +5,9 @@ layout: default.liquid
 <article class="post-page">
   <h1 class="h h_lvl_1">{{ title }}</h1>
   <div class="post-page__preview">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci distinctio facere laborum modi mollitia omnis quas, quasi velit.
-    Aperiam asperiores deleniti dignissimos expedita harum illo laborum nulla quasi tempora voluptas?
+    {% if preview_text %}
+      {{ preview_text }}
+    {% endif %}
   </div>
   <div class="post-page__content">
     {{ content | safe }}
