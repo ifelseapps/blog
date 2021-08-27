@@ -11,12 +11,12 @@ html, body {
 }
 
 body {
-  color: var(--dark-900);
+  color: var(--color-text);
   background: #ECEFF1;
 }
 
 ::selection {
-  background: var(--color-dark);
+  background: var(--color-primary);
   color: #ffffff;
 }
 
@@ -39,10 +39,10 @@ a {
   text-decoration: none;
   color: inherit;
   &:not([class]) {
-    color: #2cb98f;
+    color: var(--color-primary);
     border-bottom: solid 1px #e0e0e0;
     &:hover {
-      border-color: #2cb98f;
+      border-color: var(--color-primary);
     }
   }
 }
@@ -68,7 +68,7 @@ ul, ol {
 
 ul {
   li::marker {
-    color: #2cb98f;
+    color: var(--color-primary);
   }
 }
 

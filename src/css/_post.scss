@@ -64,7 +64,7 @@
   height: 2px;
   margin: 2rem 0;
   border: none;
-  background: #90A4AE;
+  background: var(--color-gray);
 }
 
 .post-pagination {
@@ -88,15 +88,15 @@
     display: block;
     max-width: 100%;
     padding: 1em;
-    color: #2cb98f;
-    border: solid 2px #2cb98f;
+    color: var(--color-primary);
+    border: solid 2px var(--color-primary);
     font-size: 1.2rem;
     font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     &:hover {
-      background-color: #2cb98f;
+      background-color: var(--color-primary);
       color: #ffffff;
     }
   }
