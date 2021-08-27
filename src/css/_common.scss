@@ -55,7 +55,7 @@ p:not([class]) {
   margin: 0.5em 0;
 }
 
-ul, ol {
+ul:not([class]), ol:not([class]) {
   padding: 0 1.1em 1em;
   margin: 2em 0;
 
@@ -97,6 +97,6 @@ ul {
   list-style: none;
 
   &__item:not(:last-child) {
-    margin-right: 1em;
+    margin: 0 1em 0 0;
   }
 }
