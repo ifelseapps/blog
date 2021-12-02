@@ -89,14 +89,3 @@ ul {
     }
   }
 }
-
-.contacts {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  &__item:not(:last-child) {
-    margin: 0 1em 0 0;
-  }
-}
