@@ -1,6 +1,7 @@
 .container {
   min-width: 320px;
   padding: 0 1em;
+  box-sizing: border-box;
   @include bp(md) {
     width: 90vw;
     max-width: 1400px;
@@ -12,6 +13,7 @@
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .menu__item {

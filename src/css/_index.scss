@@ -30,22 +30,36 @@
 }
 
 .main-banner__inner {
-  display: flex;
-  align-items: center;
-  margin-top: 6em;
+  margin-top: 3em;
+  padding-bottom: 6em;
+  @include bp(md) {
+    display: flex;
+    align-items: center;
+    margin-top: 6em;
+    padding-bottom: 0;
+  }
 }
 
 .main-banner__info {
-  width: 70%;
-  flex: none;
+  @include bp(md) {
+    width: 70%;
+    flex: none;
+  }
 }
 
 .main-banner__photo {
+  display: none;
   margin-left: 3em;
+  @include bp(md) {
+    display: block;
+  }
 }
 
 .main-banner__title {
-  font-size: 3rem;
+  font-size: 2rem;
+  @include bp(md) {
+    font-size: 3rem;
+  }
 }
 
 .main-banner__preview-text {
