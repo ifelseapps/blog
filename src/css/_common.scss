@@ -200,7 +200,7 @@ ul {
   font-size: 2rem;
 }
 
-.tech-stack {
+.tags-list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -209,18 +209,26 @@ ul {
   font-size: 0.8rem;
 }
 
-.tech-stack__item {
+.tags-list__item {
   display: flex;
   align-items: center;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
   padding: 0.2em 0.5em;
-  background: linear-gradient(45deg, #880E4F 0%, #F50057 100%);
+  line-height: unset;
   color: #fff;
   border-radius: 5px;
 }
 
-.tech-stack__star {
+.tags-list_color_primary .tags-list__item {
+  background: linear-gradient(45deg, #880E4F 0%, #F50057 100%);
+}
+
+.tags-list_color_grey .tags-list__item {
+  background: linear-gradient(45deg, #37474F 0%, #607D8B 100%);
+}
+
+.tags-list__star {
   width: 1em;
   height: 1em;
   margin-right: 0.4em;
