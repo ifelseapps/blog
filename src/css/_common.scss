@@ -175,10 +175,19 @@ ul {
 }
 
 .tech-stack__item {
+  display: flex;
+  align-items: center;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
   padding: 0.2em 0.5em;
   background: #C51162;
   color: #fff;
   border-radius: 5px;
+}
+
+.tech-stack__star {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  fill: #FFD600;
 }
