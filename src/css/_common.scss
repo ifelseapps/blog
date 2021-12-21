@@ -151,18 +151,53 @@ ul {
 }
 
 .button {
-  display: inline-block;
+  display: inline-flex;
   padding: 0.5em 1em;
+  box-sizing: border-box;
   text-decoration: none;
-  border: solid 3px #fff;
-  border-radius: 7px;
+  border-radius: 5px;
   font-weight: 100;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button__inner {
+  position: relative;
+  border-radius: 3px;
+  z-index: 1;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button_color_white {
+  border: solid 3px #fff;
   background: #fff;
   color: var(--color-text);
   &:hover {
     background: transparent;
     color: #ffffff;
   }
+}
+
+.button_color_primary {
+  padding: 0.1em;
+  background: linear-gradient(45deg, #880E4F 33%, #F50057 66%);
+}
+
+.button_color_primary .button__inner {
+  padding: 0.5em 2em;
+  color: #ffffff;
+}
+
+.button_color_primary:hover .button__inner {
+  background: #ECEFF1;
+  color: var(--color-text);
+}
+
+.button_size_md {
+  font-size: 1.4rem;
+}
+
+.button_size_lg {
+  font-size: 2rem;
 }
 
 .tech-stack {
