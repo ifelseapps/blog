@@ -77,6 +77,8 @@ ul {
   margin: 0;
   line-height: 1.2;
   font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   &_lvl {
     &_1 {
       font-size: var(--h1-size);
@@ -106,16 +108,21 @@ ul {
 
 .link-solid {
   position: relative;
+  letter-spacing: 0.01em;
   color: #E91E63;
+  transition: color 0.3s;
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 3px;
-    background: #F06292;
+    height: 2px;
+    background: #E91E63;
     transition: transform 0.3s;
+  }
+  &:hover {
+    color: #ffffff;
   }
   &:hover::after {
     transform: translateY(3px);

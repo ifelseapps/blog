@@ -86,51 +86,77 @@
 
 .pinned-post {
   position: relative;
+  display: flex;
+  flex-direction: column;
   flex: none;
   width: 80vw;
-  height: 500px;
   margin: 0 auto;
-  padding: 1em;
+  padding: 0.2em;
   box-sizing: border-box;
-  background: #fff;
+  background: linear-gradient(45deg, #880E4F 0%, #F50057 100%);
+  border-radius: 7px;
   @include bp(lg) {
     top: -120px;
     margin: 0 50px 0 auto;
     width: 400px;
   }
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    padding: 0.2em;
-    background: linear-gradient(45deg, #880E4F 0%, #F50057 100%);
-    border-radius: 7px;
-    z-index: 1;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ECEFF1;
-    border-radius: 5px;
-    z-index: 2;
-  }
+}
+
+.pinned-post__top {
+  padding: 0.4em 1em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.pinned-post__title {
+  letter-spacing: 0.08em;
+  text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
 }
 
 .pinned-post__inner {
-  position: relative;
-  z-index: 3;
+  flex: auto;
+  padding: 1em;
+  background: #ECEFF1;
+  border-radius: 5px;
 }
 
-.pinned-post__name {
-  font-size: 2rem;
+.post-preview {}
+
+.post-preview__title {
+  font-size: 1.8rem;
+  line-height: 1.2em;
+  text-decoration: underline;
+  text-decoration-color: #F50057;
+  text-decoration-thickness: .08em;
+  text-underline-offset: 0.1em;
+  transition: color 0.3s;
+  &:hover {
+    color: #F50057;
+  }
+}
+
+.post-preview__date {
+  margin-top: 0.3em;
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: #455A64;
+}
+
+.post-preview__description {
+  position: relative;
+  margin-top: 0.3em;
+  max-height: 150px;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 150px - 120px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+    background: linear-gradient(to top, #ECEFF1 0%, #ECEFF1 15%, transparent 100%);
+  }
 }
 
 .tech-stack-section {
@@ -140,9 +166,7 @@
   justify-content: center;
   margin-top: 1em;
   @include bp(lg) {
-    position: relative;
     max-width: 50%;
-    top: -120px;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
@@ -151,4 +175,27 @@
 
 .tech-stack-section__title {
   margin-bottom: 1em;
+}
+
+.posts-section {
+  margin-top: 3em;
+}
+
+.posts-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.posts-grid__item {
+  flex: none;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  border-radius: 7px;
+  @include bp(md) {
+    width: 50%;
+  }
+  @include bp(lg) {
+    width: 33.333333333333333%;
+  }
 }
