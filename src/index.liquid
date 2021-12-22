@@ -43,7 +43,7 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
   <div class="container">
     <div class="top-section">
       <section class="tech-stack-section">
-        <h2 class="h h_lvl_2 tech-stack-section__title">Стек технологий</h2>
+        <h2 class="h h_lvl_2 section-title">Стек технологий</h2>
         <ul class="tags-list tags-list_color_primary">
           <li class="tags-list__item">HTML</li>
           <li class="tags-list__item">CSS</li>
@@ -93,10 +93,10 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
         </div>
       </section>
     </div>
-    <section class="posts-section">
-      <h2 class="h h_lvl_1 posts-section__title">Заметки</h2>
-      <div class="posts-section__tags tags-list_color_grey">
-        <div class="tags-list">
+    <section class="main-page-section">
+      <h2 class="h h_lvl_1 section-title">Заметки</h2>
+      <div class="main-page-section__tags">
+        <div class="tags-list tags-list_color_grey">
           <a class="tags-list__item" href="#">Верстка</a>
           <a class="tags-list__item" href="#">CSS</a>
           <a class="tags-list__item" href="#">React</a>
@@ -106,25 +106,55 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
         </div>
       </div>
       <div class="posts-grid">
-        <div class="post-preview posts-grid__item">
-          <a href="#" class="post-preview__title">Практика TypeScript. Generics.</a>
+        <a class="post-preview posts-grid__item" href="#">
+          <div class="post-preview__title">Практика TypeScript. Generics.</div>
           <div class="post-preview__date">01.10.2021</div>
           <div class="post-preview__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam deleniti dolor, enim explicabo ipsam nemo saepe tempora vel. Consectetur, consequatur consequuntur fuga iusto minima officia rerum sit ullam voluptas voluptatum.</div>
-        </div>
-        <div class="post-preview posts-grid__item">
-          <a href="#" class="post-preview__title">Описание состояний интерфейса с помощью TypeScript</a>
+        </a>
+        <a class="post-preview posts-grid__item" href="#">
+          <div class="post-preview__title">Описание состояний интерфейса с помощью TypeScript</div>
           <div class="post-preview__date">01.10.2021</div>
           <div class="post-preview__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam deleniti dolor, enim explicabo ipsam nemo saepe tempora vel. Consectetur, consequatur consequuntur fuga iusto minima officia rerum sit ullam voluptas voluptatum.</div>
-        </div>
-        <div class="post-preview posts-grid__item">
-          <a href="#" class="post-preview__title">Создание библиотеки на TypeScript.</a>
+        </a>
+        <a class="post-preview posts-grid__item" href="#">
+          <div class="post-preview__title">Создание библиотеки на TypeScript.</div>
           <div class="post-preview__date">01.10.2021</div>
           <div class="post-preview__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam deleniti dolor.</div>
-        </div>
+        </a>
       </div>
-      <div class="posts-section__footer">
+      <div class="main-page-section__show-more">
         <a class="button button_color_primary button_size_md button_with-shadow" href="#">
           <span class="button__inner">Все заметки</span>
+        </a>
+      </div>
+    </section>
+    <section class="main-page-section">
+      <h2 class="h h_lvl_1 section-title">Путешествую</h2>
+      <div class="posts-grid">
+        <a class="post-preview posts-grid__item" href="#">
+          <div class="post-preview__picture">
+            <img src="https://via.placeholder.com/1400x900" alt="Alt text" class="image">
+          </div>
+          <div class="post-preview__title">Татарстан (Казань и Болгар)</div>
+          <div class="post-preview__date">Сентябрь 2021</div>
+        </a>
+        <a class="post-preview posts-grid__item" href="#">
+          <div class="post-preview__picture">
+            <img src="https://via.placeholder.com/1400x900" alt="Alt text" class="image">
+          </div>          <div class="post-preview__title">Путешествие к Деду Морозу</div>
+          <div class="post-preview__date">Ноябрь 2021</div>
+        </a>
+        <a class="post-preview posts-grid__item" href="#">
+          <div class="post-preview__picture">
+            <img src="https://via.placeholder.com/1400x900" alt="Alt text" class="image">
+          </div>
+          <div class="post-preview__title">10 дней в раю (Доминикана)</div>
+          <div class="post-preview__date">Март 2020</div>
+        </a>
+      </div>
+      <div class="main-page-section__show-more">
+        <a class="button button_color_primary button_size_md button_with-shadow" href="#">
+          <span class="button__inner">Все поездки</span>
         </a>
       </div>
     </section>

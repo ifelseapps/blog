@@ -76,9 +76,9 @@ ul {
 .h {
   margin: 0;
   line-height: 1.2;
+  font-family: 'Helvetica Neue', sans-serif;
   font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   &_lvl {
     &_1 {
       font-size: var(--h1-size);
@@ -114,7 +114,7 @@ ul {
   &::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -237,4 +237,10 @@ ul {
   height: 1em;
   margin-right: 0.4em;
   fill: #FFD600;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
