@@ -242,3 +242,30 @@
     width: 33.333333333333333%;
   }
 }
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5em;
+}
+
+.services__column {
+  flex: none;
+  width: 100%;
+  padding: 0 0.5em;
+  box-sizing: border-box;
+  @include bp(lg) {
+    width: 50%;
+  }
+  &:first-child ul {
+    margin-bottom: 0.6em;
+    @include bp(lg) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.services ul {
+  padding: 0;
+  margin: 0;
+}
