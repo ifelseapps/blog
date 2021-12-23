@@ -25,10 +25,20 @@
   {% if page.url == '/' %}
     {{ content |  safe }}
   {% else %}
-    <div class="page container">
+    <div class="page">
       {% include header.liquid %}
-      <main class="page__content">
-        {{ content |  safe }}
+      <main>
+        <div class="page-title">
+          <div class="page__title container">
+            <h1 class="h h_lvl_1 page-title__title">{{ title }}</h1>
+          </div>
+          <div class="container">
+            <div class="page-description page-title__description">
+              {{ description }}
+            </div>
+          </div>
+        </div>
+        <div class="container page__content">{{ content |  safe }}</div>
       </main>
       {% include footer.liquid %}
     </div>

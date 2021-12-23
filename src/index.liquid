@@ -12,18 +12,13 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
       </div>
     </div>
     <header class="main-banner">
-      <nav class="menu main-banner__menu container">
-        <a href="#" class="menu__item">Обо мне</a>
-        <a href="#" class="menu__item">Проекты</a>
-        <a href="#" class="menu__item">Заметки</a>
-        <a href="#" class="menu__item">Путешествия</a>
-        <a href="#" class="menu__item">Контакты</a>
-      </nav>
+      <div class="main-banner__menu container">
+        {% include menu.liquid %}
+      </div>
       <div class="main-banner__inner container">
         <div class="main-banner__info">
-          <div class="name main-banner__title">
-            <div class="name__part">Максим</div>
-            <div class="name__part">Павлов</div>
+          <div class="main-banner__title">
+            {% include name.liquid %}
           </div>
           <div class="main-banner__preview-text">
             Привет! Я — senior frontend engineer. Разрабатываю интерфейсы, которыми пользуются тысячи людей,
@@ -199,34 +194,5 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
       </section>
     </div>
   </div>
-  <footer class="footer">
-    <div class="container">
-      <nav class="menu footer__menu">
-        <a href="#" class="menu__item">Обо мне</a>
-        <a href="#" class="menu__item">Проекты</a>
-        <a href="#" class="menu__item">Заметки</a>
-        <a href="#" class="menu__item">Путешествия</a>
-        <a href="#" class="menu__item">Контакты</a>
-      </nav>
-      <div class="footer__bottom">
-        <div class="footer-copyright footer__copyright">
-          <p class="footer-copyright__line">&copy;&nbsp;2018&nbsp;&mdash;&nbsp;2022 <a href="#">Максим Павлов</a>. Все права защищены. Перепечатка материалов разрешается только с согласия автора.</p>
-          <p class="footer-copyright__line">Сайт построен с помощью <a href="#">Eleventy</a> и размещен в <a href="#">Netlify</a>.</p>
-        </div>
-        <div class="footer__subscribe">
-          <form id="subscribe-form" class="subscribe-form">
-            <label class="subscribe-form__inner">
-              <span class="subscribe-form__label">Подписаться на рассылку</span>
-              <span class="subscribe-form__field">
-                <input name="email" type="text" class="subscribe-form__input">
-                <button class="button button_color_white subscribe-form__button" type="submit">
-                  <span class="button__inner">Подписаться</span>
-                </button>
-              </span>
-            </label>
-          </form>
-        </div>
-      </div>
-    </div>
-  </footer>
+  {% include footer.liquid %}
 </div>
