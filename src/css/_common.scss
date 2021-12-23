@@ -103,7 +103,11 @@ ul {
 
 .name__part {
   &:first-letter {
-    color: #E91E63;
+    background: linear-gradient(-45deg, #880E4F 33%, #F50057 66%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #880E4F;
+    user-select: none;
   }
   &:first-child {
     margin-right: 0.2em;
@@ -290,4 +294,13 @@ ul {
 .important-block ul {
   margin: 0;
   padding: 0;
+}
+
+.line {
+  width: 10%;
+  height: 2px;
+  margin: 3em auto;
+  border: none;
+  background: linear-gradient(to right, #880E4F 33%, #F50057 66%)
+
 }
