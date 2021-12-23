@@ -1,3 +1,10 @@
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
+}
+
 .container {
   min-width: 320px;
   padding: 0 1em;
@@ -25,5 +32,87 @@
   &:hover {
     color: #F06292;
     background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.footer {
+  padding: 1.5em 0 1em;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  background: #212121;
+  color: #fff;
+}
+
+.footer__menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5em;
+  font-size: 0.85rem;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  @include bp(lg) {
+    flex-direction: row;
+    margin: 0 -1em;
+  }
+}
+
+.footer__copyright {
+  @include bp(lg) {
+    padding: 0 1em;
+  }
+}
+
+.footer__subscribe {
+  margin-bottom: 1em;
+  @include bp(lg) {
+    margin-left: auto;
+    margin-bottom: 0;
+    padding: 0 1em;
+  }
+}
+
+.footer-copyright {
+  font-size: 0.6rem;
+  line-height: 1.3em;
+  letter-spacing: 0.02em;
+}
+
+.footer-copyright__line {
+  margin: 0 0 0.3em;
+}
+
+.subscribe-form {
+  font-size: 0.6rem;
+  line-height: 1.3em;
+  letter-spacing: 0.02em;
+}
+
+.subscribe-form__label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+.subscribe-form__field {
+  display: inline-flex;
+  padding: 0.3em;
+  border-radius: 9px;
+  background: rgba(#fff, 0.1);
+  &:focus-within {
+    box-shadow: 0 0 0 2px #F50057;
+  }
+}
+
+.subscribe-form__input {
+  margin: 0;
+  padding: 0 0.5em 0 0.2em;
+  border: none;
+  background: none;
+  color: #fff;
+  &:focus {
+    outline: 0;
   }
 }
