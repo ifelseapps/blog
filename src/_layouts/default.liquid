@@ -32,13 +32,15 @@
           <div class="page__title container">
             <h1 class="h h_lvl_1 page-title__title">{{ title }}</h1>
           </div>
-          <div class="container">
-            <div class="page-description page-title__description">
-              {{ description }}
+          {% if preview_text %}
+            <div class="container">
+              <div class="page-description page-title__description">
+                {{ preview_text }}
+              </div>
             </div>
-          </div>
+          {% endif %}
         </div>
-        <div class="container page__content">{{ content |  safe }}</div>
+        <div class="container page__content">{{ content | safe }}</div>
       </main>
       {% include footer.liquid %}
     </div>
