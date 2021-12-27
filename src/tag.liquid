@@ -6,11 +6,13 @@ pagination:
   alias: tag
   filter:
     - post
-permalink: /tags/{{ tag }}/
+permalink: /posts/{{ tag }}/
 eleventyComputed:
   title: "{{ tag | capitalize }}"
 ---
 
 {% assign posts = collections[tag] | reverse %}
-{% include tags.liquid %}
+<div class="page__tags">
+  {% include tags.liquid %}
+</div>
 {% include posts.liquid %}

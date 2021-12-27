@@ -5,5 +5,7 @@ description: Максим Павлов — senior frontend engineer
 keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html, angular, react
 ---
 {% assign posts = collections.post |  reverse %}
-{% include tags.liquid %}
+<div class="page__tags">
+  {% include tags.liquid %}
+</div>
 {% include posts.liquid %}
