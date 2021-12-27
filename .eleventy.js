@@ -2,6 +2,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const Image = require('@11ty/eleventy-img');
 const { format } = require('date-fns');
+const ruLocale = require('date-fns/locale/ru');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 
@@ -13,7 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPassthroughCopy('src/css/fonts');
-  eleventyConfig.addPassthroughCopy('src/images');
+  eleventyConfig.addPassthroughCopy('src/**/*.jpg');
   eleventyConfig.addPassthroughCopy('src/scripts');
 
   const markdownItOptions = {
@@ -47,6 +48,8 @@ module.exports = function (eleventyConfig) {
             case 'nav':
             case 'post':
             case 'posts':
+            case 'travel':
+            case 'travels':
               return false;
           }
 
@@ -69,7 +72,14 @@ module.exports = function (eleventyConfig) {
     return format(dateObj, 'dd.MM.yyyy');
   });
 
-  eleventyConfig.addFilter('dateISO', dateObj => {
+  eleventyConfig.addFilter('date_month_year', dateObj => {
+    if (!dateObj) {
+      return '';
+    }
+    return format(dateObj, 'LLLL yyyy', { locale: ruLocale });
+  });
+
+  eleventyConfig.addFilter('date_iso', dateObj => {
     return format(dateObj, 'yyyy-MM-dd');
   });
 

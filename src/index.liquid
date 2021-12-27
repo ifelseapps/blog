@@ -7,9 +7,7 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
 <div class="page">
   <div>
     <div class="top-banner">
-      <div class="container">
-        На сайте появился новый раздел &mdash; <a href="#" class="link-solid"><span class="link-solid__inner">путешествия</span></a>.
-      </div>
+      <div class="container">{% include important.liquid %}</div>
     </div>
     <header class="main-banner">
       <div class="main-banner__menu container">
@@ -142,30 +140,10 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
       </section>
       <section class="main-page-section">
         <h2 class="h h_lvl_1 section-title">Путешествую</h2>
-        <div class="posts-grid">
-          <a class="post-preview posts-grid__item" href="#">
-            <div class="post-preview__picture">
-              <img src="https://via.placeholder.com/1400x900" alt="Alt text" class="image">
-            </div>
-            <div class="post-preview__title">Татарстан (Казань и Болгар)</div>
-            <div class="post-preview__date">Сентябрь 2021</div>
-          </a>
-          <a class="post-preview posts-grid__item" href="#">
-            <div class="post-preview__picture">
-              <img src="https://via.placeholder.com/1400x900" alt="Alt text" class="image">
-            </div>          <div class="post-preview__title">Путешествие к Деду Морозу</div>
-            <div class="post-preview__date">Ноябрь 2021</div>
-          </a>
-          <a class="post-preview posts-grid__item" href="#">
-            <div class="post-preview__picture">
-              <img src="https://via.placeholder.com/1400x900" alt="Alt text" class="image">
-            </div>
-            <div class="post-preview__title">10 дней в раю (Доминикана)</div>
-            <div class="post-preview__date">Март 2020</div>
-          </a>
-        </div>
+        {% assign travels = collections.travel | reverse | slice: 0, 3 %}
+        {% include travels.liquid %}
         <div class="main-page-section__show-more">
-          <a class="button button_color_primary button_size_md button_with-shadow" href="#">
+          <a class="button button_color_primary button_size_md button_with-shadow" href="/travels/">
             <span class="button__inner">Все поездки</span>
           </a>
         </div>

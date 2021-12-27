@@ -1,0 +1,12 @@
+<div class="posts-grid">
+  {% for post in travels %}
+    <a class="post-preview posts-grid__item" href="{{ post.url }}">
+      <div class="post-preview__picture">
+        {% capture preview_url %}{{ post.url }}preview.jpg{% endcapture %}
+        <img src="{{ preview_url }}" alt="Alt text" class="image">
+      </div>
+      <div class="post-preview__title">{{ post.data.title }}</div>
+      <div class="post-preview__date">{{ post.date | date_month_year | capitalize }}</div>
+    </a>
+  {% endfor %}
+</div>
