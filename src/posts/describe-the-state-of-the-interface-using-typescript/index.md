@@ -87,6 +87,6 @@ type UsersListState = State<IUser[]>;
 Глядя на такой код, можно сразу понять какое состояние описывается. Этот код сам себя документирует. Кроме того, благодаря этому подходу,
 вы получаете отличные подсказки в вашей IDE.
 
-{% Image './src/posts/describe-the-state-of-the-interface-using-typescript/example1.jpg', 'Пример подсказок в IDE' %}
+{% Image './src/posts/describe-the-state-of-the-interface-using-typescript/example1.jpg', 'Пример подсказок в IDE', 'В <code>state.status</code> хранится не просто строка, а ограниченный набор значений, которые мы описали выше.' %}
 
-{% Image './src/posts/describe-the-state-of-the-interface-using-typescript/example2.jpg', 'Пример подсказок в IDE' %}
+{% Image './src/posts/describe-the-state-of-the-interface-using-typescript/example2.jpg', 'Пример подсказок в IDE', 'TypeScript подсказывает IDE, что при <code>status === "success"</code>, в <code>state</code> доступны только поля <code>status</code> и <code>data</code>.' %}

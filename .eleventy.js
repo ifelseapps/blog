@@ -94,7 +94,19 @@ module.exports = function (eleventyConfig) {
       },
       render: function (scope, hash) {
         const str = liquidEngine.evalValue(this.str, scope);
-        return Promise.resolve(`<div class="note-wrapper"><p class="note">${str}</p></div>`);
+        return Promise.resolve(`<div class="important-block"><div class="important-block__inner">${str}</div></div>`);
+      }
+    };
+  });
+
+  eleventyConfig.addLiquidTag('key_content', function (liquidEngine) {
+    return {
+      parse: function (tagToken, remainingTokens) {
+        this.str = tagToken.args;
+      },
+      render: function (scope, hash) {
+        const str = liquidEngine.evalValue(this.str, scope);
+        return Promise.resolve(`<div class="key-content">${str}</div>`);
       }
     };
   });
@@ -111,7 +123,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidFilter('absoluteUrl', pluginRss.absoluteUrl);
   eleventyConfig.addLiquidFilter('getNewestCollectionItemDate', pluginRss.getNewestCollectionItemDate);
 
-  eleventyConfig.addLiquidShortcode('Image', async function (src, alt) {
+  eleventyConfig.addLiquidShortcode('Image', async function (src, alt, caption) {
     if (!alt) {
       throw new Error(`Missing \`alt\` on myImage from: ${src}`);
     }
@@ -146,7 +158,7 @@ module.exports = function (eleventyConfig) {
       srcset="${srcset['jpeg']}"
     ></a>`;
 
-    return `<div class="post-page__picture"><picture>${source} ${img}</picture></div>`;
+    return `<figure><picture>${source} ${img}</picture>${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
   });
 
   eleventyConfig.addLiquidShortcode('quote', function (quote, author, position, link) {

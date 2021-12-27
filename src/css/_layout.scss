@@ -6,7 +6,7 @@
 }
 
 .page__content {
-  margin: 3em 0;
+  margin: 1.5em 0;
 }
 
 .container {
@@ -60,7 +60,7 @@
 .page-title__title,
 .page-title__description {
   @include bp(lg) {
-    width: 80%;
+    width: 90%;
   }
 }
 

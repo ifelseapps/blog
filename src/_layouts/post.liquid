@@ -2,8 +2,9 @@
 layout: default.liquid
 ---
 
-<article class="post-page">
-  <div class="post-page__content">
-    {{ content | safe }}
+<div class="post-page">
+  <div class="post-page__top">
+    <a href="{{ page.url | split: '/' | slice: 0, 2 | concat: '' |  join: '/' }}">&larr; Вернуться назад</a>
   </div>
-</article>
+  {{ content | safe }}
+</div>

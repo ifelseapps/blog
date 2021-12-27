@@ -1,0 +1,111 @@
+.post-page {
+  line-height: 1.5em;
+  @include bp(lg) {
+    width: 80%;
+  }
+}
+
+.post-page__top {
+  margin-bottom: 1em;
+}
+
+.post-page code:not([class]) {
+  padding: 0.2em 0.4em;
+  background: #FCE4EC;
+  color: #880E4F;
+  border-radius: 5px;
+  font-family: 'Helvetica Neue', sans-serif!important;
+  line-height: 1em;
+  font-size: 0.8em;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.post-page code[class*="language-"],
+.post-page pre[class*="language-"] {
+  font-size: 0.8rem;
+}
+
+.post-page .important-block {
+  margin: 1em auto;
+}
+
+.post-page h1,
+.post-page h2,
+.post-page h3 {
+  margin: 1em 0;
+  line-height: 1;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+
+  .header-anchor {
+    color: #E91E63;
+    display: none;
+  }
+
+  &:hover .header-anchor {
+    display: inline;
+  }
+}
+
+.post-page h1 {
+  font-size: var(--h1-size);
+}
+
+.post-page h2 {
+  font-size: var(--h2-size);
+}
+
+.post-page h3 {
+  font-size: var(--h3-size);
+}
+
+.post-page blockquote {
+  margin: 2em 0;
+  padding: 0 1em;
+  border-left: solid 3px #E91E63;
+  font-family: 'Helvetica Neue', sans-serif;
+
+  footer {
+    font-style: italic;
+  }
+}
+
+.post-page figure {
+  margin: 2em 0;
+  padding: 0;
+
+  picture,
+  a,
+  img {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.post-page figcaption {
+  padding: 0.5em 2em;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.7rem;
+  line-height: 1em;
+}
+
+.key-content {
+  margin: 1em 0;
+  padding: 1em;
+  border-top: solid 5px #E91E63;
+  border-bottom: solid 5px #E91E63;
+  font-size: 1.6rem;
+  line-height: 1.3em;
+  font-style: italic;
+  font-weight: 700;
+  color: #E91E63;
+  @include bp(lg) {
+    width: 80%;
+    margin: 1em auto;
+  }
+}

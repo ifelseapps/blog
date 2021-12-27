@@ -60,13 +60,17 @@ p:not([class]) {
 }
 
 ul:not([class]), ol:not([class]) {
-  padding: 0 1.1em 1em;
-  margin: 2em 0;
+  padding: 0 1.1em;
+  margin: 1em 0;
 
   li {
     margin-left: 10px;
     &:not(:last-child) {
       margin-bottom: 0.6em;
+    }
+
+    ul, ol {
+      margin: 0.5em 0;
     }
   }
 }
