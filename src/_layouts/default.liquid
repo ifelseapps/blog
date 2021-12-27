@@ -30,6 +30,13 @@
       <main>
         <div class="page-title">
           <div class="page__title container">
+            {% assign date = page.date |  date_formatted %}
+            {% if page.url contains '/travels/' %}
+              {% assign date = page.date | date_month_year | capitalize %}
+            {% endif %}
+            {% if date %}
+              <time datetime="{{ page.date |  date_iso }}" class="page-title__date">{{ date }}</time>
+            {% endif %}
             <h1 class="h h_lvl_1 page-title__title">{{ title }}</h1>
           </div>
           {% if preview_text %}
