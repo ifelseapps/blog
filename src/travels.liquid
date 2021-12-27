@@ -3,5 +3,5 @@ layout: default.liquid
 title: Путешествия
 ---
 
-{% assign travels = collections.travel %}
+{% assign travels = collections.travel | reverse %}
 {% include travels.liquid %}
