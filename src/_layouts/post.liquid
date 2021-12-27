@@ -3,29 +3,7 @@ layout: default.liquid
 ---
 
 <article class="post-page">
-  <h1 class="h h_lvl_1">{{ title }}</h1>
-  <div class="post-page__preview">
-    {% if preview_text %}
-      {{ preview_text }}
-    {% endif %}
-  </div>
   <div class="post-page__content">
     {{ content | safe }}
-    <footer class="post-footer post-page__footer">
-      <ul class="post-pagination post-footer__pagination">
-        {%- assign nextPost = collections.post | getNextCollectionItem: page %}
-        <li class="post-pagination__item">
-          {%- if nextPost %}
-            <a class="post-pagination__link" href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
-          {% endif %}
-        </li>
-        {%- assign previousPost = collections.post | getPreviousCollectionItem: page %}
-        <li class="post-pagination__item">
-          {%- if previousPost %}
-            <a class="post-pagination__link" href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
-          {% endif %}
-        </li>
-      </ul>
-    </footer>
   </div>
 </article>

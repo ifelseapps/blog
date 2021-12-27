@@ -9,10 +9,6 @@
   margin: 3em 0;
 }
 
-.page__title {
-  margin-bottom: 0.5em;
-}
-
 .container {
   min-width: 320px;
   padding: 0 1em;
@@ -66,6 +62,10 @@
   @include bp(lg) {
     width: 80%;
   }
+}
+
+.page-title__description {
+  margin-top: 0.5em;
 }
 
 .page-description {

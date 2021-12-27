@@ -1,0 +1,8 @@
+---
+layout: default.liquid
+title: Заметки
+description: Максим Павлов — senior frontend engineer
+keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html, angular, react
+---
+{% assign posts = collections.post |  reverse %}
+{% include posts.liquid %}

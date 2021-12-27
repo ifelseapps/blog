@@ -62,7 +62,7 @@ module.exports = function (eleventyConfig) {
     return [...tagSet].map(t => ({ name: t, count: count[t] }));
   });
 
-  eleventyConfig.addFilter('dateFormatted', dateObj => {
+  eleventyConfig.addFilter('date_formatted', dateObj => {
     if (!dateObj) {
       return '';
     }

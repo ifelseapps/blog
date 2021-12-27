@@ -1,0 +1,6 @@
+<div class="tags-list tags-list_color_grey">
+  {% for tag in collections.tags %}
+    {% capture tag_url %}/tags/{{ tag.name }}/{% endcapture %}
+    <a class="tags-list__item" href="{{ tag_url }}">{{ tag.name | capitalize }} ({{ tag.count }})</a>
+  {% endfor %}
+</div>

@@ -80,48 +80,26 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
             <li class="tags-list__item">Git</li>
           </ul>
         </section>
+        {% assign posts = collections.post | reverse | slice: 0, 3 %}
         <section class="pinned-post">
           <div class="pinned-post__top">
             <h2 class="h h_lvl_3 pinned-post__title">Свежий пост</h2>
           </div>
-          <div class="post-preview pinned-post__inner">
-            <a href="#" class="post-preview__title">Практика TypeScript. Generics.</a>
-            <div class="post-preview__date">01.10.2021</div>
-            <div class="post-preview__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam deleniti dolor, enim explicabo ipsam nemo saepe tempora vel. Consectetur, consequatur consequuntur fuga iusto minima officia rerum sit ullam voluptas voluptatum.</div>
-          </div>
+          <a class="post-preview pinned-post__inner" href="{{ posts[0].url }}">
+            <div class="post-preview__title">{{ posts[0].data.title }}</div>
+            <div class="post-preview__date">{{ posts[0].date | date_formatted }}</div>
+            <div class="post-preview__description">{{ posts[0].data.preview_text }}</div>
+          </a>
         </section>
       </div>
       <section class="main-page-section">
         <h2 class="h h_lvl_1 section-title">Заметки</h2>
         <div class="main-page-section__tags">
-          <div class="tags-list tags-list_color_grey">
-            <a class="tags-list__item" href="#">Верстка</a>
-            <a class="tags-list__item" href="#">CSS</a>
-            <a class="tags-list__item" href="#">React</a>
-            <a class="tags-list__item" href="#">TypeScript</a>
-            <a class="tags-list__item" href="#">Книги</a>
-            <a class="tags-list__item" href="#">Фильмы</a>
-          </div>
+          {% include tags.liquid %}
         </div>
-        <div class="posts-grid">
-          <a class="post-preview posts-grid__item" href="#">
-            <div class="post-preview__title">Практика TypeScript. Generics.</div>
-            <div class="post-preview__date">01.10.2021</div>
-            <div class="post-preview__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam deleniti dolor, enim explicabo ipsam nemo saepe tempora vel. Consectetur, consequatur consequuntur fuga iusto minima officia rerum sit ullam voluptas voluptatum.</div>
-          </a>
-          <a class="post-preview posts-grid__item" href="#">
-            <div class="post-preview__title">Описание состояний интерфейса с помощью TypeScript</div>
-            <div class="post-preview__date">01.10.2021</div>
-            <div class="post-preview__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam deleniti dolor, enim explicabo ipsam nemo saepe tempora vel. Consectetur, consequatur consequuntur fuga iusto minima officia rerum sit ullam voluptas voluptatum.</div>
-          </a>
-          <a class="post-preview posts-grid__item" href="#">
-            <div class="post-preview__title">Создание библиотеки на TypeScript.</div>
-            <div class="post-preview__date">01.10.2021</div>
-            <div class="post-preview__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam deleniti dolor.</div>
-          </a>
-        </div>
+        {% include posts.liquid %}
         <div class="main-page-section__show-more">
-          <a class="button button_color_primary button_size_md button_with-shadow" href="#">
+          <a class="button button_color_primary button_size_md button_with-shadow" href="/posts/">
             <span class="button__inner">Все заметки</span>
           </a>
         </div>
