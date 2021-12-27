@@ -1,6 +1,7 @@
 ---
 title: Создание библиотеки на TypeScript
 date: 2020-04-01
+date_label: 2020-04-01
 tags:
   - typescript
   - webpack

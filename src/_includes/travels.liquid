@@ -6,7 +6,7 @@
         <img src="{{ preview_url }}" alt="Alt text" class="image">
       </div>
       <div class="post-preview__title">{{ post.data.title }}</div>
-      <div class="post-preview__date">{{ post.date | date_month_year | capitalize }}</div>
+      <div class="post-preview__date">{{ post.data.date_label | date_month_year | capitalize }}</div>
     </a>
   {% endfor %}
 </div>

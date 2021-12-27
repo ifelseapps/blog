@@ -2,7 +2,7 @@
   {% for post in posts %}
     <a class="post-preview posts-grid__item" href="{{ post.url }}">
       <div class="post-preview__title">{{ post.data.title }}</div>
-      <div class="post-preview__date">{{ post.date |  date_formatted }}</div>
+      <div class="post-preview__date">{{ post.data.date_label |  date_formatted }}</div>
       {% if post.data.preview_text %}
         <div class="post-preview__description">{{ post.data.preview_text }}</div>
       {% endif %}

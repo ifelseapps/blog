@@ -1,6 +1,7 @@
 ---
 title: Описание состояний интерфейса с помощью TypeScript
 date: 2020-09-07
+date_label: 2020-09-07
 tags:
   - typescript
   - angular
