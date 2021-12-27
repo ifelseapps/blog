@@ -12,4 +12,5 @@ eleventyComputed:
 ---
 
 {% assign posts = collections[tag] | reverse %}
+{% include tags.liquid %}
 {% include posts.liquid %}
