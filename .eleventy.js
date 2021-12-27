@@ -65,6 +65,10 @@ module.exports = function (eleventyConfig) {
     return [...tagSet].map(t => ({ name: t, count: count[t] }));
   });
 
+  eleventyConfig.addLiquidFilter("reverse", (collection) => {
+    return [...collection].reverse();
+  });
+
   eleventyConfig.addFilter('date_formatted', dateObj => {
     if (!dateObj) {
       return '';
