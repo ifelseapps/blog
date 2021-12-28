@@ -5,6 +5,7 @@ const { format } = require('date-fns');
 const ruLocale = require('date-fns/locale/ru');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const path = require('path');
 
 
 module.exports = function (eleventyConfig) {
@@ -14,7 +15,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPassthroughCopy('src/css/fonts');
-  eleventyConfig.addPassthroughCopy('src/**/*.jpg');
+  eleventyConfig.addPassthroughCopy('src/**/*.(jpg|svg|png|gif)');
   eleventyConfig.addPassthroughCopy('src/scripts');
 
   const markdownItOptions = {
@@ -133,6 +134,11 @@ module.exports = function (eleventyConfig) {
       formats: ['jpeg', 'webp'],
       urlPath: '/images/',
       outputDir: './_site/images/',
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
+        return `${name}-${width}w.${format}`;
+      }
     });
 
     const lowestSrc = stats['jpeg'][0];
