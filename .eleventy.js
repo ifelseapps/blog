@@ -150,12 +150,12 @@ module.exports = function (eleventyConfig) {
         [format]: stats[format].reduce(
           (_acc, curr) => `${_acc} ${curr.srcset} ,`,
           ''
-        ),
+        ).slice(0, -1),
       }),
       {}
     );
 
-    const source = `<source type="image/webp" data-srcset="${srcset['webp']}" >`;
+    const source = `<source type="image/webp" srcset="${srcset['webp']}" sizes='(min-width: 1024px) 1024px, 100vw'>`;
 
     const img = `<a href="${highSrc.url}"><img
       alt="${alt}"
@@ -192,12 +192,12 @@ module.exports = function (eleventyConfig) {
         [format]: stats[format].reduce(
           (_acc, curr) => `${_acc} ${curr.srcset} ,`,
           ''
-        ),
+        ).slice(0, -1),
       }),
       {}
     );
 
-    const source = `<source type="image/webp" data-srcset="${srcset['webp']}" >`;
+    const source = `<source type="image/webp" srcset="${srcset['webp']}" sizes='(min-width: 1024px) 1024px, 100vw'>`;
 
     const img = `<img
       alt="${alt}"
