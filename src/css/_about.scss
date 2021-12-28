@@ -1,0 +1,86 @@
+.about-page {}
+
+.about-page__top {
+  @include bp(lg) {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2em;
+  }
+}
+
+.about-page__photo {
+  flex: none;
+  @include bp(lg) {
+    width: 40%;
+  }
+}
+
+.about-page__photo figure {
+  margin: 0;
+}
+
+.about-page__preview-text {
+  padding: 2em 0 0;
+  @include bp(lg) {
+    padding: 2em;
+  }
+}
+
+.about-page__preview-text .h {
+  margin-top: 0;
+}
+
+.about-page__facts {
+  margin-top: 2em;
+  @include bp(lg) {
+    width: 80%;
+    margin: 2em auto;
+  }
+}
+
+.timeline {
+  margin: 0;
+  padding: 1em 0;
+  list-style: none;
+  border-left: solid 6px #BDBDBD;
+  font-size: 0.9rem;
+}
+
+.timeline__item {
+  position: relative;
+  padding: 1em 1em 1em 3em;
+  transition: background-color 0.3s;
+  &:not(:last-child) {
+    margin-bottom: 5em;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1em;
+    left: -3px;
+    width: 1.4em;
+    height: 1.4em;
+    transform: translateX(-50%);
+    background: #F50057;
+    border-radius: 100%;
+  }
+  &:hover {
+    background-color: #CFD8DC;
+  }
+}
+
+.timeline__title {
+  font-weight: 100;
+}
+
+.timeline__company {
+  font-weight: 700;
+}
+
+.timeline__details ul {
+  list-style: disc;
+}
+
+.timeline__technologies {
+  justify-content: flex-start;
+}

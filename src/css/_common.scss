@@ -83,19 +83,19 @@ ul {
 
 .h {
   margin: 0;
-  line-height: 1;
+  line-height: 1.2em;
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: 900;
   letter-spacing: 0.02em;
   &_lvl {
     &_1 {
-      font-size: var(--h1-size);
+      font-size: var(--h1-size)!important;
     }
     &_2 {
-      font-size: var(--h2-size);
+      font-size: var(--h2-size)!important;
     }
     &_3 {
-      font-size: var(--h3-size);
+      font-size: var(--h3-size)!important;
     }
   }
 }

@@ -5,6 +5,195 @@ preview_text: На этой странице я рассказываю о себ
 keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html, angular, react
 ---
 
-<div class="post-page">
-  {% image './src/images/photo_primary.jpg', 'Мое фото' %}
+<div class="post-page about-page">
+  <div class="about-page__top">
+    <div class="about-page__photo">
+      {% image './src/images/photo_primary.jpg', 'Мое фото' %}
+    </div>
+    <div class="about-page__preview-text">
+      <h2 class="h h_lvl_2">Привет!<br>Я — Максим, приятно познакомиться&nbsp;:)</h2>
+      <p>Я — frontend-разработчик (хотя, я предпочитаю называть свою профессию <em>ui engineer</em>) с опытом более 6&nbsp; лет.
+        Моя работа находится на пересечении программирования и дизайна. Я создаю интерфейсы для веб-приложений.
+      </p>
+    </div>
+  </div>
+  <p>
+    Мне нравится современный веб, такой каким он стал. Я начал заниматься вебом в начале 2000-х и мне есть с чем сравнить.
+    Я считаю веб отличной платформой для построения приложений, т.к. это позволяет мгновенно доставлять фичи пользователю,
+    а также дает ему доступ к приложению 24/7 из любой точки Земли.
+  </p>
+
+  <section class="about-page__facts">
+    <h2 class="h h_lvl_3">Несколько случайных фактов обо мне:</h2>
+    <ul>
+      <li>Я очень люблю <a href="/travels/">путешествовать</a>, могу спонтанно собраться и куда-нибудь поехать вместе с семьей</li>
+      <li>В юности я занимался подводной охотой</li>
+      <li>Я учу иврит и моя мечта — посетить город-герой Иерусалим</li>
+    </ul>
+  </section>
+  {% line %}
+  <section>
+    <h2 class="visually-hidden">Стандарты качества</h2>
+    <p>
+      В своей работе я руководствуюсь не формальными критериями, а ориентируюсь на конечного пользователя.
+      Поэтому у меня есть свои <strong>стандарты качества</strong>:
+    </p>
+    <ul>
+      <li>Код должен <strong>соответствовать стандартам</strong>.</li>
+      <li>Интерфейс должен быть <strong>оптимизирован для мобильных устройств</strong>. В своей работе я предпочитаю использовать <em>mobile first</em> подход.</li>
+      <li>Интерфейс должен быть <strong>отзывчивым</strong> и корректно отображаться даже вне «контрольных точек».</li>
+      <li>Интерфейс должен <strong>корректно отображаться в популярных браузерах</strong>, а также на разных платформах. Но это не значит,
+        что интерфейс должен выглядеть одинаково в современных и старых браузерах. Если Вам важен <em>pixel perfect</em>,
+        то нам не стоит работать вместе.</li>
+      <li>Интерфейс должен быть <strong>доступен</strong> с помощью <em>ассистивных технологий (screen readers)</em>.</li>
+      <li>Интерфейс должен <strong>работать быстро</strong>.</li>
+    </ul>
+  </section>
+  {% line %}
+  <section>
+    <h2 class="h h_lvl_2">Стек технологий</h2>
+    {% include tech-stack.liquid %}
+  </section>
+  <section>
+    <h2 class="h h_lvl_2">Опыт</h2>
+    <ul class="timeline">
+      <li class="timeline__item">
+        <div class="timeline__title">Март 2021 — н.в.</div>
+        <div class="timeline__company">ООО «МТС Диджитал», senior frontend engineer</div>
+        <div class="timeline__details">
+          <p>
+            Я разрабатываю интерфейсы, которыми пользуются тысячи людей (упоминание конкретного продукта запрещено NDA).
+          </p>
+          <ul>
+            <li>Принял участие в масштабном редизайне проекта</li>
+            <li>Перевел проект на TypeScript</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">TypeScript</li>
+            <li class="tags-list__item">Next.js</li>
+            <li class="tags-list__item">React</li>
+            <li class="tags-list__item">Redux</li>
+            <li class="tags-list__item">Redux-toolkit</li>
+            <li class="tags-list__item">Styled-components</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__title">Декабрь 2020 — март 2021</div>
+        <div class="timeline__company">ООО «Софт дивижн», senior frontend engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Принял участие в разработке системы управления безопасностью</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">Vue</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__title">Май 2019 — октябрь 2020</div>
+        <div class="timeline__company">ООО «Норд софт», senior frontend engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Разработал несколько автоматизированных рабочих мест для медицинской информационной системы</li>
+            <li>Разработал фреймворк на базе react для построения интерфейсов на основе вкладок и помог внедрить его в несколько проектов</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">TypeScript</li>
+            <li class="tags-list__item">React</li>
+            <li class="tags-list__item">Redux</li>
+            <li class="tags-list__item">Redux-saga</li>
+            <li class="tags-list__item">Emotion</li>
+            <li class="tags-list__item">Antd</li>
+            <li class="tags-list__item">Sass</li>
+            <li class="tags-list__item">Angular</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__title">Май 2018 — май 2019</div>
+        <div class="timeline__company">ООО «ФогСофт», frontend engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Дорабатывал и поддерживал клиентскую часть нескольких проектов</li>
+            <li>Принял участие в редизайне одного из проектов, декомпозировал интерфейс на переиспользуемые блоки</li>
+            <li>Участвовал в разработке дизайн-системы</li>
+            <li>Выполнял функцию ментора для начинающих разработчиков</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">TypeScript</li>
+            <li class="tags-list__item">React</li>
+            <li class="tags-list__item">Redux</li>
+            <li class="tags-list__item">jQuery</li>
+            <li class="tags-list__item">Sass</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__title">Ноябрь 2016 — апрель 2018</div>
+        <div class="timeline__company">ООО «Ареал идея», software engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Принял участие в разработке crm-системы для заказчика из финансового сектора в качестве full Stack разработчика</li>
+            <li>Реализовал несколько переиспользуемых компонентов интерфейса в виде jquery-плагинов</li>
+            <li>Разработал ui-киты для проектов, из которых бэкенд-разработчики собирали интерфейсы</li>
+            <li>Выполнял функцию ментора для начинающих разработчиков</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">PHP</li>
+            <li class="tags-list__item">MySQL</li>
+            <li class="tags-list__item">1С-Битрикс</li>
+            <li class="tags-list__item">TypeScript</li>
+            <li class="tags-list__item">jQuery</li>
+            <li class="tags-list__item">React</li>
+            <li class="tags-list__item">Sass</li>
+            <li class="tags-list__item">БЭМ</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__title">Май 2015 — ноябрь 2016</div>
+        <div class="timeline__company">ООО «ТимПрофи», software engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Принял участие в разработке и поддержке нескольких крупных интернет-магазинов</li>
+            <li>Разработал модуль для покупки билетов в театр, а также интерфейс кассира и интегрировал их с Интернет-магазином</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">PHP</li>
+            <li class="tags-list__item">MySQL</li>
+            <li class="tags-list__item">1С-Битрикс</li>
+            <li class="tags-list__item">jQuery</li>
+            <li class="tags-list__item">Sass</li>
+            <li class="tags-list__item">БЭМ</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__title">Май 2014 — апрель 2015</div>
+        <div class="timeline__company">IDID, программист 1С-Битрикс</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Принял участие в разработке нескольких Интернет-магазинов на 1С-Битрикс</li>
+            <li>Выполнял функции менеджера проектов, а позднее стал директором Ярославского филиала</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">PHP</li>
+            <li class="tags-list__item">MySQL</li>
+            <li class="tags-list__item">1С-Битрикс</li>
+            <li class="tags-list__item">jQuery</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__title">До мая 2014</div>
+        <div class="timeline__company">Project manager</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Управлял проектами (создание сайтов, интернет-реклама)</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
 </div>
