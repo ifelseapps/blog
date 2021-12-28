@@ -131,7 +131,7 @@ module.exports = function (eleventyConfig) {
 
     const stats = await Image(src, {
       widths: [320, 640, 960, 1200, 1800],
-      formats: ['jpeg', 'webp'],
+      formats: ['jpeg'],
       urlPath: '/images/',
       outputDir: './_site/images/',
       filenameFormat: function (id, src, width, format, options) {
@@ -155,7 +155,6 @@ module.exports = function (eleventyConfig) {
       {}
     );
 
-    const source = `<source type="image/webp" srcset="${srcset['webp']}" sizes='(min-width: 1024px) 1024px, 100vw'>`;
 
     const img = `<a href="${highSrc.url}"><img
       alt="${alt}"
@@ -164,7 +163,7 @@ module.exports = function (eleventyConfig) {
       srcset="${srcset['jpeg']}"
     ></a>`;
 
-    return `<figure><picture>${source} ${img}</picture>${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+    return `<figure>${img}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
   });
 
   eleventyConfig.addLiquidShortcode('image_preview', async function (src, alt) {
@@ -174,7 +173,7 @@ module.exports = function (eleventyConfig) {
 
     const stats = await Image(src, {
       widths: [320, 640, 960, 1200],
-      formats: ['jpeg', 'webp'],
+      formats: ['jpeg'],
       urlPath: '/images/',
       outputDir: './_site/images/',
       filenameFormat: function (id, src, width, format, options) {
@@ -197,16 +196,12 @@ module.exports = function (eleventyConfig) {
       {}
     );
 
-    const source = `<source type="image/webp" srcset="${srcset['webp']}" sizes='(min-width: 1024px) 1024px, 100vw'>`;
-
-    const img = `<img
+    return `<img
       alt="${alt}"
       src="${lowestSrc.url}"
       sizes='(min-width: 1024px) 1024px, 100vw'
       srcset="${srcset['jpeg']}"
     >`;
-
-    return `<picture>${source} ${img}</picture>`;
   });
 
   eleventyConfig.addLiquidShortcode('quote', function (quote, author, position, link) {

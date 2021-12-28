@@ -38,6 +38,14 @@
   }
 }
 
+.about-page__technology-stack {
+  margin-bottom: 4em;
+}
+
+.about-page__technology-stack .tags-list {
+  justify-content: flex-start;
+}
+
 .timeline {
   margin: 0;
   padding: 1em 0;
