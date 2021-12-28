@@ -2,8 +2,8 @@
   {% for post in travels %}
     <a class="post-preview posts-grid__item" href="{{ post.url }}">
       <div class="post-preview__picture">
-        {% capture preview_url %}{{ post.url }}{{ post.data.preview_prefix }}-preview.jpg{% endcapture %}
-        <img src="{{ preview_url }}" alt="Alt text" class="image">
+        {% capture preview_url %}./src{{ post.url }}{{ post.data.preview_prefix }}-preview.jpg{% endcapture %}
+        {% image_preview preview_url, post.data.title %}
       </div>
       <div class="post-preview__title">{{ post.data.title }}</div>
       <div class="post-preview__date">{{ post.data.date_label | date_month_year | capitalize }}</div>

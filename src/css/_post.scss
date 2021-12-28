@@ -82,7 +82,7 @@
   }
 
   img {
-    width: 100%;
+    width: 900px;
     max-width: 100%;
   }
 }
@@ -104,8 +104,9 @@
   font-style: italic;
   font-weight: 700;
   color: #E91E63;
+  box-sizing: border-box;
   @include bp(lg) {
-    width: 80%;
-    margin: 1em auto;
+    width: 900px;
+    margin: 1em 0;
   }
 }

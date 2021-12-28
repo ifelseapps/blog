@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPassthroughCopy('src/css/fonts');
-  eleventyConfig.addPassthroughCopy('src/**/*.(jpg|svg|png|gif)');
+  eleventyConfig.addPassthroughCopy('src/images/template/*.(jpg|svg|png|gif)');
   eleventyConfig.addPassthroughCopy('src/scripts');
 
   const markdownItOptions = {
@@ -124,13 +124,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidFilter('absoluteUrl', pluginRss.absoluteUrl);
   eleventyConfig.addLiquidFilter('getNewestCollectionItemDate', pluginRss.getNewestCollectionItemDate);
 
-  eleventyConfig.addLiquidShortcode('Image', async function (src, alt, caption) {
+  eleventyConfig.addLiquidShortcode('image', async function (src, alt, caption) {
     if (!alt) {
       throw new Error(`Missing \`alt\` on myImage from: ${src}`);
     }
 
     const stats = await Image(src, {
-      widths: [320, 640, 960, 1200, 1800, 2400],
+      widths: [320, 640, 960, 1200, 1800],
       formats: ['jpeg', 'webp'],
       urlPath: '/images/',
       outputDir: './_site/images/',
@@ -165,6 +165,48 @@ module.exports = function (eleventyConfig) {
     ></a>`;
 
     return `<figure><picture>${source} ${img}</picture>${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+  });
+
+  eleventyConfig.addLiquidShortcode('image_preview', async function (src, alt) {
+    if (!alt) {
+      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+    }
+
+    const stats = await Image(src, {
+      widths: [320, 640, 960, 1200],
+      formats: ['jpeg', 'webp'],
+      urlPath: '/images/',
+      outputDir: './_site/images/',
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
+        return `${name}-${width}w.${format}`;
+      }
+    });
+
+    const lowestSrc = stats['jpeg'][0];
+
+    const srcset = Object.keys(stats).reduce(
+      (acc, format) => ({
+        ...acc,
+        [format]: stats[format].reduce(
+          (_acc, curr) => `${_acc} ${curr.srcset} ,`,
+          ''
+        ),
+      }),
+      {}
+    );
+
+    const source = `<source type="image/webp" data-srcset="${srcset['webp']}" >`;
+
+    const img = `<img
+      alt="${alt}"
+      src="${lowestSrc.url}"
+      sizes='(min-width: 1024px) 1024px, 100vw'
+      srcset="${srcset['jpeg']}"
+    >`;
+
+    return `<picture>${source} ${img}</picture>`;
   });
 
   eleventyConfig.addLiquidShortcode('quote', function (quote, author, position, link) {

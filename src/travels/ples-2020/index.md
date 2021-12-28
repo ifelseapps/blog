@@ -9,15 +9,15 @@ preview_prefix: ples
 
 А кроме созерцания пейзажей, на мой взгляд, там делать нечего. Ну только если посетить дом-музей Левитана.
 
-{% Image './src/travels/ples-2020/ples-1.jpg', 'Осенний лес', 'Красота началась уже по дороге' %}
-{% Image './src/travels/ples-2020/ples-2.jpg', 'Вид сверху', '' %}
-{% Image './src/travels/ples-2020/ples-3.jpg', 'Покупаем чувильку', '' %}
-{% Image './src/travels/ples-2020/ples-4.jpg', 'Тестируем чувильку', '' %}
-{% Image './src/travels/ples-2020/ples-5.jpg', 'Труселя на номерном знаке', 'Отличный лайфхак от байкеров из Владимирской области, чтобы не платить штрафы.' %}
-{% Image './src/travels/ples-2020/ples-6.jpg', 'Шуршим листьями', 'Если вы любите пошуршать осенней листвой, езжайте в Плес.' %}
-{% Image './src/travels/ples-2020/ples-7.jpg', 'Опавшая листва', '' %}
-{% Image './src/travels/ples-2020/ples-8.jpg', 'Венок из листьев', '' %}
-{% Image './src/travels/ples-2020/ples-9.jpg', 'Левитан', '' %}
-{% Image './src/travels/ples-2020/ples-10.jpg', 'Левитан рисует', '' %}
-{% Image './src/travels/ples-2020/ples-11.jpg', 'Волга', 'Волга' %}
-{% Image './src/travels/ples-2020/ples-preview.jpg', 'Вид сверху', '' %}
+{% image './src/travels/ples-2020/ples-1.jpg', 'Осенний лес', 'Красота началась уже по дороге' %}
+{% image './src/travels/ples-2020/ples-2.jpg', 'Вид сверху', '' %}
+{% image './src/travels/ples-2020/ples-3.jpg', 'Покупаем чувильку', '' %}
+{% image './src/travels/ples-2020/ples-4.jpg', 'Тестируем чувильку', '' %}
+{% image './src/travels/ples-2020/ples-5.jpg', 'Труселя на номерном знаке', 'Отличный лайфхак от байкеров из Владимирской области, чтобы не платить штрафы.' %}
+{% image './src/travels/ples-2020/ples-6.jpg', 'Шуршим листьями', 'Если вы любите пошуршать осенней листвой, езжайте в Плес.' %}
+{% image './src/travels/ples-2020/ples-7.jpg', 'Опавшая листва', '' %}
+{% image './src/travels/ples-2020/ples-8.jpg', 'Венок из листьев', '' %}
+{% image './src/travels/ples-2020/ples-9.jpg', 'Левитан', '' %}
+{% image './src/travels/ples-2020/ples-10.jpg', 'Левитан рисует', '' %}
+{% image './src/travels/ples-2020/ples-11.jpg', 'Волга', 'Волга' %}
+{% image './src/travels/ples-2020/ples-preview.jpg', 'Вид сверху', '' %}
