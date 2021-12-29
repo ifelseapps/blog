@@ -10,7 +10,7 @@
 }
 
 .post-page code:not([class]) {
-  padding: 0.2em 0.4em;
+  padding: 0.3em 0.4em;
   background: #FCE4EC;
   color: #880E4F;
   border-radius: 5px;
@@ -88,10 +88,11 @@
 }
 
 .post-page figcaption {
-  padding: 0.5em 2em;
+  padding: 2em;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   line-height: 1em;
+  color: #757575;
 }
 
 .key-content {
