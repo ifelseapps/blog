@@ -5,12 +5,14 @@ const { format } = require('date-fns');
 const ruLocale = require('date-fns/locale/ru');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const embedTwitter = require('eleventy-plugin-embed-twitter');
 const path = require('path');
 
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(embedTwitter);
 
   eleventyConfig.setDataDeepMerge(true);
 
