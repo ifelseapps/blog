@@ -54,6 +54,7 @@
   font-weight: 200;
   src: local(''),
   url('fonts/source-serif-pro-v11-latin_cyrillic-200.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -62,6 +63,7 @@
   font-weight: 400;
   src: local(''),
   url('fonts/source-serif-pro-v11-latin_cyrillic-regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -70,6 +72,7 @@
   font-weight: 400;
   src: local(''),
   url('fonts/source-serif-pro-v11-latin_cyrillic-italic.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -78,6 +81,7 @@
   font-weight: 700;
   src: local(''),
   url('fonts/source-serif-pro-v11-latin_cyrillic-700.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
@@ -86,4 +90,5 @@
   font-weight: 900;
   src: local(''),
   url('fonts/source-serif-pro-v11-latin_cyrillic-900.woff2') format('woff2');
+  font-display: swap;
 }
