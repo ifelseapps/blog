@@ -13,14 +13,26 @@
   <meta name="msapplication-config" content="/images/template/favicons/browserconfig.xml?v=4">
   <meta name="theme-color" content="#ffffff">
   <title>{{ title }}</title>
+  <meta property="og:site_name" content="Senior frontend engineer – Максим Павлов"/>
 
   {% if description %}
     <meta name="description" content="{{ description }}">
+    <meta property="og:title" content="{{ description }}">
+    <meta property="og:description" content="{{ description }}"/>
   {% endif %}
 
   {% if keywords %}
     <meta name="keywords" content="{{ keywords }}">
   {% endif %}
+
+  {% if type %}
+    <meta property="og:type" content="{{ type }}" />
+  {% endif %}
+
+  <meta property="og:url" content="https://maximpavlov.su{{ page.url }}" />
+
+  <meta property="og:image" content="https://v1.screenshot.11ty.dev/{{ 'https://maximpavlov.su' | encode }}{{ page.url | encode }}/opengraph/"/>
+  <meta property="og:image:width" content="1200"/>
 </head>
 <body>
   {% if page.url == '/' %}

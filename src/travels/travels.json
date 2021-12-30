@@ -1,5 +1,6 @@
 {
   "tags": "travel",
   "layout": "post.liquid",
-  "is_post_detail": true
+  "is_post_detail": true,
+  "type": "article"
 }

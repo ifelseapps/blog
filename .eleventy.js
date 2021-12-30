@@ -68,6 +68,10 @@ module.exports = function (eleventyConfig) {
     return [...tagSet].map(t => ({ name: t, count: count[t] }));
   });
 
+  eleventyConfig.addLiquidFilter("encode", (url) => {
+    return encodeURIComponent(url);
+  });
+
   eleventyConfig.addLiquidFilter("reverse", (collection) => {
     return [...collection].reverse();
   });
