@@ -1,11 +1,15 @@
 <div class="posts-grid">
   {% for post in posts %}
-    <a class="post-preview posts-grid__item" href="{{ post.url }}">
-      <div class="post-preview__title">{{ post.data.title }}</div>
-      <div class="post-preview__date">{{ post.data.date_label |  date_formatted }}</div>
-      {% if post.data.preview_text %}
-        <div class="post-preview__description">{{ post.data.preview_text }}</div>
-      {% endif %}
-    </a>
+    <article class="post-preview posts-grid__item">
+      <a class="post-preview__link" href="{{ post.url }}">
+        <h2 class="post-preview__title">{{ post.data.title }}</h2>
+        <time datetime="{{ post.date | date_iso }}" class="post-preview__date">
+          {{ post.date | date_formatted }}
+        </time>
+        {% if post.data.preview_text %}
+          <div class="post-preview__description">{{ post.data.preview_text }}</div>
+        {% endif %}
+      </a>
+    </article>
   {% endfor %}
 </div>

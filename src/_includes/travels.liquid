@@ -1,12 +1,14 @@
 <div class="posts-grid">
   {% for post in travels %}
-    <a class="post-preview posts-grid__item" href="{{ post.url }}">
-      <div class="post-preview__picture">
-        {% capture preview_url %}./src{{ post.url }}{{ post.data.preview_prefix }}-preview.jpg{% endcapture %}
-        {% image_preview preview_url, post.data.title %}
-      </div>
-      <div class="post-preview__title">{{ post.data.title }}</div>
-      <div class="post-preview__date">{{ post.data.date_label | date_month_year | capitalize }}</div>
-    </a>
+    <article class="post-preview posts-grid__item">
+      <a class="post-preview__link" href="{{ post.url }}">
+        <div class="post-preview__picture">
+          {% capture preview_url %}./src{{ post.url }}{{ post.data.preview_prefix }}-preview.jpg{% endcapture %}
+          {% image_preview preview_url, post.data.title %}
+        </div>
+        <h2 class="post-preview__title">{{ post.data.title }}</h2>
+        <time datetime="{{ post.data.date_label | date_iso }}" class="post-preview__date">{{ post.data.date_label | date_month_year | capitalize }}</time>
+      </a>
+    </article>
   {% endfor %}
 </div>

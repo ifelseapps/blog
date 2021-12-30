@@ -125,8 +125,10 @@
 }
 
 .post-preview__title {
+  margin: 0;
   font-size: 1.8rem;
   line-height: 1.2em;
+  font-weight: 400;
   text-decoration: underline;
   text-decoration-color: #F50057;
   text-decoration-thickness: .08em;

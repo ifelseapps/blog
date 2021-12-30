@@ -87,6 +87,9 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('date_iso', dateObj => {
+    if (!dateObj) {
+      return '';
+    }
     return format(dateObj, 'yyyy-MM-dd');
   });
 

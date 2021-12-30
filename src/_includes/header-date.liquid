@@ -1,0 +1,7 @@
+{% assign date = date_label |  date_formatted %}
+{% if page.url contains '/travels/' %}
+  {% assign date = date_label | date_month_year | capitalize %}
+{% endif %}
+{% if date_label %}
+  <time datetime="{{ page.date |  date_iso }}" class="page-title__date">{{ date }}</time>
+{% endif %}

@@ -28,28 +28,37 @@
   {% else %}
     <div class="page">
       {% include header.liquid %}
-      <main>
-        <div class="page-title">
-          <div class="page__title container">
-            {% assign date = date_label |  date_formatted %}
-            {% if page.url contains '/travels/' %}
-              {% assign date = date_label | date_month_year | capitalize %}
-            {% endif %}
-            {% if date %}
-              <time datetime="{{ page.date |  date_iso }}" class="page-title__date">{{ date }}</time>
-            {% endif %}
-            <h1 class="h h_lvl_1 page-title__title">{{ title }}</h1>
-          </div>
-          {% if preview_text %}
-            <div class="container">
-              <div class="page-description page-title__description">
-                {{ preview_text }}
+
+      {% if is_post_detail %}
+        <main>
+          <article>
+            <header class="page-title">
+              <div class="container">
+                {% include header-date.liquid %}
+                <h1 class="h h_lvl_1 page-title__title">{{ title }}</h1>
               </div>
+              {% if preview_text %}
+                <div class="container">
+                  <div class="page-description page-title__description">
+                    {{ preview_text }}
+                  </div>
+                </div>
+              {% endif %}
+            </header>
+            <div class="container page__content">{{ content | safe }}</div>
+          </article>
+        </main>
+      {% else %}
+        <main>
+          <div class="page-title">
+            <div class="container">
+              <h1 class="h h_lvl_1 page-title__title">{{ title }}</h1>
             </div>
-          {% endif %}
-        </div>
-        <div class="container page__content">{{ content | safe }}</div>
-      </main>
+          </div>
+          <div class="container page__content">{{ content | safe }}</div>
+        </main>
+      {% endif %}
+
       {% include footer.liquid %}
     </div>
   {% endif %}
