@@ -10,14 +10,14 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
       <div class="container">{% include important.liquid %}</div>
     </aside>
     <header class="main-banner">
-      <div class="main-banner__menu container">
+      <nav class="main-banner__menu container">
         {% include menu.liquid %}
-      </div>
+      </nav>
       <div class="main-banner__inner container">
         <div class="main-banner__info">
-          <div class="main-banner__title">
+          <h1 class="main-banner__title">
             {% include name.liquid %}
-          </div>
+          </h1>
           <div class="main-banner__preview-text">
             Привет! Я — senior frontend engineer с 6+ годами опыта. Разрабатываю интерфейсы
             в <a href="https://mts.ru" class="link-solid" target="_blank"><span class="link-solid__inner">МТС</span></a>.
@@ -47,11 +47,13 @@ keywords: frontend, фронтенд, ui, ux, javascript, typescript, css, html,
           <div class="pinned-post__top">
             <h2 class="h h_lvl_3 pinned-post__title">Свежий пост</h2>
           </div>
-          <a class="post-preview pinned-post__inner" href="{{ posts[0].url }}">
-            <div class="post-preview__title">{{ posts[0].data.title }}</div>
-            <div class="post-preview__date">{{ posts[0].date | date_formatted }}</div>
-            <div class="post-preview__description">{{ posts[0].data.preview_text }}</div>
-          </a>
+          <article>
+            <a class="post-preview pinned-post__inner" href="{{ posts[0].url }}">
+              <h3 class="post-preview__title">{{ posts[0].data.title }}</h3>
+              <div class="post-preview__date">{{ posts[0].date | date_formatted }}</div>
+              <div class="post-preview__description">{{ posts[0].data.preview_text }}</div>
+            </a>
+          </article>
         </section>
       </div>
       <section class="main-page-section">

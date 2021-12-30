@@ -2,7 +2,13 @@
   {% for post in posts %}
     <article class="post-preview posts-grid__item">
       <a class="post-preview__link" href="{{ post.url }}">
-        <h2 class="post-preview__title">{{ post.data.title }}</h2>
+
+        {% if page.url == '/' %}
+          <h3 class="post-preview__title">{{ post.data.title }}</h3>
+        {% else %}
+          <h2 class="post-preview__title">{{ post.data.title }}</h2>
+        {% endif %}
+
         <time datetime="{{ post.date | date_iso }}" class="post-preview__date">
           {{ post.date | date_formatted }}
         </time>

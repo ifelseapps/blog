@@ -6,7 +6,13 @@
           {% capture preview_url %}./src{{ post.url }}{{ post.data.preview_prefix }}-preview.jpg{% endcapture %}
           {% image_preview preview_url, post.data.title %}
         </div>
-        <h2 class="post-preview__title">{{ post.data.title }}</h2>
+
+        {% if page.url == '/' %}
+          <h3 class="post-preview__title">{{ post.data.title }}</h3>
+        {% else %}
+          <h2 class="post-preview__title">{{ post.data.title }}</h2>
+        {% endif %}
+
         <time datetime="{{ post.data.date_label | date_iso }}" class="post-preview__date">{{ post.data.date_label | date_month_year | capitalize }}</time>
       </a>
     </article>
