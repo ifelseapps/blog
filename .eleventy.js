@@ -6,6 +6,7 @@ const ruLocale = require('date-fns/locale/ru');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
+const htmlmin = require('html-minifier');
 const path = require('path');
 
 
@@ -35,6 +36,20 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.setLibrary('md', markdownLib);
+
+  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+    if( outputPath && outputPath.endsWith(".html") ) {
+      return htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true
+      });
+    }
+
+    return content;
+  });
+
 
   eleventyConfig.addCollection('tags', function (collection) {
     let tagSet = new Set();
