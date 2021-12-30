@@ -111,7 +111,7 @@ ul {
 
 .name__part {
   &:first-letter {
-    background: linear-gradient(-45deg, #880E4F 33%, #F50057 66%);
+    background: linear-gradient(-45deg, #F50057 0%, #D81B60 33%, #F50057 66%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #880E4F;
