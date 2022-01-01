@@ -4,7 +4,7 @@
       <a class="post-preview__link" href="{{ post.url }}">
         <div class="post-preview__picture">
           {% capture preview_url %}./src{{ post.url }}{{ post.data.preview_prefix }}-preview.jpg{% endcapture %}
-          {% image_preview preview_url, post.data.title %}
+          {% image_preview preview_url %}
         </div>
 
         {% if page.url == '/' %}

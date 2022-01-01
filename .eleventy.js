@@ -190,13 +190,9 @@ module.exports = function (eleventyConfig) {
     return `<figure>${img}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
   });
 
-  eleventyConfig.addLiquidShortcode('image_preview', async function (src, alt) {
-    if (!alt) {
-      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
-    }
-
+  eleventyConfig.addLiquidShortcode('image_preview', async function (src) {
     const stats = await Image(src, {
-      widths: [320, 640, 960, 1200],
+      widths: [1200],
       formats: ['jpeg'],
       urlPath: '/images/',
       outputDir: './_site/images/',
@@ -207,25 +203,9 @@ module.exports = function (eleventyConfig) {
       }
     });
 
-    const lowestSrc = stats['jpeg'][0];
+    const data = stats['jpeg'][0];
 
-    const srcset = Object.keys(stats).reduce(
-      (acc, format) => ({
-        ...acc,
-        [format]: stats[format].reduce(
-          (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-          ''
-        ).slice(0, -1),
-      }),
-      {}
-    );
-
-    return `<img
-      alt="${alt}"
-      src="${lowestSrc.url}"
-      sizes='(min-width: 1024px) 1024px, 100vw'
-      srcset="${srcset['jpeg']}"
-    >`;
+    return `<div class="pic" style="background-image: url(${data.url})"></div>`;
   });
 
   eleventyConfig.addLiquidShortcode('quote', function (quote, author, position, link) {

@@ -167,11 +167,16 @@
   }
 }
 
+.post-preview__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .post-preview__picture {
   position: relative;
-  max-height: 260px;
+  height: 260px;
   margin-bottom: 0.3em;
-  overflow: hidden;
   &::after {
     content: '';
     position: absolute;
@@ -190,9 +195,15 @@
   display: block;
 }
 
-.post-preview__picture img {
-  display: block;
-  max-width: 100%;
+.post-preview__picture .pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .post-preview:hover .post-preview__picture::after {
