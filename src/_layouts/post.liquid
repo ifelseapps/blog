@@ -3,6 +3,21 @@ layout: default.liquid
 ---
 
 <div class="post-page">
+  {% if years %}
+    <div class="post-page__years">
+      <ul class="post-years">
+        {% for item in years %}
+          <li class="post-years__item">
+            {% if page.url == item.link %}
+              {{ item.date | date_month_year | capitalize }}
+            {% else %}
+              <a href="{{ item.link }}">{{ item.date | date_month_year | capitalize }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
   <div class="post-page__top">
     <a href="{{ page.url | split: '/' | slice: 0, 2 | concat: '' |  join: '/' }}">&larr; Вернуться назад</a>
   </div>

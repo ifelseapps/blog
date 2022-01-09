@@ -55,6 +55,33 @@ module.exports = function (eleventyConfig) {
   });
 
 
+  eleventyConfig.addCollection('travels', (collection) => {
+    const travels = collection.getFilteredByTag('travel');
+
+    const groups = travels.reduce((acc, item) => {
+      if (!item.data.group) {
+        return acc;
+      }
+
+      acc[item.data.group] = acc[item.data.group] || [];
+      acc[item.data.group].push({
+        date: item.data.date_label,
+        link: item.url,
+      });
+
+      return acc;
+    }, {});
+
+
+    travels.forEach((item) => {
+      if (item.data.group) {
+        item.data.years = [...groups[item.data.group]].reverse();
+      }
+    });
+
+    return travels;
+  });
+
   eleventyConfig.addCollection('tags', function (collection) {
     let tagSet = new Set();
     const count = {};

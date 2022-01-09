@@ -5,8 +5,33 @@
   }
 }
 
+.post-page__years {
+  margin-bottom: 1em;
+}
+
 .post-page__top {
   margin-bottom: 1em;
+}
+
+.post-years {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0 -1em;
+  padding: 0 0.5em;
+  list-style: none;
+  font-family: 'Helvetica Neue', sans-serif!important;
+  font-size: 0.7rem;
+  background: #FCE4EC;
+  border-radius: 5px;
+}
+
+.post-years__item {
+  padding: 0.5em;
+  font-weight: 700;
+}
+
+.post-years__item a {
+  font-weight: 400;
 }
 
 .post-page code:not([class]) {
