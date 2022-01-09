@@ -7,16 +7,16 @@ keywords: frontend, фронтенд, senior frontend engineer, senior frontend 
 <div class="page">
   <div>
     <aside class="top-banner">
-      <div class="container">{% include important.liquid %}</div>
+      <div class="container">{% include 'important.liquid' %}</div>
     </aside>
     <header class="main-banner">
       <nav class="main-banner__menu container">
-        {% include menu.liquid %}
+        {% include 'menu.liquid' %}
       </nav>
       <div class="main-banner__inner container">
         <div class="main-banner__info">
           <h1 class="main-banner__title">
-            {% include name.liquid %}
+            {% include 'name.liquid' %}
           </h1>
           <div class="main-banner__preview-text">
             Привет! Я — senior frontend engineer с 6+ годами опыта. Разрабатываю интерфейсы
@@ -40,7 +40,7 @@ keywords: frontend, фронтенд, senior frontend engineer, senior frontend 
       <div class="top-section">
         <section class="tech-stack-section">
           <h2 class="h h_lvl_2 section-title">Стек технологий</h2>
-          {% include tech-stack.liquid %}
+          {% include 'tech-stack.liquid' %}
         </section>
         {% assign posts = collections.post | reverse | slice: 0, 3 %}
         <section class="pinned-post">
@@ -59,9 +59,9 @@ keywords: frontend, фронтенд, senior frontend engineer, senior frontend 
       <section class="main-page-section">
         <h2 class="h h_lvl_1 section-title">Заметки</h2>
         <div class="main-page-section__tags">
-          {% include tags.liquid %}
+          {% include 'tags.liquid' %}
         </div>
-        {% include posts.liquid %}
+        {% include 'posts.liquid' %}
         <div class="main-page-section__show-more">
           <a class="button button_color_primary button_size_md button_with-shadow" href="/posts/">
             <span class="button__inner">Все заметки</span>
@@ -106,7 +106,7 @@ keywords: frontend, фронтенд, senior frontend engineer, senior frontend 
       <section class="main-page-section">
         <h2 class="h h_lvl_1 section-title">Путешествую</h2>
         {% assign travels = collections.travel | reverse | slice: 0, 3 %}
-        {% include travels.liquid %}
+        {% include 'travels.liquid' %}
         <div class="main-page-section__show-more">
           <a class="button button_color_primary button_size_md button_with-shadow" href="/travels/">
             <span class="button__inner">Все поездки</span>
@@ -115,5 +115,5 @@ keywords: frontend, фронтенд, senior frontend engineer, senior frontend 
       </section>
     </div>
   </main>
-  {% include footer.liquid %}
+  {% include 'footer.liquid' %}
 </div>

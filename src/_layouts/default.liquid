@@ -42,14 +42,14 @@
     {{ content |  safe }}
   {% else %}
     <div class="page">
-      {% include header.liquid %}
+      {% include 'header.liquid' %}
 
       {% if is_post_detail %}
         <main>
           <article>
             <header class="page-title">
               <div class="container">
-                {% include header-date.liquid %}
+                {% include 'header-date.liquid' %}
                 <h1 class="h h_lvl_1 page-title__title">{{ title }}</h1>
               </div>
               {% if preview_text %}
@@ -74,7 +74,7 @@
         </main>
       {% endif %}
 
-      {% include footer.liquid %}
+      {% include 'footer.liquid' %}
     </div>
   {% endif %}
   <script src="/scripts/common.js"></script>

@@ -21,6 +21,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/images/template/**/*.(jpg|svg|png|gif)');
   eleventyConfig.addPassthroughCopy('src/scripts');
 
+  eleventyConfig.setLiquidOptions({
+    strictFilters: false,
+  });
+
   const markdownItOptions = {
     html: true,
   };
