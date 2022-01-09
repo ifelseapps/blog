@@ -16,18 +16,21 @@ metadata:
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  {% assign all = collections.post | concat: collections.travel %}
+  <updated>{{ all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.post %}
+  {%- for post in all %}
     {% assign absolutePostUrl = post.url | url | absoluteUrl: metadata.url %}
     <entry>
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      {% if post.date %}
+        <updated>{{ post.date | dateToRfc3339 }}</updated>
+      {% endif %}
       <id>{{ absolutePostUrl }}</id>
     </entry>
   {%- endfor %}
