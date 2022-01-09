@@ -121,8 +121,8 @@ module.exports = function (eleventyConfig) {
       parse: function (tagToken, remainingTokens) {
         this.str = tagToken.args;
       },
-      render: function (scope, hash) {
-        const str = liquidEngine.evalValue(this.str, scope);
+      render: async function (scope, hash) {
+        const str = await liquidEngine.evalValue(this.str, scope);
         return Promise.resolve(`<div class="important-block"><div class="important-block__inner">${str}</div></div>`);
       }
     };
@@ -133,8 +133,8 @@ module.exports = function (eleventyConfig) {
       parse: function (tagToken, remainingTokens) {
         this.str = tagToken.args;
       },
-      render: function (scope, hash) {
-        const str = liquidEngine.evalValue(this.str, scope);
+      render: async function (scope, hash) {
+        const str = await liquidEngine.evalValue(this.str, scope);
         return Promise.resolve(`<div class="key-content">${str}</div>`);
       }
     };
@@ -144,6 +144,14 @@ module.exports = function (eleventyConfig) {
     return {
       render: function () {
         return Promise.resolve('<hr class="line">');
+      }
+    };
+  });
+
+  eleventyConfig.addLiquidTag('current_year', function (liquidEngine) {
+    return {
+      render: function () {
+        return Promise.resolve(format(new Date(), 'yyyy'));
       }
     };
   });

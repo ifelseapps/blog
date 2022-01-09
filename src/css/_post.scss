@@ -32,19 +32,19 @@
 .post-page h1,
 .post-page h2,
 .post-page h3 {
-  margin: 1em 0;
-  line-height: 1;
+  margin: 1.8em 0 1em;
+  line-height: 1.3em;
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: 900;
   letter-spacing: 0.02em;
 
   .header-anchor {
-    color: #E91E63;
-    display: none;
+    color: #E0E0E0;
+    transition: color 0.3s;
   }
 
   &:hover .header-anchor {
-    display: inline;
+    color: #E91E63;
   }
 }
 
