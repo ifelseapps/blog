@@ -3,6 +3,9 @@ layout: default.liquid
 ---
 
 <div class="post-page">
+  <div class="post-page__top">
+    <a href="{{ page.url | split: '/' | slice: 0, 2 | concat: '' |  join: '/' }}">&larr; Вернуться назад</a>
+  </div>
   {% if years %}
     <div class="post-page__years">
       <ul class="post-years">
@@ -18,8 +21,5 @@ layout: default.liquid
       </ul>
     </div>
   {% endif %}
-  <div class="post-page__top">
-    <a href="{{ page.url | split: '/' | slice: 0, 2 | concat: '' |  join: '/' }}">&larr; Вернуться назад</a>
-  </div>
   {{ content | safe }}
 </div>
