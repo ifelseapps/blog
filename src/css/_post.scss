@@ -45,6 +45,10 @@
   text-shadow: 0 1px rgba(0, 0, 0, 0.05);
 }
 
+.post-page pre[class*="language-"] {
+  margin: 2em 0;
+}
+
 .post-page code[class*="language-"],
 .post-page pre[class*="language-"] {
   font-size: 0.8rem;
@@ -104,8 +108,11 @@
 
   img {
     display: block;
-    width: 900px;
     max-width: 100%;
+  }
+
+  .full-width {
+    width: 900px;
   }
 }
 

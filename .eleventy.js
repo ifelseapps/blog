@@ -187,13 +187,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidFilter('absoluteUrl', pluginRss.absoluteUrl);
   eleventyConfig.addLiquidFilter('getNewestCollectionItemDate', pluginRss.getNewestCollectionItemDate);
 
-  eleventyConfig.addLiquidShortcode('image', async function (src, alt, caption) {
+  eleventyConfig.addLiquidShortcode('image', async function (src, alt, caption, fullWidth = 'true') {
     if (!alt) {
       throw new Error(`Missing \`alt\` on myImage from: ${src}`);
     }
 
     const stats = await Image(src, {
-      widths: [320, 640, 960, 1200, 1800],
+      widths: fullWidth === 'false' ? [null] : [320, 640, 960, 1200, 1800],
       formats: ['jpeg'],
       urlPath: '/images/',
       outputDir: './_site/images/',
@@ -219,12 +219,16 @@ module.exports = function (eleventyConfig) {
     );
 
 
-    const img = `<a href="${highSrc.url}"><img
+    const img = fullWidth === 'true' ? `<a href="${highSrc.url}"><img
+      class="full-width"
       alt="${alt}"
       src="${lowestSrc.url}"
       sizes='(min-width: 1024px) 1024px, 100vw'
       srcset="${srcset['jpeg']}"
-    ></a>`;
+    ></a>` : `<img
+      alt="${alt}"
+      src="${lowestSrc.url}"
+    >`;
 
     return `<figure>${img}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
   });
