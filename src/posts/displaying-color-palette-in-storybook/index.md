@@ -56,7 +56,7 @@ module.exports = {
 ```
 
 При запуске storybook мы увидим, что наша story успешно добавилась.
-{% image './src/posts/display-color-palette-in-storybook/color-palette-storybook-1.png', 'Пустая story' %}
+{% image './src/posts/displaying-color-palette-in-storybook/color-palette-storybook-1.png', 'Пустая story' %}
 
 Основой нашего механизма будет функция `getColorsFromCustomProperties`.
 
@@ -77,7 +77,7 @@ console.log(
 Мы не хотим завязываться на конкретные custom properties. Нам нужно вывести все доступные properties. Поэтому данный метод нам не подходит.
 
 У глобального объекта `document` есть свойство `styleSheets`. Давайте посмотрим что оно содержит.
-{% image './src/posts/display-color-palette-in-storybook/color-palette-storybook-2.png', 'Объект styleSheets' %}
+{% image './src/posts/displaying-color-palette-in-storybook/color-palette-storybook-2.png', 'Объект styleSheets' %}
 
 Отфильтруем таблицы стилей только для текущего домена.
 
@@ -85,7 +85,7 @@ console.log(
 function getColorsFromCustomProperties() {
   const isCurrentDomain = (stylesheet: CSSStyleSheet) =>
     !stylesheet.href || stylesheet.href.indexOf(window.location.origin) === 0;
-  
+
   return Array.from(document.styleSheets)
     .filter(isCurrentDomain);
 }
@@ -227,7 +227,7 @@ export const Colors = () => {
 ```
 
 Вот что получилось.
-{% image './src/posts/display-color-palette-in-storybook/color-palette-storybook-3.png', 'Вывод цветовой палитры' %}
+{% image './src/posts/displaying-color-palette-in-storybook/color-palette-storybook-3.png', 'Вывод цветовой палитры' %}
 
 Сделаем так, чтобы при клике по плашке цвета, в буфер обмена копировался сниппет, которым мы будем пользоваться при использовании данного цвета (например, `var(--primary-color)`).
 
@@ -328,5 +328,5 @@ export const Colors = () => {
 {% note 'Обратите внимание, что мы кешируем результаты работы функции <code>getColorsFromCustomProperties</code>, т.к. она достаточно «тяжелая» и нет никакой необходимости вызывать ее при каждом изменении значения в поле поиска.' %}
 
 Вот, что у нас получилось.
-{% image './src/posts/display-color-palette-in-storybook/color-palette-storybook-4.png', 'Пример работы фильтра' %}
+{% image './src/posts/displaying-color-palette-in-storybook/color-palette-storybook-4.png', 'Пример работы фильтра' %}
 
