@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('src/robots.txt');
   eleventyConfig.addPassthroughCopy('src/css/fonts');
-  eleventyConfig.addPassthroughCopy('src/images/template/**/*.(jpg|svg|png|gif)');
+  eleventyConfig.addPassthroughCopy('src/images/template/**/*.(jpg|svg|png|gif|webmanifest|xml|ico)');
   eleventyConfig.addPassthroughCopy('src/scripts');
 
   eleventyConfig.setLiquidOptions({
