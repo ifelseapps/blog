@@ -79,7 +79,7 @@ ul:not([class]), ol:not([class]) {
   }
 }
 
-ul {
+ul, ol {
   li::marker {
     color: #F50057;
   }
@@ -241,6 +241,10 @@ ul {
   border-radius: 5px;
 }
 
+.tags-list_align_left {
+  justify-content: flex-start;
+}
+
 .tags-list_color_primary .tags-list__item {
   background: linear-gradient(45deg, #880E4F 0%, #F50057 100%);
 }
@@ -312,4 +316,15 @@ ul {
   border: none;
   background: linear-gradient(to right, #880E4F 33%, #F50057 66%)
 
+}
+
+.projects-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 -1em;
+}
+
+.projects-links__item {
+  padding: 1em;
 }
