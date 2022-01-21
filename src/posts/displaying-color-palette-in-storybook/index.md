@@ -41,7 +41,7 @@ Colors.parameters = {
 
 Поправим конфиг storybook в файле `main.js`.
 
-``` js
+```js/2
 module.exports = {
   'stories': [
     '../docs/**/*.(tsx|mdx)',

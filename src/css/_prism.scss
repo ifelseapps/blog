@@ -1,3 +1,14 @@
+.highlight-line-active {
+  display: block;
+  margin: 0 -1em;
+  padding: 0.1em 1em;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.highlight-line-active + br {
+  display: none;
+}
+
 /* PrismJS 1.23.0
 https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+haskell+http+java+jsx+tsx+scss+typescript */
 /**
