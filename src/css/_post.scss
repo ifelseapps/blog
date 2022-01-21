@@ -13,6 +13,10 @@
   margin-bottom: 1em;
 }
 
+.post-page__toc {
+  margin: 2em 0;
+}
+
 .post-years {
   display: inline-flex;
   flex-wrap: wrap;
@@ -58,6 +62,19 @@
   margin: 1em auto;
 }
 
+.toc {
+  display: inline-flex;
+  padding: 1em;
+  background: #FFEBEE;
+  border: solid 1px #FFCDD2;
+  border-radius: 5px;
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
 .post-page h1,
 .post-page h2,
 .post-page h3 {
@@ -67,8 +84,13 @@
   font-weight: 900;
   letter-spacing: 0.02em;
 
+  &:focus {
+    outline: 0;
+    color: #E91E63;
+  }
+
   .header-anchor {
-    color: #E0E0E0;
+    color: inherit;
     transition: color 0.3s;
   }
 

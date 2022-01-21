@@ -6,6 +6,7 @@ const ruLocale = require('date-fns/locale/ru');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
+const pluginTOC = require('eleventy-plugin-toc');
 const htmlmin = require('html-minifier');
 const path = require('path');
 
@@ -14,6 +15,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(embedTwitter);
+  eleventyConfig.addPlugin(pluginTOC);
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -30,14 +32,11 @@ module.exports = function (eleventyConfig) {
     html: true,
   };
 
-  const markdownItAnchorOptions = {
-    permalink: true,
-    permalinkSymbol: '§'
-  };
-
   const markdownLib = markdownIt(markdownItOptions).use(
     markdownItAnchor,
-    markdownItAnchorOptions
+    {
+      permalink: markdownItAnchor.permalink.headerLink()
+    }
   );
 
   eleventyConfig.setLibrary('md', markdownLib);
