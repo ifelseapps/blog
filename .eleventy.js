@@ -194,7 +194,7 @@ module.exports = function (eleventyConfig) {
 
     const stats = await Image(src, {
       widths: fullWidth === 'false' ? [null] : [320, 640, 960, 1200, 1800],
-      formats: ['jpeg'],
+      formats: [null],
       urlPath: '/images/',
       outputDir: './_site/images/',
       filenameFormat: function (id, src, width, format, options) {
@@ -204,8 +204,9 @@ module.exports = function (eleventyConfig) {
       }
     });
 
-    const lowestSrc = stats['jpeg'][0];
-    const highSrc = stats['jpeg'][stats['jpeg'].length - 1];
+    const format = path.extname(src) === '.jpg' ? 'jpeg' : 'png';
+    const lowestSrc = stats[format][0];
+    const highSrc = stats[format][stats[format].length - 1];
 
     const srcset = Object.keys(stats).reduce(
       (acc, format) => ({
@@ -218,13 +219,12 @@ module.exports = function (eleventyConfig) {
       {}
     );
 
-
     const img = fullWidth === 'true' ? `<a href="${highSrc.url}"><img
       class="full-width"
       alt="${alt}"
       src="${lowestSrc.url}"
       sizes='(min-width: 1024px) 1024px, 100vw'
-      srcset="${srcset['jpeg']}"
+      srcset="${srcset[format]}"
     ></a>` : `<img
       alt="${alt}"
       src="${lowestSrc.url}"

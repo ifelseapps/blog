@@ -7,7 +7,7 @@ tags:
 - 11ty
 ---
 Вдохновил меня на это [сайт Артемия Лебедева](https://tema.ru).
-{% image './src/posts/grouping-posts-in-11ty/grouping-posts-11ty-1.jpg', 'Группировка поездок на сайте Артемия Лебедева' %}
+{% image './src/posts/grouping-posts-in-11ty/grouping-posts-11ty-1.png', 'Группировка поездок на сайте Артемия Лебедева' %}
 
 Конечно, я не путешествую так много как Артемий. Поэтому мне достаточно вывести на странице поста ссылку вида `[месяц] [год]`.
 
@@ -84,4 +84,4 @@ group: spb
 ```
 
 Вот что у нас получилось.
-{% image './src/posts/grouping-posts-in-11ty/grouping-posts-11ty-2.jpg', 'Группировка постов', '', 'false' %}
+{% image './src/posts/grouping-posts-in-11ty/grouping-posts-11ty-2.png', 'Группировка постов', '', 'false' %}

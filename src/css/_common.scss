@@ -342,3 +342,31 @@ ul, ol {
 .projects-links__item {
   padding: 0.5em 1em;
 }
+
+.not-found-page {}
+
+.not-found-page__picture {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.not-found-page__picture figure,
+.not-found-page__picture figure a,
+.not-found-page__picture figure a .full-width {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+}
+
+.not-found-page__titles {
+  margin-top: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.not-found-page__main-page-link {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
