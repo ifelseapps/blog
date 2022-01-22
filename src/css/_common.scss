@@ -343,7 +343,14 @@ ul, ol {
   padding: 0.5em 1em;
 }
 
-.not-found-page {}
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3em 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
 
 .not-found-page__picture {
   max-width: 600px;
