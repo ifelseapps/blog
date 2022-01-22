@@ -384,7 +384,7 @@ ul, ol {
   flex-wrap: wrap;
   font-size: 1.5rem;
   border-top: solid 1px #CFD8DC;
-  @include bp(sm) {
+  @include bp(md) {
     justify-content: space-between;
   }
 }
