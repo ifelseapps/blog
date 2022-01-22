@@ -2,7 +2,13 @@
 layout: default.liquid
 title: Путешествия
 keywords: путешествия, путевые заметки, путешествия по россии, золотое кольцо, туризм
+pagination:
+  data: collections.travel
+  reverse: true
+  alias: travels
+  size: 9
 ---
 
-{% assign travels = collections.travel | reverse %}
+{% assign travels = travels %}
 {% include 'travels.liquid' %}
+{% include 'pagination.liquid' %}

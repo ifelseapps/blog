@@ -1,0 +1,12 @@
+<div class="pagination page__pagination">
+  <div class="pagination__item">
+    {% if pagination.href.next %}
+      <a href="{{pagination.href.next}}">&laquo;&nbsp;предыдущие</a>
+    {% endif %}
+  </div>
+  <div class="pagination__item">
+    {% if pagination.href.previous %}
+      <a href="{{pagination.href.previous}}">следующие&nbsp;&raquo;</a>
+    {% endif %}
+  </div>
+</div>

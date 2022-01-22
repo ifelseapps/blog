@@ -377,3 +377,19 @@ ul, ol {
   display: flex;
   justify-content: center;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 -1em;
+  font-size: 1.5rem;
+  border-top: solid 1px #CFD8DC;
+  @include bp(sm) {
+    justify-content: space-between;
+  }
+}
+
+.pagination__item {
+  padding: 0.5em 1em;
+}
