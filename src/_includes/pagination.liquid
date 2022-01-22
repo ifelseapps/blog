@@ -1,12 +1,16 @@
 <div class="pagination page__pagination">
   <div class="pagination__item">
     {% if pagination.href.next %}
-      <a href="{{pagination.href.next}}">&laquo;&nbsp;предыдущие</a>
+      <a class="pagination__button" href="{{pagination.href.next}}">&laquo;</a>
+    {% else %}
+      <div class="pagination__button pagination__button_disabled">&laquo;</div>
     {% endif %}
   </div>
   <div class="pagination__item">
     {% if pagination.href.previous %}
-      <a href="{{pagination.href.previous}}">следующие&nbsp;&raquo;</a>
+      <a class="pagination__button" href="{{pagination.href.previous}}">&raquo;</a>
+    {% else %}
+      <div class="pagination__button pagination__button_disabled">&raquo;</div>
     {% endif %}
   </div>
 </div>
