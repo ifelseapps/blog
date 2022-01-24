@@ -25,7 +25,7 @@ tags:
 Долгое время мой zettelkasten жил в коробке из под обуви, но недавно я приобрел себе картотеку.
 В качестве карточек я использую карточки _Brunnen_. Они сделаны из хорошей, плотной бумаги и очень приятны на ощупь.
 
-{% image './src/posts/my-experience-using-zettelkasten/my-zettelkasten-0.jpg', 'Картотека' %}
+{% image './src/posts/my-experience-using-zettelkasten/my-zettelkasten-1.jpg', 'Картотека' %}
 
 В моей картотеке есть три типа карточек:
 1. Карточка источника
