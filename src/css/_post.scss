@@ -138,6 +138,10 @@
   }
 }
 
+.post-page div:not([class]) {
+  max-width: 900px;
+}
+
 .post-page figcaption {
   width: 900px;
   max-width: 100%;
