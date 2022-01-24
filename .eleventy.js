@@ -7,6 +7,7 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
 const pluginTOC = require('eleventy-plugin-toc');
+const pluginBlogTools = require('eleventy-plugin-blog-tools');
 const htmlmin = require('html-minifier');
 const path = require('path');
 
@@ -16,6 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(embedTwitter);
   eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(pluginBlogTools);
 
   eleventyConfig.setDataDeepMerge(true);
 
