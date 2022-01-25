@@ -24,3 +24,22 @@ layout: default.liquid
   {{ content | toc: '{ "wrapperClass": "toc post-page__toc" }' }}
   {{ content | safe }}
 </div>
+<footer class="post-page-footer full-width-block">
+  <div class="post-page-footer__inner">
+    <div class="post-page-footer__avatar" aria-hidden="true">
+      <div class="photo"></div>
+    </div>
+    <div class="post-page-footer__name">
+      {% include 'name.liquid' %}
+    </div>
+    <div class="post-page-footer__description">
+      Привет! Я — senior frontend engineer с 6+ годами опыта. Разрабатываю интерфейсы в <a href="https://mts.ru" target="_blank">МТС</a> и свои
+      <a href="/projects/">проекты</a>.  В свободное время я люблю <a href="/travels/">путешествовать</a>, изучаю иврит и английский, интересуюсь историей и гражданской авиацией.
+    </div>
+    <div class="post-page-footer__more">
+      <a class="button button_color_primary button_with-shadow" href="/about/">
+        <span class="button__inner">Подробнее</span>
+      </a>
+    </div>
+  </div>
+</footer>
