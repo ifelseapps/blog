@@ -222,7 +222,7 @@ ul, ol {
 }
 
 .button_color_primary:hover .button__inner {
-  background: #ECEFF1;
+  background: var(--button-primary-background-hover, #ECEFF1);
   color: var(--color-text);
 }
 
