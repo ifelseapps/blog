@@ -18,4 +18,4 @@ preview_prefix: monino
 {% image './src/travels/monino-2021/monino-7.jpg', 'Ту-144, вид сбоку', 'Ту-144, вид сбоку' %}
 {% image './src/travels/monino-2021/monino-5.jpg', 'Ил-62', 'Ил-62' %}
 {% image './src/travels/monino-2021/monino-6.jpg', 'Ил-76', 'Военно-транспортный Ил-76' %}
-{% image './src/travels/monino-2021/monino-8.jpg', 'Ту-160', 'Ту-160 «белый лебедь», сверхзвуковой стратегический ракетоносец' %}
+{% image './src/travels/monino-2021/monino-8.jpg', 'Бомбардировщик' %}
