@@ -1,0 +1,75 @@
+---
+layout: default.liquid
+title: Maxim Pavlov
+description: Maxim Pavlov — senior frontend engineer
+keywords: frontend, фронтенд, senior frontend engineer, senior frontend developer, фронтенд-разработчик, ui, ux, javascript, typescript, react, redux
+---
+<div class="page">
+  <div>
+    {% include 'important.liquid' %}
+    <header class="main-banner">
+      <div class="container">
+        <div class="main-banner__locales">
+          {% include 'locales.liquid' %}
+        </div>
+      </div>
+      <nav class="main-banner__menu container">
+        {% include 'menu.liquid' %}
+      </nav>
+      <div class="main-banner__inner container">
+        <div class="main-banner__info">
+          <h1 class="main-banner__title">
+            {% include 'name.liquid' %}
+          </h1>
+          <div class="main-banner__preview-text">
+            Hi! I'm a senior frontend engineer with 7+ years of experience. I develop interfaces at <a href="https://mts.ru" class="link-solid" target="_blank"><span class="link-solid__inner">MTS</span></a>.<br>
+            In&nbsp;my spare time I like to travel, learn Hebrew and English, and am interested in history and civil aviation.
+          </div>
+          <div class="main-banner__more">
+            <a href="/en/about/" class="button button_color_white">
+              <span class="button__inner">Show more</span>
+            </a>
+          </div>
+        </div>
+        <div class="main-banner__photo" aria-hidden="true">
+          <div class="photo"></div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <main>
+    <div class="container">
+      <div class="top-section">
+        <section class="tech-stack-section">
+          <h2 class="h h_lvl_2 section-title">My technology stack</h2>
+          {% include 'tech-stack.liquid' %}
+        </section>
+      </div>
+      <section class="main-page-section">
+        <div class="important-block">
+          <div class="important-block__inner">
+            <h2 class="h h_lvl_2 section-title important-block__title">What can I do?</h2>
+            <div class="services">
+              <div class="services__column">
+                <ul>
+                  <li>Layout (cross-browser, adaptive and accessible</li>
+                  <li>SPA application development on React</li>
+                  <li>Implementing the design system developed by your designer</li>
+                </ul>
+              </div>
+              <div class="services__column">
+                <ul>
+                  <li>Optimize  performance of the client side of the site or application</li>
+                  <li>Mentore beginner developers</li>
+                </ul>
+              </div>
+            </div>
+            <hr class="line">
+            <p>You can learn more about my experience in the <a href="/en/about/">about me</a> section.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  {% include 'footer.liquid' %}
+</div>

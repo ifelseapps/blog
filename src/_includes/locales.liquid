@@ -1,0 +1,16 @@
+<ul class="locales">
+  {% for locale in site.locales %}
+    {% if locale == site.locale %}
+      <li class="locales__item locales__item_active">{{ locale }}</li>
+    {% else %}
+      {% if locale == 'ru' %}
+        {% assign url = '/'  %}
+      {% else %}
+        {% assign url = '/' | append: locale | append: ''  %}
+      {% endif %}
+      <li class="locales__item">
+        <a class="locales__link" href="{{ url }}">{{ locale }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

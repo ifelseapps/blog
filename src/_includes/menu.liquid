@@ -1,7 +1,17 @@
+{% if site.locale == 'ru' %}
+  {% assign prefix = '' %}
+{% else %}
+  {% assign prefix = '/' | append: site.locale %}
+{% endif %}
+
 <div class="js-menu menu menu_fallback">
-  <a href="/about" class="menu__item{% if page.url == '/about/' %} menu__item_active{% endif %}">Обо мне</a>
-  <a href="/projects/" class="menu__item{% if page.url contains '/projects/' %} menu__item_active{% endif %}">Проекты</a>
-  <a href="/posts/" class="menu__item{% if page.url contains '/posts/' %} menu__item_active{% endif %}">Заметки</a>
-  <a href="/travels/" class="menu__item{% if page.url contains '/travels/' %} menu__item_active{% endif %}">Путешествия</a>
-  <a href="/contacts/" class="menu__item{% if page.url == '/contacts/' %} menu__item_active{% endif %}">Контакты</a>
+  {% for item in site.navigation %}
+    {% if item[site.locale] %}
+      {% assign fullUrl = prefix | append: item.link %}
+      <a href="{{ fullUrl }}" class="menu__item{% if page.url == fullUrl %} menu__item_active{% endif %}">
+        {{ item[site.locale] }}
+      </a>
+    {% endif %}
+  {% endfor %}
 </div>
+

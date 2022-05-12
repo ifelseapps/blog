@@ -1,0 +1,16 @@
+{
+  "site": {
+    "locale": "en",
+    "name": "Maxim",
+    "surname": "Pavlov",
+    "important": "",
+    "footer": {
+      "rights": "All rights reserved. Reprint of materials is allowed only with the consent of the author.",
+      "build": "The site is built using",
+      "deploy": "and hosted in",
+      "subscribe_label": "Subscribe to the newsletter",
+      "subscribe_placeholder": "Enter your e-mail",
+      "subscribe_button": "Subscribe"
+    }
+  }
+}

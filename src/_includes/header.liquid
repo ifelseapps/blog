@@ -1,8 +1,18 @@
 <header class="header">
   <div class="container header__inner">
-    <a class="header__name" href="/">
-      {% include 'name.liquid' %}
-    </a>
+    {% if site.locale == 'ru' %}
+      {% assign url = '/' %}
+    {% else %}
+      {% assign url = '/' | append: site.locale | append: '/' %}
+    {% endif %}
+    <div class="header__name-wrapper">
+      <a class="header__name" href="{{ url }}">
+        {% include 'name.liquid' %}
+      </a>
+      <span class="header__locales">
+        {% include 'locales.liquid' %}
+      </span>
+    </div>
     {% include 'menu.liquid' %}
   </div>
 </header>

@@ -1,0 +1,152 @@
+---
+layout: default.liquid
+title: About me
+is_post_detail: true
+keywords: frontend, senior frontend engineer, senior frontend developer, react, redux, typescript
+preview_text: On this page I talk about myself, my experience, my technology stack, and my approach to my work.
+---
+<div class="post-page about-page">
+  <div class="about-page__top">
+    <div class="about-page__photo">
+      {% image './src/images/photo_primary.jpg', 'My photo' %}
+    </div>
+    <div class="about-page__preview-text">
+      <h2 class="h h_lvl_2">Hi!<br>I am Maxim, nice to meet you &nbsp;:)</h2>
+      <p>I'm a front-end developer (although I prefer to call myself a <em>UI engineer</em>) with more than 7 years experience. My work is at the intersection of programming and design. I create interfaces for web applications.</p>
+    </div>
+  </div>
+  <p>
+  I like the modern web the way it is now. I started in the early 2000's and I have a lot to compare it to. I think the web is a great platform to build applications on because it allows you to instantly deliver features to the user as well as give them 24/7 access to the application from anywhere in the world.
+  </p>
+
+  <section class="about-page__facts">
+    <h2 class="h h_lvl_3">A few random facts about me</h2>
+    <ul>
+      <li>I love to <a href="/travels/">travel</a>, I can spontaneously pack up and go somewhere with my family</li>
+      <li>I used to scuba dive when I was younger</li>
+      <li>I learn Hebrew, and my dream is to visit Jerusalem, the hero city</li>
+    </ul>
+  </section>
+  {% line %}
+  <section>
+    <h2 class="visually-hidden">Стандарты качества</h2>
+    <p>
+    In my work I'm not guided by formal criteria, but focus on the end user. So I have <strong>my own quality standards</strong>:
+    </p>
+    <ul>
+      <li>The code must meet the standards.</li>
+      <li>The interface must be <strong>optimized for mobile devices</strong>. In my work I prefer to use a <em>mobile first</em> approach.</li>
+      <li>The interface must be <strong>responsive</strong> and display correctly even outside the &laquo;checkpoints&raquo;.</li>
+      <li>The interface should display <strong>correctly in popular browsers as well as on different platforms</strong>. But that doesn't mean that the interface should look the same in modern and old browsers. If pixel perfect is important to you, then we should not work together.</li>
+      <li>The interface should <strong>work quickly</strong>.</li>
+      <li>Preferably, the interface should be <strong>accessible</strong> using assistive technologies (screen readers).</li>
+    </ul>
+  </section>
+  {% line %}
+  <section class="about-page__technology-stack">
+    <h2 class="h h_lvl_2">My technology stack</h2>
+    {% include 'tech-stack.liquid' %}
+  </section>
+  <section>
+    <h2 class="h h_lvl_2">My experience</h2>
+    <ul class="timeline">
+      <li class="timeline__item">
+        <div class="timeline__company">MTS Digital LLC, senior frontend engineer</div>
+        <div class="timeline__details">
+          <p>I work in a distributed team, which develops <a href="https://profile.mts.ru">MTS Profile</a> (it is something like <em>Google Account</em>, only in MTS ecosystem).</p>
+          <ul>
+            <li>Took part in large-scale redesign of the project.</li>
+            <li>Converted the project to TypeScript</li>
+            <li>Rolled out unit testing on the project</li>
+            <li>Developed several large modules</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">TypeScript</li>
+            <li class="tags-list__item">Next.js</li>
+            <li class="tags-list__item">Node.js</li>
+            <li class="tags-list__item">React</li>
+            <li class="tags-list__item">Redux</li>
+            <li class="tags-list__item">Redux-toolkit</li>
+            <li class="tags-list__item">Styled-components</li>
+            <li class="tags-list__item">Jest</li>
+            <li class="tags-list__item">Enzyme</li>
+            <li class="tags-list__item">Storybook</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__company">Nord Software LLC, senior frontend engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Developed several workstations for a medical information system</li>
+            <li>Developed a react framework for building tab-based interfaces and helped implement it in several projects</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">TypeScript</li>
+            <li class="tags-list__item">React</li>
+            <li class="tags-list__item">Redux</li>
+            <li class="tags-list__item">Redux-saga</li>
+            <li class="tags-list__item">Emotion</li>
+            <li class="tags-list__item">Antd</li>
+            <li class="tags-list__item">Sass</li>
+            <li class="tags-list__item">Angular</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__company">FogSoft LLC, frontend engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Finalized and supported client side of several projects</li>
+            <li>Participated in redesign of one of the projects, decomposed the interface into re-usable blocks</li>
+            <li>Participated in design system development</li>
+            <li>Acted as a mentor for newbie developers</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">TypeScript</li>
+            <li class="tags-list__item">React</li>
+            <li class="tags-list__item">Redux</li>
+            <li class="tags-list__item">jQuery</li>
+            <li class="tags-list__item">Sass</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__company">Areal Idea LLC, software engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Participated in crm-system development for a customer in financial sector as a full-stack developer</li>
+            <li>Implemented several reusable interface components in the form of jquery plugins</li>
+            <li>Developed ui-kits for projects, from which backend developers assembled interfaces</li>
+            <li>Served as a mentor for fledgling developers</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">PHP</li>
+            <li class="tags-list__item">MySQL</li>
+            <li class="tags-list__item">TypeScript</li>
+            <li class="tags-list__item">jQuery</li>
+            <li class="tags-list__item">React</li>
+            <li class="tags-list__item">Sass</li>
+            <li class="tags-list__item">BEM</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__company">TimProfi LLC, software engineer</div>
+        <div class="timeline__details">
+          <ul>
+            <li>Participated in development and support of several major online stores</li>
+            <li>Developed a module for buying theater tickets, as well as the cashier interface, and integrated them with the online store</li>
+          </ul>
+          <ul class="tags-list tags-list_color_primary timeline__technologies">
+            <li class="tags-list__item">PHP</li>
+            <li class="tags-list__item">MySQL</li>
+            <li class="tags-list__item">jQuery</li>
+            <li class="tags-list__item">Sass</li>
+            <li class="tags-list__item">BEM</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>

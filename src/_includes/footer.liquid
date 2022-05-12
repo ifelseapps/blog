@@ -5,17 +5,17 @@
     </div>
     <div class="footer__bottom">
       <div class="footer-copyright footer__copyright">
-        <p class="footer-copyright__line">&copy;&nbsp;2018&nbsp;&mdash;&nbsp;{% current_year %} <a href="#">Максим Павлов</a>. Все права защищены. Перепечатка материалов разрешается только с согласия автора.</p>
-        <p class="footer-copyright__line">Сайт построен с помощью <a href="https://11ty.dev" target="_blank">Eleventy</a> и размещен в <a href="https://www.netlify.com/" target="_blank">Netlify</a>.</p>
+        <p class="footer-copyright__line">&copy;&nbsp;2018&nbsp;&mdash;&nbsp;{% current_year %} <a href="/">{{ site.name }} {{ site.surname }}</a>. {{ site.footer.rights }}</p>
+        <p class="footer-copyright__line">{{ site.footer.build }} <a href="https://11ty.dev" target="_blank">Eleventy</a> {{ site.footer.deploy }} <a href="https://www.netlify.com/" target="_blank">Netlify</a>.</p>
       </div>
       <div class="footer__subscribe">
         <form id="subscribe-form" class="subscribe-form">
           <div class="subscribe-form__inner">
-            <label class="subscribe-form__label" for="email">Подписаться на рассылку</label>
+            <label class="subscribe-form__label" for="email">{{ site.footer.subscribe_label }}</label>
             <span class="subscribe-form__field">
-                <input name="email" id="email" placeholder="Введите e-mail" type="text" class="subscribe-form__input">
+              <input name="email" id="email" placeholder="{{ site.footer.subscribe_placeholder }}" type="text" class="subscribe-form__input">
                 <button class="button button_color_white subscribe-form__button" type="submit">
-                  <span class="button__inner">Подписаться</span>
+                  <span class="button__inner">{{ site.footer.subscribe_button }}</span>
                 </button>
               </span>
           </div>

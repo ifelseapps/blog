@@ -57,7 +57,7 @@
 <body>
   <noscript><div><img src="https://mc.yandex.ru/watch/48619130" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-  {% if page.url == '/' %}
+  {% if page.url == '/' or page.url == '/en/' %}
     {{ content |  safe }}
   {% else %}
     <div class="page">

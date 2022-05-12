@@ -1,1 +1,5 @@
-На сайте появился новый раздел &mdash; <a href="/travels/" class="link-solid"><span class="link-solid__inner">путешествия</span></a>.
+{% if site.important != '' %}
+  <aside class="top-banner">
+    <div class="container">{{ site.important }}</div>
+  </aside>
+{% endif %}
