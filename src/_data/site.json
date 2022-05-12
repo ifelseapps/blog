@@ -7,7 +7,7 @@
   "navigation": [
     { "ru": "Обо мне", "en": "About", "link": "/about/" },
     { "ru": "Проекты", "en": "Projects", "link": "/projects/" },
-    { "ru": "Заметки", "link": "/notes/" },
+    { "ru": "Заметки", "link": "/posts/" },
     { "ru": "Путешествия", "link": "/travels/" },
     { "ru": "Контакты", "en": "Contacts", "link": "/contacts/" }
   ],
