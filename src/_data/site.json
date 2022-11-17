@@ -3,10 +3,9 @@
   "locales": ["ru", "en"],
   "name": "Максим",
   "surname": "Павлов",
-  "important": "На сайте появился новый раздел &mdash; <a href='/travels/' class='link-solid'><span class='link-solid__inner'>путешествия</span></a>.",
+  "important": "Ищу команду мечты 🧐 <a href='/hire-me/' class='link-solid'><span class='link-solid__inner'>Подробнее</span></a>.",
   "navigation": [
     { "ru": "Обо мне", "en": "About", "link": "/about/" },
-    { "ru": "Проекты", "en": "Projects", "link": "/projects/" },
     { "ru": "Заметки", "link": "/posts/" },
     { "ru": "Путешествия", "link": "/travels/" },
     { "ru": "Контакты", "en": "Contacts", "link": "/contacts/" }
