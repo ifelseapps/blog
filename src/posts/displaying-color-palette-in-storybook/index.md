@@ -2,6 +2,7 @@
 title: Вывод цветовой палитры в Storybook
 date: 2022-01-17
 date_label: 2022-01-17
+is_favorite: true
 tags:
 - storybook
 - design systems

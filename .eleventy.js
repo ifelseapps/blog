@@ -56,6 +56,13 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+  eleventyConfig.addCollection('favorite', (collection) => {
+    const posts = collection.getFilteredByTag('post');
+    const reversed = [...posts].reverse();
+    const favorite = reversed.find(post => post.data.is_favorite);
+
+    return [favorite];
+  });
 
   eleventyConfig.addCollection('travels', (collection) => {
     const travels = collection.getFilteredByTag('travel');

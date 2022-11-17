@@ -51,10 +51,10 @@ keywords: frontend, фронтенд, senior frontend engineer, senior frontend 
             <h2 class="h h_lvl_3 pinned-post__title">Свежий пост</h2>
           </div>
           <article>
-            <a class="post-preview pinned-post__inner" href="{{ posts[0].url }}">
-              <h3 class="post-preview__title">{{ posts[0].data.title }}</h3>
-              <div class="post-preview__date">{{ posts[0].date | date_formatted }}</div>
-              <div class="post-preview__description">{{ posts[0].data.preview_text }}</div>
+            <a class="post-preview pinned-post__inner" href="{{ collections.favorite[0].url }}">
+              <h3 class="post-preview__title">{{ collections.favorite[0].data.title }}</h3>
+              <div class="post-preview__date">{{ collections.favorite[0].date | date_formatted }}</div>
+              <div class="post-preview__description">{{ collections.favorite[0].data.preview_text }}</div>
             </a>
           </article>
         </section>
