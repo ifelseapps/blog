@@ -224,6 +224,9 @@
 }
 
 .section-title {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom: 0.5em;
   text-align: center;
   background: linear-gradient(45deg, #880e4f 33%, #f50057 66%);
