@@ -143,6 +143,14 @@ ul, ol {
   &:hover::after {
     transform: translateY(3px);
   }
+
+  &_stroked {
+    color: #9E9E9E;
+    text-decoration: line-through;
+    &::after {
+      background: #9E9E9E;
+    }
+  }
 }
 
 .link-solid__inner {
