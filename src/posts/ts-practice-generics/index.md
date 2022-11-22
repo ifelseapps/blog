@@ -4,9 +4,9 @@ date: 2021-01-28
 date_label: 2021-01-28
 is_favorite: true
 tags:
-- typescript
-- generics
-- обобщения
+  - typescript
+  - generics
+  - обобщения
 keywords: typescript, практика typescript, generics, обобщения
 preview_text: В данной заметке я попробую рассказать просто об одной из непростых тем в TypeScript — об&nbsp;обобщениях. Обобщения позволят вам писать универсальный код, который может работать с разными типами сущностей.
 ---
@@ -15,13 +15,18 @@ preview_text: В данной заметке я попробую рассказ�
 
 Я часто вижу, что разработчики используют TypeScript на достаточно примитивном уровне: _«вот мы типизируем строки, вот мы типизируем объекты, вот мы типизируем пропсы и стейт компонента»_. К тому же, многие пишут на TypeScript так, чтобы компилятор не ругался, а моя философия — писать так, чтобы компилятор и IDE помогали в разработке. Я хочу поделиться своим опытом использования TypeScript на практике в формате нескольких статей. Мы рассмотрим дженерики (обобщения), условные типы, будем учиться выводить сложные типы, а также применим эти знания к разработке на React.
 
+Все статьи цикла:
+
+- **Практика TypeScript. Generics.**
+- [Практика TypeScript. Типизируем React-приложение](/posts/types-for-react-application/)
+
 Для тех, кто впервые столкнулся с TypeScript, дженерики (обобщения) — одна из самых трудных тем. Обобщение — это параметризованный тип, который позволяет объявлять параметры типа, являющиеся временной заменой конкретных типов, конкретизация которых будет выполнена в момент создания экземпляра.
 
 Напишем простую функцию, которая возвращает перевернутый массив. Нам неизвестен заранее тип элементов массива и мы хотим, чтобы функция работала с любым типом. Поэтому мы заменяем тип параметром `T`.
 
 ```tsx
 function reverse<T>(arr: T[]): T[] {
-    return [...arr.reverse()];
+  return [...arr.reverse()];
 }
 const reversed = reverse(['a', 'b', 'c']);
 const reversed2 = reverse([1, 2, 3]);
@@ -32,11 +37,12 @@ const reversed2 = reverse([1, 2, 3]);
 Возьмем пример посложнее. Напишем типизированную обертку над `Object.keys()`.
 
 ```tsx
-const getObjectKeys = <T extends /*1*/Record<string, any>>(obj: T) => Object.keys(obj) as Array</*2*/keyof T>;
+const getObjectKeys = <T extends /*1*/ Record<string, any>>(obj: T) =>
+  Object.keys(obj) as Array</*2*/ keyof T>;
 
 const obj = {
-    name: 'Ivan',
-    age: 25
+  name: 'Ivan',
+  age: 25,
 };
 
 const keys = getObjectKeys(obj);
@@ -51,51 +57,71 @@ const keys = getObjectKeys(obj);
 
 ```tsx
 interface IUser {
-    id: string;
-    name: string;
-    age: number;
+  id: string;
+  name: string;
+  age: number;
 }
 
 interface IResponse {
-	data: IUser[];
+  data: IUser[];
 }
 
-const getUsers = (): Promise<IResponse> => Promise.resolve({
-	data: [
-	  {
-	    id: '0001',
-	    name: 'Ivan',
-	    age: 30,
-	  },
-	  {
-	    id: '0002',
-	    name: 'Petr',
-	    age: 25,
-	  },
-	]
-});
+const getUsers = (): Promise<IResponse> =>
+  Promise.resolve({
+    data: [
+      {
+        id: '0001',
+        name: 'Ivan',
+        age: 30,
+      },
+      {
+        id: '0002',
+        name: 'Petr',
+        age: 25,
+      },
+    ],
+  });
 
-function createDictionaryFromArray<T extends Record<string, any>, V = T[keyof T]>(getKey: (el: T) => string, getValue: (el: T) => V) {
-  return (arr: T[]) => arr.reduce<Record<string, V>>((acc, el) => ({
-    ...acc,
-    [getKey(el)]: getValue(el)
-  }), {});
+function createDictionaryFromArray<
+  T extends Record<string, any>,
+  V = T[keyof T]
+>(getKey: (el: T) => string, getValue: (el: T) => V) {
+  return (arr: T[]) =>
+    arr.reduce<Record<string, V>>(
+      (acc, el) => ({
+        ...acc,
+        [getKey(el)]: getValue(el),
+      }),
+      {}
+    );
 }
 
 getUsers()
-  .then(res => res.data)
-  .then(createDictionaryFromArray(el => el.id, el => el.age))
-  .then(usersAge => console.log(usersAge));
+  .then((res) => res.data)
+  .then(
+    createDictionaryFromArray(
+      (el) => el.id,
+      (el) => el.age
+    )
+  )
+  .then((usersAge) => console.log(usersAge));
 ```
 
 Давайте разберем, что тут происходит.
 
 ```tsx
-function createDictionaryFromArray</*1*/T extends Record<string, any>, /*2*/V = T[keyof T]>(/*3*/getKey: (el: T) => string, /*4*/getValue: (el: T) => V) {
-  return /*5*/(arr: T[]) => arr.reduce</*6*/Record<string, V>>((acc, el) => ({
-    ...acc,
-    [getKey(el)]: getValue(el)
-  }), {});
+function createDictionaryFromArray<
+  /*1*/ T extends Record<string, any>,
+  /*2*/ V = T[keyof T]
+>(/*3*/ getKey: (el: T) => string, /*4*/ getValue: (el: T) => V) {
+  return /*5*/ (arr: T[]) =>
+    arr.reduce</*6*/ Record<string, V>>(
+      (acc, el) => ({
+        ...acc,
+        [getKey(el)]: getValue(el),
+      }),
+      {}
+    );
 }
 ```
 
@@ -112,9 +138,14 @@ function createDictionaryFromArray</*1*/T extends Record<string, any>, /*2*/V = 
 
 ```tsx
 getUsers()
-  .then(res => res.data)
-  .then(createDictionaryFromArray<IUser, IUser>(el => el.id, el => el))
-  .then(usersAge => console.log(usersAge));
+  .then((res) => res.data)
+  .then(
+    createDictionaryFromArray<IUser, IUser>(
+      (el) => el.id,
+      (el) => el
+    )
+  )
+  .then((usersAge) => console.log(usersAge));
 ```
 
 Какой профит дала нам типизация этой функции? Во-первых мы получили правильный тип переменной `usersAge`. Во-вторых мы получили актуальные подсказки в IDE при написании функций `getKey` и `getValue`. Это именно та помощь TypeScript о которой я говорил в начале.
@@ -158,12 +189,12 @@ class BrowserStorage<T extends Record<string, any>> {
   }
 }
 
-const storage = new BrowserStorage<IPerson>("example", localStorage);
-storage.set("login", "ivanov");
-storage.set("name", "Ivanov Ivan");
-storage.set("email", "ivan@ivanov.ru");
+const storage = new BrowserStorage<IPerson>('example', localStorage);
+storage.set('login', 'ivanov');
+storage.set('name', 'Ivanov Ivan');
+storage.set('email', 'ivan@ivanov.ru');
 
-console.log(storage.get("login"));
+console.log(storage.get('login'));
 ```
 
 На сегодня все. Надеюсь, что данная статья помогла вам лучше понять обобщения в TypeScript 🙂 Все примеры я выложил на [stackblitz](https://stackblitz.com/edit/typescript-generics-examples).
