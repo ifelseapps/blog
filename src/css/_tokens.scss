@@ -1,14 +1,45 @@
 :root {
-  --color-primary: #2cb98f;
+  --color-background: #eceff1;
   --color-text: #212121;
-  --color-gray: #90a4ae;
-
-  // TODO: переименовать в соответствии с конвенцией
-  --theme-toggler-color: #fafafa;
-  --theme-toggler-back: #1f61c5;
-  --theme-focus-color: #8c9eff;
+  --color-post-date: #455a64;
+  --color-important-block-background: #fce4ec;
+  --color-important-block-accent: #f50057;
+  --color-section-title-from: #880e4f;
+  --color-section-title-to: #f50057;
+  --color-line-from: #880e4f;
+  --color-line-to: #f50057;
+  --color-timeline-item: #f50057;
+  --color-figcaption: #757575;
+  --color-inline-code-background: #fce4ec;
+  --color-inline-code-color: #880e4f;
+  --color-list-marker: #f50057;
+  --color-key-content: #e91e63;
+  --color-focus: #f50057;
+  --color-toggler-back: #1f61c5;
+  --color-toggler: #fff;
 
   --h1-size: 2.1rem;
   --h2-size: 1.6rem;
   --h3-size: 1.2rem;
+}
+
+.theme-dark {
+  --color-background: #323232;
+  --color-text: #fff;
+  --color-post-date: #b8c3c8;
+  --color-important-block-background: #3a1d26;
+  --color-important-block-accent: #bc0000;
+  --color-section-title-from: #bb0d6a;
+  --color-section-title-to: #f50057;
+  --color-line-from: #c81374;
+  --color-line-to: #f50057;
+  --color-timeline-item: #bd0143;
+  --color-figcaption: #a9a6a6;
+  --color-inline-code-background: #661933;
+  --color-inline-code-color: rgb(255, 181, 181);
+  --color-list-marker: #ff3a7f;
+  --color-key-content: #fc4985;
+  --color-focus: #f50057;
+  --color-toggler-back: #42a5f5;
+  --color-toggler: #fff;
 }

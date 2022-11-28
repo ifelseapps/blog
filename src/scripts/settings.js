@@ -6,7 +6,6 @@ const page = document.getElementById('page');
 const themeMeta = document.querySelector('meta[name="theme-color"]');
 const defaultTheme = themeMeta.content;
 const LOCAL_STORAGE_KEY = 'dark_theme';
-const isDarkThemeEnabled = localStorage[LOCAL_STORAGE_KEY] === 'Y';
 
 settingsBtn.addEventListener('click', function () {
   if (settingsBlock.classList.contains('settings_visible')) {
@@ -39,13 +38,46 @@ themeTogglerCheckbox.addEventListener('change', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (window.localStorage && isDarkThemeEnabled) {
+  const theme = getTheme();
+
+  if (theme === 'dark') {
     themeTogglerCheckbox.click();
   }
-
-  // Включаем transition'ы после того как передвинули toggler в нужное положение
-  setTimeout(
-    () => themeToggler.classList.remove('theme-switcher_animation-off'),
-    0
-  );
 });
+
+function getTheme() {
+  const themeFromStorage = getThemeFromStorage();
+
+  if (themeFromStorage) {
+    console.log('__BB__', themeFromStorage);
+    return themeFromStorage;
+  }
+
+  console.log('__AAA__');
+  const isEnabledSystemDarkTheme = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+
+  if (isEnabledSystemDarkTheme) {
+    console.log('__XXX_TEST__', themeFromStorage);
+    return 'dark';
+  }
+
+  return 'light';
+}
+
+function getThemeFromStorage() {
+  try {
+    if (localStorage[LOCAL_STORAGE_KEY] === 'Y') {
+      return 'dark';
+    }
+
+    if (localStorage[LOCAL_STORAGE_KEY] === 'N') {
+      return 'light';
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}

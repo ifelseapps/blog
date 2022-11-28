@@ -1,4 +1,5 @@
-.about-page {}
+.about-page {
+}
 
 .about-page__top {
   @include bp(lg) {
@@ -50,7 +51,7 @@
   margin: 0;
   padding: 1em 0;
   list-style: none;
-  border-left: solid 6px #BDBDBD;
+  border-left: solid 6px #bdbdbd;
   font-size: 0.9rem;
 }
 
@@ -69,11 +70,11 @@
     width: 1.4em;
     height: 1.4em;
     transform: translateX(-50%);
-    background: #F50057;
+    background: var(--color-timeline-item);
     border-radius: 100%;
   }
   &:hover {
-    background-color: #CFD8DC;
+    background-color: var(--color-important-block-background);
   }
 }
 

@@ -18,13 +18,13 @@
 }
 
 .post-page-footer {
-  --button-primary-background-hover: #FCE4EC;
+  --button-primary-background-hover: var(--color-important-block-background);
 
   margin-top: 1.5em;
   margin-bottom: -1.5em;
   padding-top: 3em;
   padding-bottom: 3em;
-  background: #FCE4EC;
+  background: var(--color-important-block-background);
 }
 
 .post-page-footer__inner {
@@ -61,9 +61,9 @@
   margin: 0 -1em;
   padding: 0 0.5em;
   list-style: none;
-  font-family: 'Helvetica Neue', sans-serif!important;
+  font-family: 'Helvetica Neue', sans-serif !important;
   font-size: 0.7rem;
-  background: #FCE4EC;
+  background: #fce4ec;
   border-radius: 5px;
 }
 
@@ -78,21 +78,21 @@
 
 .post-page code:not([class]) {
   padding: 0.3em 0.4em;
-  background: #FCE4EC;
-  color: #880E4F;
+  background: var(--color-inline-code-background);
+  color: var(--color-inline-code-color);
   border-radius: 5px;
-  font-family: 'Helvetica Neue', sans-serif!important;
+  font-family: 'Helvetica Neue', sans-serif !important;
   line-height: 1em;
   font-size: 0.8em;
   text-shadow: 0 1px rgba(0, 0, 0, 0.05);
 }
 
-.post-page pre[class*="language-"] {
+.post-page pre[class*='language-'] {
   margin: 2em 0;
 }
 
-.post-page code[class*="language-"],
-.post-page pre[class*="language-"] {
+.post-page code[class*='language-'],
+.post-page pre[class*='language-'] {
   font-size: 0.8rem;
 }
 
@@ -103,8 +103,8 @@
 .toc {
   display: inline-flex;
   padding: 1em;
-  background: #FFEBEE;
-  border: solid 1px #FFCDD2;
+  background: #ffebee;
+  border: solid 1px #ffcdd2;
   border-radius: 5px;
   ol {
     margin: 0;
@@ -124,7 +124,7 @@
 
   &:focus {
     outline: 0;
-    color: #E91E63;
+    color: #e91e63;
   }
 
   .header-anchor {
@@ -133,7 +133,7 @@
   }
 
   &:hover .header-anchor {
-    color: #E91E63;
+    color: #e91e63;
   }
 }
 
@@ -154,7 +154,7 @@
   padding: 0 1em;
   font-size: 0.85rem;
   line-height: 1.3em;
-  border-left: solid 3px #E91E63;
+  border-left: solid 3px #e91e63;
   font-family: 'Helvetica Neue', sans-serif;
 
   footer {
@@ -188,19 +188,19 @@
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 0.75rem;
   line-height: 1.5em;
-  color: #757575;
+  color: var(--color-figcaption);
 }
 
 .key-content {
   margin: 1em 0;
   padding: 1em;
-  border-top: solid 5px #E91E63;
-  border-bottom: solid 5px #E91E63;
+  border-top: solid 5px var(--color-key-content);
+  border-bottom: solid 5px var(--color-key-content);
   font-size: 1.6rem;
   line-height: 1.3em;
   font-style: italic;
   font-weight: 700;
-  color: #E91E63;
+  color: var(--color-key-content);
   box-sizing: border-box;
   @include bp(lg) {
     width: 900px;
