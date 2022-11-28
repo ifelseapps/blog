@@ -12,9 +12,11 @@ settingsBtn.addEventListener('click', function () {
   if (settingsBlock.classList.contains('settings_visible')) {
     page.style.transform = `translate3d(0, 0, 0)`;
   } else {
-    page.style.transform = `translate3d(0, ${Math.floor(
-      settingsBlock.clientHeight
-    )}px, 0)`;
+    // TODO: -1 - костыль, надо разобраться почему прорисовывается тонкая линия
+    // между блоком настроек и header'ом
+    page.style.transform = `translate3d(0, ${
+      settingsBlock.clientHeight - 1
+    }px, 0)`;
   }
   settingsBlock.classList.toggle('settings_visible');
 });
