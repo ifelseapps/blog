@@ -12,7 +12,9 @@ settingsBtn.addEventListener('click', function () {
   if (settingsBlock.classList.contains('settings_visible')) {
     page.style.transform = `translate3d(0, 0, 0)`;
   } else {
-    page.style.transform = `translate3d(0, ${settingsBlock.clientHeight}px, 0)`;
+    page.style.transform = `translate3d(0, ${Math.floor(
+      settingsBlock.clientHeight
+    )}px, 0)`;
   }
   settingsBlock.classList.toggle('settings_visible');
 });

@@ -65,11 +65,12 @@
   height: 1.2em;
 }
 
-.settings-button:hover {
+.settings-button:hover:not(.touch-device .settings-button:hover) {
   color: #f06292;
 }
 
-.settings-button:hover .settings-button__icon {
+.settings-button:hover:not(.touch-device .settings-button:hover)
+  .settings-button__icon {
   animation-name: infinite-rotate;
   animation-duration: 0.8s;
   animation-fill-mode: both;
@@ -82,8 +83,9 @@
   left: 0;
   z-index: 1;
   width: 100%;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  height: 54px;
+  display: flex;
+  align-items: center;
   font-size: 0.8rem;
   background: #212121;
   color: #fff;
