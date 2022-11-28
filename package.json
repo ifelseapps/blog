@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run styles && eleventy --serve",
-    "build": "npm run styles && eleventy",
-    "styles": "gulp styles",
-    "styles:watch": "gulp"
+    "start": "npm run build:styles && npm run build:scripts && eleventy --serve",
+    "build": "npm run build:styles && npm run build:scripts && eleventy",
+    "build:styles": "gulp styles",
+    "build:scripts": "gulp scripts",
+    "build:assets": "gulp"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
   "devDependencies": {
     "html-minifier": "^4.0.0",
     "markdown-it-anchor": "^8.4.1",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "webpack-stream": "^7.0.0"
   }
 }

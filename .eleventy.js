@@ -11,7 +11,6 @@ const pluginBlogTools = require('eleventy-plugin-blog-tools');
 const htmlmin = require('html-minifier');
 const path = require('path');
 
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
@@ -23,8 +22,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('src/robots.txt');
   eleventyConfig.addPassthroughCopy('src/css/fonts');
-  eleventyConfig.addPassthroughCopy('src/images/template/**/*.(jpg|svg|png|gif|webmanifest|xml|ico)');
-  eleventyConfig.addPassthroughCopy('src/scripts');
+  eleventyConfig.addPassthroughCopy(
+    'src/images/template/**/*.(jpg|svg|png|gif|webmanifest|xml|ico)'
+  );
 
   eleventyConfig.setLiquidOptions({
     strictFilters: false,
@@ -34,22 +34,19 @@ module.exports = function (eleventyConfig) {
     html: true,
   };
 
-  const markdownLib = markdownIt(markdownItOptions).use(
-    markdownItAnchor,
-    {
-      permalink: markdownItAnchor.permalink.headerLink()
-    }
-  );
+  const markdownLib = markdownIt(markdownItOptions).use(markdownItAnchor, {
+    permalink: markdownItAnchor.permalink.headerLink(),
+  });
 
   eleventyConfig.setLibrary('md', markdownLib);
 
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if( outputPath && outputPath.endsWith(".html") ) {
+    if (outputPath && outputPath.endsWith('.html')) {
       return htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       });
     }
 
@@ -59,7 +56,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('favorite', (collection) => {
     const posts = collection.getFilteredByTag('post');
     const reversed = [...posts].reverse();
-    const favorite = reversed.find(post => post.data.is_favorite);
+    const favorite = reversed.find((post) => post.data.is_favorite);
 
     return [favorite];
   });
@@ -81,7 +78,6 @@ module.exports = function (eleventyConfig) {
       return acc;
     }, {});
 
-
     travels.forEach((item) => {
       if (item.data.group) {
         item.data.years = [...groups[item.data.group]].reverse();
@@ -98,7 +94,7 @@ module.exports = function (eleventyConfig) {
       if ('tags' in item.data) {
         let tags = item.data.tags;
 
-        tags.forEach(t => count[t] = (count[t] || 0) + 1);
+        tags.forEach((t) => (count[t] = (count[t] || 0) + 1));
 
         tags = tags.filter(function (item) {
           switch (item) {
@@ -120,32 +116,32 @@ module.exports = function (eleventyConfig) {
       }
     });
 
-    return [...tagSet].map(t => ({ name: t, count: count[t] }));
+    return [...tagSet].map((t) => ({ name: t, count: count[t] }));
   });
 
-  eleventyConfig.addLiquidFilter("encode", (url) => {
+  eleventyConfig.addLiquidFilter('encode', (url) => {
     return encodeURIComponent(url);
   });
 
-  eleventyConfig.addLiquidFilter("reverse", (collection) => {
+  eleventyConfig.addLiquidFilter('reverse', (collection) => {
     return [...collection].reverse();
   });
 
-  eleventyConfig.addFilter('date_formatted', dateObj => {
+  eleventyConfig.addFilter('date_formatted', (dateObj) => {
     if (!dateObj) {
       return '';
     }
     return format(dateObj, 'dd.MM.yyyy');
   });
 
-  eleventyConfig.addFilter('date_month_year', dateObj => {
+  eleventyConfig.addFilter('date_month_year', (dateObj) => {
     if (!dateObj) {
       return '';
     }
     return format(dateObj, 'LLLL yyyy', { locale: ruLocale });
   });
 
-  eleventyConfig.addFilter('date_iso', dateObj => {
+  eleventyConfig.addFilter('date_iso', (dateObj) => {
     if (!dateObj) {
       return '';
     }
@@ -159,8 +155,10 @@ module.exports = function (eleventyConfig) {
       },
       render: async function (scope, hash) {
         const str = await liquidEngine.evalValue(this.str, scope);
-        return Promise.resolve(`<div class="important-block"><div class="important-block__inner">${str}</div></div>`);
-      }
+        return Promise.resolve(
+          `<div class="important-block"><div class="important-block__inner">${str}</div></div>`
+        );
+      },
     };
   });
 
@@ -172,7 +170,7 @@ module.exports = function (eleventyConfig) {
       render: async function (scope, hash) {
         const str = await liquidEngine.evalValue(this.str, scope);
         return Promise.resolve(`<div class="key-content">${str}</div>`);
-      }
+      },
     };
   });
 
@@ -180,7 +178,7 @@ module.exports = function (eleventyConfig) {
     return {
       render: function () {
         return Promise.resolve('<hr class="line">');
-      }
+      },
     };
   });
 
@@ -188,59 +186,69 @@ module.exports = function (eleventyConfig) {
     return {
       render: function () {
         return Promise.resolve(format(new Date(), 'yyyy'));
-      }
+      },
     };
   });
 
   eleventyConfig.addLiquidFilter('dateToRfc3339', pluginRss.dateToRfc3339);
   eleventyConfig.addLiquidFilter('absoluteUrl', pluginRss.absoluteUrl);
-  eleventyConfig.addLiquidFilter('getNewestCollectionItemDate', pluginRss.getNewestCollectionItemDate);
+  eleventyConfig.addLiquidFilter(
+    'getNewestCollectionItemDate',
+    pluginRss.getNewestCollectionItemDate
+  );
 
-  eleventyConfig.addLiquidShortcode('image', async function (src, alt, caption, fullWidth = 'true') {
-    if (!alt) {
-      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
-    }
-
-    const stats = await Image(src, {
-      widths: fullWidth === 'false' ? [null] : [320, 640, 960, 1200, 1800],
-      formats: [null],
-      urlPath: '/images/',
-      outputDir: './_site/images/',
-      filenameFormat: function (id, src, width, format, options) {
-        const extension = path.extname(src);
-        const name = path.basename(src, extension);
-        return `${name}-${width}w.${format}`;
+  eleventyConfig.addLiquidShortcode(
+    'image',
+    async function (src, alt, caption, fullWidth = 'true') {
+      if (!alt) {
+        throw new Error(`Missing \`alt\` on myImage from: ${src}`);
       }
-    });
 
-    const format = path.extname(src) === '.jpg' ? 'jpeg' : 'png';
-    const lowestSrc = stats[format][0];
-    const highSrc = stats[format][stats[format].length - 1];
+      const stats = await Image(src, {
+        widths: fullWidth === 'false' ? [null] : [320, 640, 960, 1200, 1800],
+        formats: [null],
+        urlPath: '/images/',
+        outputDir: './_site/images/',
+        filenameFormat: function (id, src, width, format, options) {
+          const extension = path.extname(src);
+          const name = path.basename(src, extension);
+          return `${name}-${width}w.${format}`;
+        },
+      });
 
-    const srcset = Object.keys(stats).reduce(
-      (acc, format) => ({
-        ...acc,
-        [format]: stats[format].reduce(
-          (_acc, curr) => `${_acc} ${curr.srcset} ,`,
-          ''
-        ).slice(0, -1),
-      }),
-      {}
-    );
+      const format = path.extname(src) === '.jpg' ? 'jpeg' : 'png';
+      const lowestSrc = stats[format][0];
+      const highSrc = stats[format][stats[format].length - 1];
 
-    const img = fullWidth === 'true' ? `<a href="${highSrc.url}"><img
+      const srcset = Object.keys(stats).reduce(
+        (acc, format) => ({
+          ...acc,
+          [format]: stats[format]
+            .reduce((_acc, curr) => `${_acc} ${curr.srcset} ,`, '')
+            .slice(0, -1),
+        }),
+        {}
+      );
+
+      const img =
+        fullWidth === 'true'
+          ? `<a href="${highSrc.url}"><img
       class="full-width"
       alt="${alt}"
       src="${lowestSrc.url}"
       sizes='(min-width: 1024px) 1024px, 100vw'
       srcset="${srcset[format]}"
-    ></a>` : `<img
+    ></a>`
+          : `<img
       alt="${alt}"
       src="${lowestSrc.url}"
     >`;
 
-    return `<figure>${img}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
-  });
+      return `<figure>${img}${
+        caption ? `<figcaption>${caption}</figcaption>` : ''
+      }</figure>`;
+    }
+  );
 
   eleventyConfig.addLiquidShortcode('image_preview', async function (src) {
     const stats = await Image(src, {
@@ -252,7 +260,7 @@ module.exports = function (eleventyConfig) {
         const extension = path.extname(src);
         const name = path.basename(src, extension);
         return `${name}-${width}w.${format}`;
-      }
+      },
     });
 
     const data = stats['jpeg'][0];
@@ -260,32 +268,31 @@ module.exports = function (eleventyConfig) {
     return `<div class="pic" style="background-image: url(${data.url})"></div>`;
   });
 
-  eleventyConfig.addLiquidShortcode('quote', function (quote, author, position, link) {
-    const authorHtml = link && link.length
-      ? `<a target="_blank" href="${link}">${author}</a>`
-      : author;
-    const parts = [
-      `<blockquote><p>${quote}</p><footer>`,
-      authorHtml
-    ];
+  eleventyConfig.addLiquidShortcode(
+    'quote',
+    function (quote, author, position, link) {
+      const authorHtml =
+        link && link.length
+          ? `<a target="_blank" href="${link}">${author}</a>`
+          : author;
+      const parts = [`<blockquote><p>${quote}</p><footer>`, authorHtml];
 
-    if (position) {
-      parts.push(
-        `, <span>${position}</span>`
-      );
+      if (position) {
+        parts.push(`, <span>${position}</span>`);
+      }
+
+      parts.push('</footer></blockquote>');
+
+      return parts.join('');
     }
-
-    parts.push('</footer></blockquote>');
-
-    return parts.join('');
-  });
+  );
 
   return {
     dir: {
       input: 'src',
       includes: '_includes',
       layouts: '_layouts',
-      markdownTemplateEngine: 'liquid'
-    }
+      markdownTemplateEngine: 'liquid',
+    },
   };
 };
