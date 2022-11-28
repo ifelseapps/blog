@@ -4,39 +4,45 @@ title: Maxim Pavlov
 description: Maxim Pavlov — senior frontend engineer
 keywords: frontend, senior frontend engineer, senior frontend developer, ui, ux, javascript, typescript, react, redux
 ---
-<div class="page">
-  <div>
-    {% include 'important.liquid' %}
-    <header class="main-banner">
-      <div class="container">
-        <div class="main-banner__locales">
-          {% include 'locales.liquid' %}
+{% include 'settings.liquid' %}
+<div id="page" class="page">
+  {% include 'important.liquid' %}
+  <header class="main-banner">
+    <div class="container">
+      <div class="main-banner__settings">
+        <button id="settings-btn" class="settings-button">
+          <svg class="settings-button__icon">
+            <use xlink:href="#icon-settings"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="main-banner__menu container">
+      {% include 'menu.liquid' %}
+    </nav>
+    <div class="main-banner__inner container">
+      <div class="main-banner__info">
+        <h1 class="main-banner__title">
+          {% include 'name.liquid' %}
+        </h1>
+        <div class="main-banner__preview-text">
+          Hi! I'm a senior frontend engineer with 8,5 years of experience. I develop interfaces at
+          <a href="https://mts.ru" class="link-solid" target="_blank">
+            <span class="link-solid__inner">MTS</span>
+          </a>.<br>
+          In&nbsp;my spare time I like to travel, learn Hebrew and English, and am interested in history and civil aviation.
+        </div>
+        <div class="main-banner__more">
+          <a href="/en/about/" class="button button_color_white">
+            <span class="button__inner">Show more</span>
+          </a>
         </div>
       </div>
-      <nav class="main-banner__menu container">
-        {% include 'menu.liquid' %}
-      </nav>
-      <div class="main-banner__inner container">
-        <div class="main-banner__info">
-          <h1 class="main-banner__title">
-            {% include 'name.liquid' %}
-          </h1>
-          <div class="main-banner__preview-text">
-            Hi! I'm a senior frontend engineer with 8,5 years of experience. I develop interfaces at <a href="https://mts.ru" class="link-solid" target="_blank"><span class="link-solid__inner">MTS</span></a>.<br>
-            In&nbsp;my spare time I like to travel, learn Hebrew and English, and am interested in history and civil aviation.
-          </div>
-          <div class="main-banner__more">
-            <a href="/en/about/" class="button button_color_white">
-              <span class="button__inner">Show more</span>
-            </a>
-          </div>
-        </div>
-        <div class="main-banner__photo" aria-hidden="true">
-          <div class="photo"></div>
-        </div>
+      <div class="main-banner__photo" aria-hidden="true">
+        <div class="photo"></div>
       </div>
-    </header>
-  </div>
+    </div>
+  </header>
   <main>
     <div class="container">
       <div class="top-section">
@@ -65,7 +71,9 @@ keywords: frontend, senior frontend engineer, senior frontend developer, ui, ux,
               </div>
             </div>
             <hr class="line">
-            <p>You can learn more about my experience in the <a href="/en/about/">about me</a> section.</p>
+            <p>You can learn more about my experience in the
+              <a href="/en/about/">about me</a>
+              section.</p>
           </div>
         </div>
       </section>

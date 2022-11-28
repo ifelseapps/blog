@@ -4,6 +4,7 @@
   grid-template-columns: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: transform 0.3s;
 }
 
 .page__content {
@@ -44,6 +45,66 @@
   }
 }
 
+.settings-button {
+  padding: 0.5em;
+  color: #fff;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.settings-button__icon {
+  width: 2em;
+  height: 2em;
+  fill: currentColor;
+}
+
+.settings-button_sm .settings-button__icon {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.settings-button:hover {
+  color: #f06292;
+}
+
+.settings-button:hover .settings-button__icon {
+  animation-name: infinite-rotate;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.settings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 0.8rem;
+  background: #212121;
+  color: #fff;
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.3s;
+}
+
+.settings_visible {
+  transform: translate3d(0, 0, 0);
+}
+
+.settings__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.settings__item {
+  padding: 0 1em;
+}
+
 .header {
   padding: 1em 0;
   background: #212121;
@@ -72,13 +133,13 @@
   font-size: 1.4rem;
 }
 
-.header__locales {
+.header__settings {
   display: inline-flex;
   position: absolute;
   top: 0;
   left: 100%;
   transform: translateY(-25%);
-  margin-left: 0.5em;
+  margin-left: 0.1em;
 }
 
 .header .menu {
@@ -275,4 +336,14 @@
   border-radius: 100%;
   background: linear-gradient(-45deg, #f50057 0%, #d81b60 33%, #f50057 66%);
   color: #fff;
+}
+
+@keyframes infinite-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
 }

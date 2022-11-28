@@ -4,40 +4,46 @@ title: Максим Павлов
 description: Максим Павлов — senior frontend engineer
 keywords: frontend, фронтенд, senior frontend engineer, senior frontend developer, фронтенд-разработчик, ui, ux, javascript, typescript, react, redux
 ---
-<div class="page">
-  <div>
-    {% include 'important.liquid' %}
-    <header class="main-banner">
-      <div class="container">
-        <div class="main-banner__locales">
-          {% include 'locales.liquid' %}
+{% include 'settings.liquid' %}
+<div id="page" class="page">
+  {% include 'important.liquid' %}
+  <header class="main-banner">
+    <div class="container">
+      <div class="main-banner__settings">
+        <button id="settings-btn" class="settings-button">
+          <svg class="settings-button__icon">
+            <use xlink:href="#icon-settings"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="main-banner__menu container">
+      {% include 'menu.liquid' %}
+    </nav>
+    <div class="main-banner__inner container">
+      <div class="main-banner__info">
+        <h1 class="main-banner__title">
+          {% include 'name.liquid' %}
+        </h1>
+        <div class="main-banner__preview-text">
+          Привет! Я — senior frontend engineer с 8,5 годами опыта. Разрабатываю интерфейсы
+          в
+          <a href="https://mts.ru" class="link-solid" target="_blank">
+            <span class="link-solid__inner">МТС</span>
+          </a>.
+          В&nbsp;свободное время я люблю путешествовать, изучаю иврит и английский, интересуюсь историей и гражданской авиацией.
+        </div>
+        <div class="main-banner__more">
+          <a href="/about/" class="button button_color_white">
+            <span class="button__inner">Подробнее</span>
+          </a>
         </div>
       </div>
-      <nav class="main-banner__menu container">
-        {% include 'menu.liquid' %}
-      </nav>
-      <div class="main-banner__inner container">
-        <div class="main-banner__info">
-          <h1 class="main-banner__title">
-            {% include 'name.liquid' %}
-          </h1>
-          <div class="main-banner__preview-text">
-            Привет! Я — senior frontend engineer с 8,5 годами опыта. Разрабатываю интерфейсы
-            в <a href="https://mts.ru" class="link-solid" target="_blank"><span class="link-solid__inner">МТС</span></a>.
-            В&nbsp;свободное время я люблю путешествовать, изучаю иврит и английский, интересуюсь историей и гражданской авиацией.
-          </div>
-          <div class="main-banner__more">
-            <a href="/about/" class="button button_color_white">
-              <span class="button__inner">Подробнее</span>
-            </a>
-          </div>
-        </div>
-        <div class="main-banner__photo" aria-hidden="true">
-          <div class="photo"></div>
-        </div>
+      <div class="main-banner__photo" aria-hidden="true">
+        <div class="photo"></div>
       </div>
-    </header>
-  </div>
+    </div>
+  </header>
   <main>
     <div class="container">
       <div class="top-section">
@@ -91,7 +97,8 @@ keywords: frontend, фронтенд, senior frontend engineer, senior frontend 
               </div>
             </div>
             <hr class="line">
-            <p>Подробнее с моим опытом можно познакомиться в разделе <a href="/about/">обо мне</a>.</p>
+            <p>Подробнее с моим опытом можно познакомиться в разделе
+              <a href="/about/">обо мне</a>.</p>
           </div>
         </div>
       </section>

@@ -7,7 +7,8 @@ const webpack = require('webpack-stream');
 
 const PATHS = {
   styles: 'src/css/**/*.scss',
-  scipts: 'src/scripts/common.js',
+  scripts: 'src/scripts/**/*.js',
+  jsBundle: 'src/scripts/common.js',
 };
 
 function stylesTask() {
@@ -20,7 +21,7 @@ function stylesTask() {
 
 function scriptsTask() {
   return gulp
-    .src(PATHS.scipts)
+    .src(PATHS.jsBundle)
     .pipe(webpack({ mode: 'production', output: { filename: 'common.js' } }))
     .pipe(gulp.dest('_site/scripts/'));
 }
@@ -31,5 +32,5 @@ module.exports.scripts = scriptsTask;
 
 module.exports.default = function () {
   gulp.watch([PATHS.styles], stylesTask);
-  gulp.watch([PATHS.scipts], scriptsTask);
+  gulp.watch([PATHS.scripts], scriptsTask);
 };

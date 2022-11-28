@@ -1,7 +1,12 @@
 :root {
   --color-primary: #2cb98f;
   --color-text: #212121;
-  --color-gray: #90A4AE;
+  --color-gray: #90a4ae;
+
+  // TODO: переименовать в соответствии с конвенцией
+  --theme-toggler-color: #fafafa;
+  --theme-toggler-back: #1f61c5;
+  --theme-focus-color: #8c9eff;
 
   --h1-size: 2.1rem;
   --h2-size: 1.6rem;

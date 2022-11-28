@@ -40,11 +40,13 @@
   }
 }
 
-.main-banner__locales {
+.main-banner__settings {
+  position: relative;
   display: flex;
   justify-content: flex-end;
-  padding-top: 2em;
+  padding-top: 1em;
   padding-right: 1em;
+  z-index: 1;
 }
 
 .main-banner__info {

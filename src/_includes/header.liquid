@@ -9,8 +9,12 @@
       <a class="header__name" href="{{ url }}">
         {% include 'name.liquid' %}
       </a>
-      <span class="header__locales">
-        {% include 'locales.liquid' %}
+      <span class="header__settings">
+        <button id="settings-btn" class="settings-button settings-button_sm">
+          <svg class="settings-button__icon">
+            <use xlink:href="#icon-settings"></use>
+          </svg>
+        </button>
       </span>
     </div>
     {% include 'menu.liquid' %}
