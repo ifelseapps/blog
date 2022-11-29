@@ -8,10 +8,9 @@
   {% for item in site.navigation %}
     {% if item[site.locale] %}
       {% assign fullUrl = prefix | append: item.link %}
-      <a href="{{ fullUrl }}" class="menu__item{% if page.url == fullUrl %} menu__item_active{% endif %}">
+      <a href="{{ fullUrl }}" class="menu__item{% if page.url contains fullUrl %} menu__item_active{% endif %}">
         {{ item[site.locale] }}
       </a>
     {% endif %}
   {% endfor %}
 </div>
-
