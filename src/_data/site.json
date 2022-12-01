@@ -3,7 +3,7 @@
   "locales": ["ru", "en"],
   "name": "Максим",
   "surname": "Павлов",
-  "important": "Ищу команду мечты 🧐 <a href='/hire-me/' class='link-solid'><span class='link-solid__inner'>Подробнее</span></a>.",
+  "important": "",
   "navigation": [
     { "ru": "Обо мне", "en": "About", "link": "/about/" },
     { "ru": "Заметки", "link": "/posts/" },
